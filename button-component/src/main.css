@@ -1,0 +1,16 @@
+.button {
+	padding: 10px 20px;
+	background-color: salmon
+}
+
+.button--md {
+	padding: 15px 30px;
+}
+
+.button--lg {
+	padding: 15px 30px;
+}
+
+.button--bg-green {
+	background-color: green;
+}
