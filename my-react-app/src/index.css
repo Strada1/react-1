@@ -21,6 +21,7 @@ body {
     background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(14, 174, 87, 1) 0%, rgba(12, 116, 117, 1) 90%);
     margin: 0;
     display: flex;
+    justify-content: center;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
