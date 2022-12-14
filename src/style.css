@@ -1,0 +1,50 @@
+body {
+	background-color: rgb(200, 255, 252);
+}
+
+.headerGenderize {
+	display: flex;
+	justify-content: center;
+	margin: 100px;
+	margin-left: 10px;
+	font-size: 50px;
+	font-weight: 100;
+	background-image: linear-gradient(to left, #553c9a, #b393d3);
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	margin: 100px;
+	margin-left: 10px;
+}
+
+.formGenderize {
+	margin-top: -50px;
+}
+
+.inputNameGenderize {
+	height: calc(2.25rem + 2px);
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 400;
+	border: 1px solid #bdbdbd;
+	border-radius: 0.25rem;
+}
+
+.buttonSubmitGenderize {
+	display: block;
+	color: rgb(0, 0, 0);
+	font-size: 14px;
+	font-family: "montserrat";
+	margin: 20px 45px;
+	padding: 14px 20px;
+	text-transform: uppercase;
+	overflow: hidden;
+	transition: 1s all ease;
+	cursor: pointer;
+	background-image: linear-gradient(to left, #553c9a, #b393d3);
+}
