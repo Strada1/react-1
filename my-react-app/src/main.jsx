@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App'
 import './index.css'
 
 const root = ReactDOM.createRoot(
@@ -38,6 +37,5 @@ function TextInput(props) {
     <input className={props.textInputClassName} type='text'/>
   )
 }
-
 
 root.render(<App/>)
