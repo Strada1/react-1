@@ -2,9 +2,11 @@ import { Button } from './Button.jsx';
 import { TextInput } from './TextInput';
 export function MainComponent() {
   return (
-    <div>
-      <TextInput></TextInput>
-      <Button></Button>
-    </div>
+    <form>
+      <label>
+        <TextInput InputClass="userInput"></TextInput>
+        <Button btnClass="btn"></Button>
+      </label>
+    </form>
   );
 }

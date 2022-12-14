@@ -1,3 +1,3 @@
-export function TextInput() {
-  return <input type="text" className="userInput" />;
+export function TextInput(props) {
+  return <input type="text" className={props.InputClass} />;
 }
