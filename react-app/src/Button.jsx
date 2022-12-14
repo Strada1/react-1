@@ -1,3 +1,7 @@
-export function Button(props) {
-  return <button className={props.btnClass}>Узнать пол</button>;
+import React from 'react';
+
+export class Button extends React.Component {
+  render() {
+    return <button className={this.props.btnClass}>Узнать пол</button>;
+  }
 }

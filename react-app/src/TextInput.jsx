@@ -1,3 +1,7 @@
-export function TextInput(props) {
-  return <input type="text" className={props.InputClass} />;
+import React from 'react';
+
+export class TextInput extends React.Component {
+  render() {
+    return <input type="text" className={this.props.InputClass}></input>;
+  }
 }
