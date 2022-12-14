@@ -1,0 +1,26 @@
+.red_big {
+    margin: 20px;
+    padding: 10px;
+    font-size: 40px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+}
+
+.yellow_middle {
+    margin: 15px;
+    padding: 10px;
+    font-size: 25px;
+    background-color: yellow;
+    border: none;
+}
+
+.blue_small {
+    margin: 10px;
+    padding: 10px;
+    font-size: 10px;
+    background-color: blue;
+    border: none;
+
+
+}
