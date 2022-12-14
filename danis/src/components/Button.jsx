@@ -1,5 +1,5 @@
 function Button() {
-  return <button>Узнать пол</button>;
+  return <button>Узнай пол</button>;
 }
 
 export default Button;
