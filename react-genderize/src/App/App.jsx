@@ -1,17 +1,16 @@
-import OutputResult from '../components/OutputResult'
-import MyButton from '../components/UI/button/MyButton'
-import MyInput from '../components/UI/input/MyInput'
+import React from 'react'
+import { OutputResult } from '../components/OutputResult'
+import { WelcomeQuestion } from '../components/WelcomeQuestion'
+import { UiForm } from '../components/UiForm'
 import '../../styles/styles.css'
+
 
 function App() {
 
   return (
     <div className='wrapper'>
-      <h3>How do you get to know the gender of a person using his first name?</h3>
-      <form className='request'>
-        <MyInput className='input-request' type="text" placeholder=" First Name" autoFocus/>
-        <MyButton className='button-request'>Request</MyButton>
-      </form>
+      <WelcomeQuestion />
+      <UiForm />
       <OutputResult />
     </div>
   )

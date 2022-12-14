@@ -1,6 +1,6 @@
 import React from 'react'
-import RequestName from './RequestName'
-import ResultGender from './ResultGender'
+import { RequestName } from './RequestName'
+import { ResultGender } from './ResultGender'
 
 const OutputResult = () => {
   return (
