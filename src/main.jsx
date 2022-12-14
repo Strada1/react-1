@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Button from "./Button";
-import Input from "./Input";
+import Button from "./components/button/Button.jsx";
+import Input from "./components/input/Input.jsx";
 // import './main.css'
 
 const TEXTINBUTTON = "НАЖМИ";
