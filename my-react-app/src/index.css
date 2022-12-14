@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(128, 210, 210);
+}
+
+.headerGenderize {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+
+.formGenderize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputNameGenderize {
+  width: 10vw;
+}
+
+.buttonSubmitGenderize {
+  margin-top: 1vw;
+  width: 8vw;
+  height: 2vh;
+}
+
