@@ -1,7 +1,7 @@
 import './App.css';
-import Main from "./components/container";
+import { Main } from "./components/container";
 
-function App() {
+export function App() {
   return (
     <div>
       <Main className='container'/>
@@ -9,4 +9,3 @@ function App() {
   )
 }
 
-export default App

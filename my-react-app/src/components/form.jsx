@@ -1,7 +1,7 @@
-import TextInput from "./textInput";
-import Button from "./button";
+import { TextInput } from "./textInput";
+import { Button } from "./button";
 
-function Form(props) {
+export function Form(props) {
     return(
         <form className={props.className}>
             <TextInput className='input'/>
@@ -9,8 +9,6 @@ function Form(props) {
         </form>
     )
 }
-
-export default Form;
 
 
 
