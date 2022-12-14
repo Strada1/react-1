@@ -13,4 +13,4 @@ const OutputResult = () => {
   )
 }
 
-export default OutputResult
+export { OutputResult }

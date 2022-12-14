@@ -8,4 +8,4 @@ const RequestName = () => {
   )
 }
 
-export default RequestName
+export { RequestName }

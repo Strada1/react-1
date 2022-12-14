@@ -8,4 +8,4 @@ const ResultGender = () => {
   )
 }
 
-export default ResultGender
+export { ResultGender }
