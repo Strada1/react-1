@@ -2,7 +2,7 @@ import React from 'react';
 
 class InputGenderize extends React.Component {
   constructor(props) {
-    super(props);
+    super(props) ;
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
