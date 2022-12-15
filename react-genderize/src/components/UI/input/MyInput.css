@@ -1,0 +1,10 @@
+.input-request {
+    width: 200px;
+    height: 26px;
+    margin-right: 10px;
+    padding-left: 10px;
+    outline: 0;
+    border: 1px solid #555555;;
+    border-radius: 4px;
+    background-color:  inherit; 
+}
