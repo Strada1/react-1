@@ -1,0 +1,8 @@
+.main-form{
+    display: flex;
+}
+
+p{
+    padding-top: 2rem;
+    margin: 0;
+}
