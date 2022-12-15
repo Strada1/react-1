@@ -1,9 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Button from "./components/Button";
-import Input from "./components/Input";
+import Button from "../button";
+import Input from "../input";
 
-class Main extends React.Component {
+export default class Main extends React.Component {
   render() {
 
     function breakForm(event) {
@@ -20,5 +19,3 @@ class Main extends React.Component {
     );
   }
 }
-
-ReactDOM.render(<Main />, document.getElementById("root"));
