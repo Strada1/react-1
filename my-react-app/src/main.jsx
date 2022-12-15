@@ -1,12 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import Button from './App'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Button text = 'hello' />
+        <Button text = 'ello' />
+        <Button text = 'loo' />
+      </div>
+    )
+  }
+}
 
+const element = <App />;
+
+root.render(element);
