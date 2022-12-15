@@ -1,0 +1,19 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right:70px;
+}
+
+.headerGenderize {
+	display: flex;
+	justify-content: center;
+	margin: 100px;
+	margin-left: 10px;
+	font-size: 50px;
+	font-weight: 100;
+	background-image: linear-gradient(to left, #553c9a, #b393d3);
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
