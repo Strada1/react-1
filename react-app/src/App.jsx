@@ -1,16 +1,20 @@
 import './App.css'
-import Product from "./components/Product.jsx";
-import {useState} from "react";
-import {PRODUCTS} from "./assets/products.js";
 
 function App() {
-    const [products, setProducts] = useState(PRODUCTS)
+    function formatName(name) {
+        return name;
+    }
+
+    function getGreeting(user) {
+        if (user) {
+            return <h1>Здравствуй, {formatName(user)}!</h1>;
+        }
+        return <h1>Здравствуй, незнакомец.</h1>;
+    }
 
     return (
         <div className="App">
-            {products.map((product) =>
-                <Product product={product} key={PRODUCTS.id}/>
-            )}
+            <h1>{getGreeting("")}</h1>
         </div>
     )
 }
