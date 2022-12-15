@@ -14,7 +14,7 @@ class InputGenderize extends React.Component {
   render() {
     return (
       <input
-        onClick={this.handleSubmit}
+        onInput={this.handleSubmit}
         className='input'
         placeholder='введите имя'
       ></input>
