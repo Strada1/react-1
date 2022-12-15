@@ -1,21 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Button from './App'
+import React from "react";
+import Button from "./Button";
+import TextInput from "./TextInput";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Button text = 'hello' />
-        <Button text = 'ello' />
-        <Button text = 'loo' />
-      </div>
-    )
-  }
+class Main extends React.Component {
+    render() {
+        return (
+            <form class='form'>
+                <TextInput />
+                <Button />
+            </form>
+        )
+    }
 }
 
-const element = <App />;
-
-root.render(element);
+export default Main

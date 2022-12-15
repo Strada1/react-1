@@ -1,13 +1,5 @@
-import React from "react"
+import ReactDOM from 'react-dom/client'
+import Main from './main';
+import '../style.css'
 
-class Button extends React.Component {
-  render() {
-    return (
-      <button >
-        <p>{this.props.text}</p>
-      </button>
-    )
-  }
-}
-
-export default Button
+ReactDOM.createRoot(document.getElementById('root')).render(<Main />);
