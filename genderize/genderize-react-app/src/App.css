@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App{
+  padding: 8rem;
+  border: 2px solid #ffffff;
+  border-radius: 2rem;
+  backdrop-filter: blur(3px);
+}
+
+h1{
+  padding-bottom: 25px;
+  color: #ffffff;
+  text-shadow: -5px 2px 3px rgb(1, 25, 73);
+  font-size: 65px;
+}
+
+p{
+  padding-top: 55px;
+  color: #ffffff;
+  text-shadow: -5px 2px 3px rgb(1, 25, 73);
+  font-size: 35px;
+  display: flex;
+  flex-direction: row;
+}
