@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(128, 210, 210);
+}
+
+.headerGenderize {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+
+
+
+
+
