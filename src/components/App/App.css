@@ -1,0 +1,14 @@
+div {
+  margin: 0 auto;
+}
+
+input,
+button,
+div {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+div {
+  align-items: center;
+}
