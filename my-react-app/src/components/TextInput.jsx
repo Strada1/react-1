@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-function TextInput(props) {
-    return (
-        <input className={props.className} id={props.id} type={props.type} />
-    );
+class TextInput extends React.Component{
+    render() {
+        return(
+            <input className={this.props.className} id={this.props.id} type={this.props.type} />
+        )
+    }
 }
 
 export default TextInput;

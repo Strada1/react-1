@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
-function Button(props) {
-    return (
-        <button className={props.className} id={props.id} type={props.type}>
-            {props.text}
-        </button>
-    );
+class Button extends React.Component{
+    render(){
+        return(
+            <button className={this.props.className} id={this.props.id} type={this.props.type}>
+                {this.props.text}
+            </button>
+        )
+    }
 }
 
 export default Button;
