@@ -1,8 +1,8 @@
 import React from 'react'
 
-function getGender() {
+function getGender(event) {
+	event.preventDefault();
 	alert("click")
-	console.log('click: ', click);
 }
 
 export {getGender}
