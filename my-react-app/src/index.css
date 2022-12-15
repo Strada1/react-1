@@ -4,42 +4,8 @@
   align-items: center;
   height: 100%;
   background-color: rgb(77, 79, 139);
-  background-image: url(../public/mountains.png);
+  background-image: url(/mountains.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
-.container {
-  background-color: rgba(179, 171, 198, 0.2);
-  width: 500px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  border-radius: 20px;
-}
-
-.form {
-  margin-right: 10px;
-}
-
-.input {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid black;
-  border-radius: 8px;
-  padding: 8px;
-  font-size: 16px;
-  outline: none;
-}
-
-.button {
-  appearance: none;
-  border: 0;
-  border-radius: 5px;
-  background: #4650d7;
-  color: #fff;
-  padding: 8px 16px;
-  font-size: 16px;
-  margin: 0 0 0 20px;
-}
