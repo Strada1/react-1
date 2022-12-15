@@ -6,10 +6,7 @@ import './app.css';
 function App() {
   return (
     <div className='gender'>
-      <h1 className='gender-title'>
-        {' '}
-        &#128697; know gender by name &#128698;{' '}
-      </h1>
+      <h1 className='gender-title'>&#128697; know gender by name &#128698;</h1>
       <div className='gender-box'>
         <form className='gender-form'>
           <TextInput />
