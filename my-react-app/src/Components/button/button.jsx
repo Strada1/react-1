@@ -1,5 +1,5 @@
-import React from 'react'
-import './button.css'
+import React from 'react';
+import './button.css';
 
 class Button extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class Button extends React.Component {
   render() {
     return (
       <button onClick={this.props.onClick} className={this.props.buttonClassName}>Узнать</button>
-    )
+    );
   }
 }
 
-export { Button }
+export { Button };
