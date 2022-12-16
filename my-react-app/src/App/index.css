@@ -10,10 +10,31 @@ body {
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 80vh;
+  
 }
 
+.resultGender {
+  font-size: x-large;
+  margin-top: 2vh;
+}
+
+.enteredName {
+  font-size: large;
+  margin-top: 2vh;
+}
+
+.error {
+  color: red;
+  font-weight: bolder;
+}
+
+.notFoundGender {
+  margin-top: 2vh;
+  font-size: large;
+}
 
 
 

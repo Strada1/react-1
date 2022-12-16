@@ -12,13 +12,11 @@ class GetGender extends React.Component {
 	}
 
 	changeForm(event) {
-		this.setState({
-			value: event.target.value
-		});
+		
 	}
 
 	submitForm(event) {
-		event.preventDefault();
+		
 	}
 
 	render() {
