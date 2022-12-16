@@ -1,0 +1,13 @@
+.gender{
+    border-radius: 20px;
+    padding: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.gender-form{
+    display: flex;
+    gap: 25px;
+}
