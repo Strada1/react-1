@@ -2,23 +2,17 @@ import React from 'react';
 
 class InputGenderize extends React.Component {
   constructor(props) {
-    super(props) ;
+    super(props);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      value: 'Name'
+    }
   }
 
-  handleSubmit() {
-    console.log('Done...');
-  }
+    
 
   render() {
-    return (
-      <input
-        onInput={this.handleSubmit}
-        className='input'
-        placeholder='введите имя'
-      ></input>
-    );
+    return <input onChange={this.props.name} className='input' placeholder='введите имя'></input>;
   }
 }
 
