@@ -3,6 +3,8 @@ import TextInput from '../text-input/text-input';
 import Button from '../button/button';
 import './app.css';
 import requestGender from '../../js/requestGender';
+import WarningBanner from '../warning/warning';
+import Result from '../result/result';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,7 +52,8 @@ class App extends React.Component {
             <TextInput value={value} onChange={this.handleInput} />
             <Button />
           </form>
-          <div className='gender-result'>result:{result}</div>
+          <WarningBanner lengthText={value.length} />
+          <Result result={result} />
         </div>
       </div>
     );
