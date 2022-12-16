@@ -3,12 +3,9 @@
     width: 500px;
     height: 300px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     border-radius: 20px;
-  }
-  
-  .form {
-    margin-right: 10px;
   }
