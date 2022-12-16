@@ -4,17 +4,25 @@ import Button from "../Button/Button.jsx";
 import './MainForm.css'
 
 class MainForm extends React.Component {
-    request(e) {
-        e.preventDefault();
-        const value = document.querySelector(".input-name").value;
-        console.log("request sent " + value)
+    constructor(props) {
+        super(props);
+        this.state = {value: ""};
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        // this.setState({value: event.target.value})
+        console.log("request sent ")
+    }
+
     render() {
         return (
             <div>
-                <form className="main-form" onSubmit={this.request}>
+                <form className="main-form" onSubmit={this.handleSubmit}>
                     <TextInput />
-                    <Button/>
+                    <Button />
                 </form>
             </div>
         );
