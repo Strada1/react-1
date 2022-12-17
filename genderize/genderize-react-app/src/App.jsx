@@ -8,7 +8,6 @@ class App extends React.Component {
             <div className="App">
                 <h1>Gender app</h1>
                 <MainForm/>
-                <p>resolve: </p>
             </div>
         )
     }

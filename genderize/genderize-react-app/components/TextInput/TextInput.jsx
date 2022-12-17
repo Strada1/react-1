@@ -5,14 +5,13 @@ class TextInput extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: ""};
 
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value})
-        console.log(this.state.value  )
+        this.props.updateValue(event.target.value);
+
     }
 
     render() {
@@ -21,8 +20,7 @@ class TextInput extends React.Component {
                 <input
                     className="input-name"
                     type="text"
-                    placeholder="Введите имя"
-                    value={this.state.value}
+                    placeholder="Write name"
                     onChange={this.handleChange}/>
             </div>
         );

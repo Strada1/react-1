@@ -19,11 +19,3 @@ h1{
   font-size: 65px;
 }
 
-p{
-  padding-top: 55px;
-  color: #ffffff;
-  text-shadow: -5px 2px 3px rgb(1, 25, 73);
-  font-size: 35px;
-  display: flex;
-  flex-direction: row;
-}
