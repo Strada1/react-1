@@ -1,0 +1,8 @@
+* {
+	box-sizing: border-box;
+}
+
+.wrapper {
+	max-width: 400px;
+	margin: auto;
+}
