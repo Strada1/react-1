@@ -23,7 +23,6 @@ class FormGenderize extends React.Component {
     this.setState({
       value: event.target.value,
     });
-    let namelength = this.state.value;
   }
 
   handlerGender(name, gender) {
@@ -66,4 +65,5 @@ class FormGenderize extends React.Component {
     );
   }
 }
+
 root.render(<FormGenderize />);
