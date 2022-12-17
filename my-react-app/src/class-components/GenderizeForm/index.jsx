@@ -12,17 +12,21 @@ class GenderizeForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.setName = this.setName.bind(this);
+  }
+
+  setName(name) {
+    this.setState({ name });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.submit(this.state.name);
+    this.setName('');
   }
 
   handleInputChange(value) {
-    this.setState({
-      name: value
-    });
+    this.setName(value);
   }
 
   render() {
