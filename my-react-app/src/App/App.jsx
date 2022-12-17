@@ -15,6 +15,7 @@ class Main extends React.Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
+    
   }
 
   handleSubmit(event) {
@@ -26,7 +27,8 @@ class Main extends React.Component {
     } else {
       this.setState({ isSubmit: true });
       genderize(`${serverURL}?name=${this.state.value}`).then((result) => {
-        this.setState({ gender: result.gender });
+        this.setState({ gender: result.gender },
+          ()=> {alert(this.state.gender)});
       });
     }
   }
