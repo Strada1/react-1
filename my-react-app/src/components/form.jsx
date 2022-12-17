@@ -6,10 +6,10 @@ import React from "react";
 export class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = ({
+        this.state = {
             name: "",
             gender: "",
-        });
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -22,7 +22,7 @@ export class Form extends React.Component {
         event.preventDefault();
         
         if (this.state.name.length < 3) {
-            this.setState({gender: 'Имя не может быть меньше 2 символов'})
+            this.setState({gender: 'Name cannot be less than 2 characters'})
         } else {
             addGender(`${SERVER_URL}?name=${this.state.name}`).then(user => this.setState({gender: user.gender}));
         }
