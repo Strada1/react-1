@@ -28,7 +28,7 @@ export default function Main() {
 		<form onSubmit={onLogIn}>
 			<label>
 				Name:
-				{value.length < 2 ? 'Введите больше символов' : ''}
+				{value.length < 2 && 'Введите больше символов'}
 				<TextInput value={value} setValue={setValue} />
 			</label>
 			<Button />
