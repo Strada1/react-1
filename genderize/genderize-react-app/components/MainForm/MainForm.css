@@ -1,0 +1,19 @@
+.main-form {
+    display: flex;
+}
+
+p {
+    padding-top: 55px;
+    color: #ffffff;
+    text-shadow: -5px 2px 3px rgb(1, 25, 73);
+    font-size: 35px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+h2 {
+    padding-top: 20px;
+    color: #ffffff;
+    text-shadow: -5px 2px 3px rgb(1, 25, 73);
+    font-size: 35px;
+}
