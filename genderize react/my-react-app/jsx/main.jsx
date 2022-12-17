@@ -12,7 +12,6 @@ class FormGenderize extends React.Component {
 
     this.state = {
       value: '',
-      name: '',
       gender: '',
     };
 
@@ -25,17 +24,14 @@ class FormGenderize extends React.Component {
     });
   }
 
-  handlerGender(name, gender) {
+  handlerGender(gender) {
     this.setState({
-      name: name,
       gender: gender,
     });
-    console.log(this.state.value.length);
   }
 
   fetchRequest(e) {
     e.preventDefault();
-    console.log(e.target.value);
     const serverUrl = 'https://api.genderize.io';
 
     const url = `${serverUrl}?name=${this.state.value}`;
@@ -44,15 +40,20 @@ class FormGenderize extends React.Component {
       .then((result) => result.json())
 
       .then((result) => {
-        this.handlerGender(result.name, result.gender);
+        this.handlerGender(result.gender);
         return result;
       });
-    this.setState({
-      value: '',
-    });
   }
 
   render() {
+    const divResult = this.state.value.length;
+    let div;
+    if (divResult <= 2) {
+      div = <DivError />;
+    } else {
+      div = <DivName genderize={this.state.gender} />;
+    }
+
     return (
       <form onSubmit={this.fetchRequest}>
         <InputGenderize
@@ -60,7 +61,7 @@ class FormGenderize extends React.Component {
           name={(e) => this.handlerName(e)}
         />
         <ButtonGenderize />
-        <DivName name={this.state.name} genderize={this.state.gender} />
+        {div}
       </form>
     );
   }

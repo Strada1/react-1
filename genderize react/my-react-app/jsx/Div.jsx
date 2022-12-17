@@ -8,11 +8,10 @@ class DivName extends React.Component {
   render() {
     return (
       <div>
-        {this.props.name} is {this.props.genderize}
+        {this.props.genderize}
       </div>
     );
   }
 }
 
 export default DivName;
-{/* <DivName name={this.state.name }  genderize={this.state.gender} /> */}
