@@ -1,4 +1,4 @@
-export const SERVER_URL = 'https://api.genderize.io';
+import { ERROR } from "./const";
 
 class ServerError extends Error {
     constructor(message) {
@@ -12,7 +12,7 @@ export async function addGender(url) {
         const response = await fetch(url);
   
         if (!response.ok) {
-          throw new ServerError('data fetch error');
+          throw new ServerError(ERROR.DATA);
         }
   
         const result = await response.json();

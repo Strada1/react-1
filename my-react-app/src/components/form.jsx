@@ -1,6 +1,7 @@
 import { TextInput } from "./textInput";
 import { Button } from "./button";
-import { SERVER_URL, addGender } from "./server";
+import { addGender } from "./server";
+import { SERVER_URL, CLASS_ELEMENT, EQUALS, ERROR } from "./const";
 import React from "react";
 
 export class Form extends React.Component {
@@ -22,7 +23,7 @@ export class Form extends React.Component {
         event.preventDefault();
         
         if (this.state.name.length < 3) {
-            this.setState({gender: 'Name cannot be less than 2 characters'})
+            this.setState({gender: ERROR.LENGTH})
         } else {
             addGender(`${SERVER_URL}?name=${this.state.name}`).then(user => this.setState({gender: user.gender}));
         }
@@ -32,8 +33,8 @@ export class Form extends React.Component {
         return(
             <div>
                 <form className={this.props.className} onSubmit={this.handleSubmit}>
-                    <TextInput className='input' onChange={this.handleChange}/>
-                    <Button className='button' text='='/>
+                    <TextInput className={CLASS_ELEMENT.INPUT} onChange={this.handleChange}/>
+                    <Button className={CLASS_ELEMENT.BUTTON} text={EQUALS}/>
                 </form>
                 <span>{this.state.gender}</span>
             </div>
