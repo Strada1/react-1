@@ -10,14 +10,24 @@ class FormGenderize extends React.Component {
     super(props);
 
     this.state = {
-      value: 'текст',
+      value: '',
+      name: '',
+      gender: '',
     };
+
     this.fetchRequest = this.fetchRequest.bind(this);
   }
 
   handlerName(event) {
     this.setState({
       value: event.target.value,
+    });
+  }
+
+  handlerGender(name, gender) {
+    this.setState({
+      name: name,
+      gender: gender,
     });
   }
 
@@ -31,20 +41,26 @@ class FormGenderize extends React.Component {
       .then((result) => result.json())
 
       .then((result) => {
-        console.log(result);
+        this.handlerGender(result.name, result.gender);
         return result;
-      })      
+      });
+
+    this.setState({
+      value: '',
+    });
   }
-  
+
   render() {
     return (
       <form onSubmit={this.fetchRequest}>
-        <InputGenderize name={(e) => this.handlerName(e)} />
+        <InputGenderize
+          value={this.state.value}
+          name={(e) => this.handlerName(e)}
+        />
         <ButtonGenderize />
-        <DivName  />
+        <DivName name={this.state.name} genderize={this.state.gender} />
       </form>
     );
   }
 }
 root.render(<FormGenderize />);
-
