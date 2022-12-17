@@ -70,7 +70,7 @@ class MainForm extends React.Component {
                     <Button/>
                 </form>
                 {this.state.errorMessage && <h2>Short name</h2>}
-                {this.state.showResolve && <p>resolve: {this.state.name} {this.state.gender}</p>}
+                {this.state.showResolve && <p>resolve: {this.state.name } {this.state.gender}</p>}
             </div>
         );
     }
