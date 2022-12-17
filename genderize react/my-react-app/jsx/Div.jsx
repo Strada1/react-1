@@ -15,3 +15,4 @@ class DivName extends React.Component {
 }
 
 export default DivName;
+{/* <DivName name={this.state.name }  genderize={this.state.gender} /> */}
