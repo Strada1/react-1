@@ -1,0 +1,8 @@
+.inputNameGenderize {
+	height: calc(2.25rem + 2px);
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 400;
+	border: 1px solid #bdbdbd;
+	border-radius: 0.25rem;
+}

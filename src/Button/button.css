@@ -1,0 +1,13 @@
+.buttonSubmitGenderize {
+	display: block;
+	color: rgb(0, 0, 0);
+	font-size: 12px;
+	font-family: "montserrat";
+	margin: 0px 25px;
+	padding: 10px 10px;
+	text-transform: uppercase;
+	overflow: hidden;
+	transition: 1s all ease;
+	cursor: pointer;
+	background-image: linear-gradient(to left, #553c9a, #b393d3);
+} 
