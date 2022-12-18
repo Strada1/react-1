@@ -1,18 +1,14 @@
 import React from "react";
 
 class Input extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  onChange(e) {
-    // e.preventDefault();
-    console.log(e.target.value);
-    this.setState = { value: e.target.value };
-  }
   render() {
     return (
-      <input onChange={(e) => this.onChange(e)} className="text" type="text" />
+      <input
+        onChange={this.props.onChange}
+        className="text-input"
+        type={this.props.type}
+        placeholder={this.props.placeholder}
+      />
     );
   }
 }

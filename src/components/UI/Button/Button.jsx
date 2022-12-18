@@ -1,13 +1,10 @@
 import React from "react";
 
 class Button extends React.Component {
-  onClick() {
-    console.log("Нажата кнопка");
-  }
   render() {
     return (
-      <button onClick={() => this.onClick()} className="button">
-        <span>{this.props.textInButton}</span>
+      <button type={this.props.type} className={this.props.name}>
+        <span> Нажми </span>
       </button>
     );
   }
