@@ -55,9 +55,6 @@ class App extends React.Component {
       return;
     }
   }
-  handleClick() {
-    console.log("click");
-  }
   render() {
     return (
       <div className="App">
@@ -67,7 +64,7 @@ class App extends React.Component {
             type="text"
             placeholder="Your name"
           />
-          <Button onClick={this.handleClick} name="button"></Button>
+          <Button name="button"></Button>
         </form>
         <Result result={this.state.result} />
       </div>
