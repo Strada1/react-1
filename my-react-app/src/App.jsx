@@ -5,7 +5,7 @@ import Button from "./Button";
 class App extends React.Component {
     render() {
         return (
-            <form class="form">
+            <form className="form">
                 <TextInput />
                 <Button />
             </form>
