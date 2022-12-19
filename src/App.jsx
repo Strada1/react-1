@@ -19,12 +19,12 @@ export class App extends React.Component {
 	};
 
 	render() {
-		const isListEmpty = this.state.list.length === 0;
+		const isListEmpty = !this.state.list.length;
 
 		return (
 			<div className='wrapper'>
 				<Form getGender={this.getGender} errorText='Min 3 character'/>
-				{!isListEmpty && <List list={this.state.list}/>}
+				<List isRender={!isListEmpty} list={this.state.list}/>
 			</div>
 		);
 	};

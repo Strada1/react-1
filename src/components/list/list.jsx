@@ -1,11 +1,13 @@
-export function List(props) {
-	const listItem = props.list.map(item => {
-		return <li key={item.id}>{item.name}-{item.gender}</li>
-	});
+export function List({ list, isRender }) {
+	if(!isRender) {
+		return null
+	}
 
-	return(
+	return (
 		<ul>
-			{listItem}
+			{list.map(item => {
+				return <li key={item.id}>{`${item.name}-${item.gender}`}</li>
+			})}
 		</ul>
 	);
 };

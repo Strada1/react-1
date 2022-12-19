@@ -1,11 +1,12 @@
 import './button.css';
 
-export function Button(props) {
+export function Button({type, text}) {
 	return (
 		<button
 			className='button'
+			type={type}
 		>
-			{props.text}
+			{text}
 		</button>
 	);
 };

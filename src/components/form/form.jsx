@@ -3,15 +3,17 @@ import { fetchData } from '../../services/fetchData.js';
 import { Button } from '../button/button';
 import './form.css';
 
+const MIN_CHARS_LENGTH = 2;
+const DEFAULT_STATE = {
+	inputValue: '',
+	isInputValueShort: false,
+	id: 0
+};
+
 export class Form extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			inputValue: '',
-			gender: '',
-			isInputValueShort: false,
-			id: 0
-		};
+		this.state = DEFAULT_STATE;
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	};
@@ -22,10 +24,8 @@ export class Form extends React.Component {
 
 	async handleSubmit(e) {
 		e.preventDefault();
-		const MIN_CHARS_LENGTH = 2;
 		const inputValue = this.state.inputValue;
 		const isInputValueShort = inputValue.length <= MIN_CHARS_LENGTH;
-		const id = this.state.id;
 
 		if (isInputValueShort) {
 			this.setState({ isInputValueShort });
@@ -33,11 +33,8 @@ export class Form extends React.Component {
 		};
 
 		const { gender } = await fetchData(inputValue);
-		this.setState({ gender });
-		this.setState({ isInputValueShort });
-		this.setState({id: this.state.id + 1});
-		this.props.getGender(inputValue, gender, id);
-		this.setState({ gender: '' });
+		this.setState({ isInputValueShort, id: this.state.id + 1 });
+		this.props.getGender(inputValue, gender, this.state.id++);
 		this.setState({ inputValue: '' });
 	};
 
@@ -48,12 +45,12 @@ export class Form extends React.Component {
 					<input
 						className='form__input'
 						type='text'
-						onChange={this.handleChange} 
+						onChange={this.handleChange}
 						value={this.state.inputValue}
 					/>
 					{this.state.isInputValueShort && <div className='form__error'>{this.props.errorText}</div>}
 				</div>
-				<Button text='Get gender' />
+				<Button type='submit' text='Get gender' />
 			</form>
 		);
 	};
