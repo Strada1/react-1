@@ -1,0 +1,11 @@
+:root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(77, 79, 139);
+  background-image: url(/mountains.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
