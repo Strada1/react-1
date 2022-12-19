@@ -1,0 +1,50 @@
+#root {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.inputElement {
+  max-width: 170px;
+}
+
+.containerElement {
+  padding: 15px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+    
+.buttonElement {
+  background-color: #e2f3e3;
+  border-radius: 8px;
+  border: 1px #3c763d groove;
+  color: black;
+  padding: 6px 6px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.checkedElement {
+  background-color: #fd0c85;
+  border-radius: 8px;
+  border: 1px #2c011e groove;
+  color: black;
+  padding: 6px 6px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.mylogo {
+  margin: 5px;
+}
+
+
