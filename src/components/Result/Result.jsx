@@ -1,18 +1,24 @@
-import React from 'react';
-import './styleResult.css';
+import PropTypes from 'prop-types'
+import React from 'react'
+import './styleResult.css'
+
 class Result extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props);
+    this.state = {}
   }
+
   render() {
-    if (this.props.resultTextContent === null) {
+    const { resultTextContent } = this.props
+    if (resultTextContent === null) {
       return null
     }
-    return (
-      <div className='text-result'>Gender:{this.props.resultTextContent}</div>
-    )
+    return <div className="text-result">Gender:{resultTextContent}</div>
   }
 }
 
-export default Result;
+Result.propTypes = {
+  resultTextContent: PropTypes.string.isRequired,
+}
+
+export default Result
