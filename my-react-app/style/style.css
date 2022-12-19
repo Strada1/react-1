@@ -6,6 +6,7 @@
 }
 
 .container {
+    margin: 100px auto;
     max-width: 450px;
     height: 50px;
     display: flex;
@@ -14,8 +15,6 @@
 }
 
 .form {
-    margin: 100px auto;
-
     width: 330px;
     display: flex;
     gap: 30px;

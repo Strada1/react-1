@@ -14,7 +14,6 @@ class Button extends React.Component {
     render() {
         return (
             <input
-                onClick={this.submit}
                 type="submit"
                 value="Genderize"
                 className="submit"
