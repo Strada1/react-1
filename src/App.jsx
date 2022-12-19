@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Main from './components/Main/Main'
+import MainForm from './components/MainForm/MainForm'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Main />
+    <MainForm></MainForm>
   </React.StrictMode>,
 )
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<Main></Main>)

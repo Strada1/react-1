@@ -7,9 +7,7 @@ class Button extends React.Component {
   
   render() {
     return (
-      <div className="check-button">
-        <button disabled={this.props.status<=2 ? true : false} onClick={this.props.findoutgender} className="check-button__button" type='button'>Click</button>
-      </div>
+      <button disabled={this.props.length<=2 ? true : false} className="check-button__button" type='submit'>Click</button>
     )
   }
 }

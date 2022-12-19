@@ -8,9 +8,7 @@ class TextInput extends React.Component {
 
   render() {
     return(
-      <div className='check-name'>
-          <input onChange={this.props.textchange} className='check-name__input' type="text"/>
-      </div>
+      <input onChange={this.props.textchange} className='check-name__input' type="text"/>
     )
   }
 }
