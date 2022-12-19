@@ -1,14 +1,26 @@
 import React from "react";
 import "./app.css";
-import { Button } from "../button/Button";
-import { Input } from "../input/Input";
+import { Button } from "../button/button";
+import { Input } from "../input/input";
 import { ShowWarning } from "../warning/warning";
 import { serverURL, genderize } from "../request/request";
+
+const minLength = 2;
+
+const defaultState = {
+  value: "",
+  gender: "",
+  isSubmit: true,
+};
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "", gender: "", isSubmit: true };
+    this.state = {
+      value: defaultState.value,
+      gender: defaultState.gender,
+      isSubmit: defaultState.isSubmit,
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,7 +31,7 @@ class Main extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.state.value.length <= 2) {
+    if (this.state.value.length <= minLength) {
       this.setState({ isSubmit: false });
       setTimeout(() => this.setState({ isSubmit: true }), 3000);
       return;
@@ -34,22 +46,23 @@ class Main extends React.Component {
   }
 
   render() {
+    const {value, isSubmit} = this.state
     return (
-      <div className={this.props.class}>
+      <div className="container">
         <form className="form" onSubmit={this.handleSubmit}>
           <Input
             type="text"
             name="name"
             placeholder="Your name"
-            value={this.state.value}
+            value={value}
             onChange={this.handleChange}
           />
           <Button />
-          <ShowWarning warning={this.state.isSubmit} />
+          <ShowWarning warning={isSubmit} />
         </form>
       </div>
     );
-}
+  }
 }
 
 export { Main };

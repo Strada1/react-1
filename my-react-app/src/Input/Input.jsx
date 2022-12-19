@@ -7,14 +7,15 @@ class Input extends React.Component {
   }
 
   render() {
+    const {type, name, placeholder, onChange} = this.props;
     return (
       <label>
         <input
           className="input"
-          type={this.props.type}
-          name={this.props.name}
-          placeholder={this.props.placeholder}
-          onChange={this.props.onChange}
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          onChange={onChange}
         />
       </label>
     );
