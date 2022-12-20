@@ -9,7 +9,6 @@ export default class Button extends Component {
 
   handlerClick(event) {
     event.preventDefault();
-    console.log("Hello bitches");
   }
 
   render() {
