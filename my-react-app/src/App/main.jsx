@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './form.cgjss';
+import './form.css';
 import { TextInput } from '../Components/input/input';
 import { Button } from '../Components/button/button';
 
@@ -50,7 +51,7 @@ class Main extends React.Component {
         <div className="container">
           <form onSubmit={this.handlerSubmitForm} className="formGenderize">
             <TextInput valueInput={this.state.value} onChange={this.handlerChangeInput} textInputClassName="inputNameGenderize" />
-            <Button onClick={this.handlerSubmitForm} buttonClassName="buttonSubmitGenderize" />
+            <Button buttonClassName="buttonSubmitGenderize" />
           </form>
 
           {
@@ -61,6 +62,7 @@ class Main extends React.Component {
             Введенное имя:
             {this.state.name}
           </div>
+
           {
                 this.state.gender === null
                   ? <div className="notFoundGender">К сожалению информация не найденна. Попробуйте ввести своё имя на английском</div>
