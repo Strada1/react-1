@@ -7,8 +7,10 @@ export class TextInput extends React.Component {
     }
 
     render() {
+    const { className, onChange } = this.props;
+
         return(
-            <input className={this.props.className} type={TYPE_ELEMENT.TEXT} onChange={this.props.onChange}></input>
+            <input className={className} type={TYPE_ELEMENT.TEXT} onChange={onChange}></input>
         )
     }
 }

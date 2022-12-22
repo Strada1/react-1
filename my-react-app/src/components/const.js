@@ -7,8 +7,6 @@ export const CLASS_ELEMENT = {
     BUTTON: 'button'
 }
 
-export const EQUALS = '=';
-
 export const ERROR = {
     DATA: 'data fetch error',
     LENGTH: 'Name cannot be less than 2 characters'
@@ -18,3 +16,10 @@ export const TYPE_ELEMENT = {
     SUBMIT: 'submit',
     TEXT: "text"
 }
+
+export const DEFAULT_STATE = {
+        name: "",
+        gender: "",
+}
+
+export const MIN_LENGTH = 3;

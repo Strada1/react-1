@@ -1,10 +1,18 @@
 import { Form } from "./form";
 import { CLASS_ELEMENT } from "./const";
+import React from "react";
 
-export function Main(props) {
-    return(
-        <div className={props.className}>
-            <Form className={CLASS_ELEMENT.FORM}/>
-        </div>
-    )
+export class Main extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        
+        return(
+            <div className={this.props.className}>
+                <Form className={CLASS_ELEMENT.FORM}/>
+            </div>
+        )
+    }
 }

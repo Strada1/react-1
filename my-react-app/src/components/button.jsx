@@ -7,8 +7,10 @@ export class Button extends React.Component {
     }
 
     render() {
+    const { className, text } = this.props;
+
         return(
-            <button className={this.props.className} type={TYPE_ELEMENT.SUBMIT}>{this.props.text}</button>
+            <button className={className} type={TYPE_ELEMENT.SUBMIT}>{text}</button>
         )
     }
 }
