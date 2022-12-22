@@ -4,8 +4,8 @@ import Task from '../task';
 export default function List() {
   return (
     <div>
-      <Task taskDescription="Пойти гулять да" />
-      <Task taskDescription="Учить React" />
+      <Task taskDescription="Пойти гулять " />
+      <Task taskDescription="Учить React " />
     </div>
   );
 }
