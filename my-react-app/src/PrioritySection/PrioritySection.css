@@ -1,0 +1,15 @@
+legend {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  fieldset {
+    border: 0;
+    width: 100%;
+  }
+
+  .tasks-wrapper:not(:last-child) {
+    margin: 0 0 30px;
+  }
+  
