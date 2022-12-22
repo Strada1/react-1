@@ -1,5 +1,6 @@
 import React from 'react';
 import './formTask.sass'
+
 function FormTask(props) {
   const { taskPriority } = props
   const className = taskPriority === 'low' ? 'list_low': 'list_high'
