@@ -1,0 +1,25 @@
+.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid #989898;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.taskInprogress {
+    background: #ffffff;
+}
+
+.taskDone {
+    background: #F4F4F4;
+}
+
+.task_text {
+    width: 94%;
+    margin-left: 12px;
+    margin-right: 12px;
+    display: block;
+    margin: 12px 0px;
+}

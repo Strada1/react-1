@@ -1,0 +1,10 @@
+.task_fieldbtn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 34px;
+    color: #998899;
+    bottom: 6px;
+    font-weight: 100;
+}

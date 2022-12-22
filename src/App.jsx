@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import Todo from './components/Todo/Todo'
+import './App.css'
+
 import './App.css'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <Todo />
     </div>
   )
 }
