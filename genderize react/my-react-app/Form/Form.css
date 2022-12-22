@@ -1,0 +1,41 @@
+body {
+    background: url(https://images.hdqwalls.com/download/blue-black-white-abstract-tiles-4k-02-1920x1080.jpg) center center/cover no-repeat;
+    min-height: 600px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    margin-top: 390px;
+    text-align: center;
+    padding-top: 40px;
+    background-color: rgba(148, 189, 178, 0.3);
+    width: 300px;
+    height: 100px;
+    border-radius: 3px;
+}
+
+form{
+    display: block;
+    background-color: rgba(104, 126, 141, 0.3);
+    font-size: 22px;
+    color: rgb(201, 212, 188);
+    border: radius 10px;
+}
+
+button {
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 12px;
+    padding-bottom: 4.5px;
+    height: 24px;
+    margin-left: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgb(89, 79, 102);
+    border-radius: 2px;
+}
+
+button:hover {
+    box-shadow: 0px 0px 4px 1px #503e69;
+}
+
+

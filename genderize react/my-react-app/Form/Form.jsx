@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import InputGenderize from './Input';
-import fetchRequest from './async';
-const resolve = fetchRequest;
+import InputGenderize from '../Input/Input';
+import fetchRequest from '../async/async';
+import './Form.css'
+
 
 class FormGenderize extends React.Component {
   constructor(props) {
@@ -27,7 +28,11 @@ class FormGenderize extends React.Component {
   }
 
   render() {
+    const gender = fetchRequest(this.state.value)
+    gender.then(result => this.state.gender = (result.gender))
+
     return (
+      <div className='wrapper'>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -39,12 +44,10 @@ class FormGenderize extends React.Component {
           name={(e) => this.handlerName(e)}
         />
         <button className='button' type='submit' />
-        {this.state.value.length <= 2 ? (
-          <div> Entry name</div>
-        ) : (
-          <div> {this.state.gender} </div>
-        )}
+        {this.state.value.length <= 2 ? <div> Entry name</div> : <div>{this.state.value + ' is ' + this.state.gender}</div>}
       </form>
+      </div>
+      
     );
   }
 }

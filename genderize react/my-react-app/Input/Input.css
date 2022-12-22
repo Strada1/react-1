@@ -1,0 +1,13 @@
+input{
+    margin-bottom: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: rgb(201, 212, 188);
+    font-size: 18px;
+    text-align: center;
+    border-radius:3px
+}
+
+input:hover {
+    box-shadow: 0px 0px 6px 2px #503e69;
+}
