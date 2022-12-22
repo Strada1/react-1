@@ -1,17 +1,15 @@
-/* eslint-disable */ 
 import React from 'react';
 import './button.css';
 
 class Button extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <button type='submit' className={this.props.buttonClassName}>Узнать</button>
-    );
-  }
+    render() {
+        const { buttonClassName, valueInput } = this.props;
+        return (
+            <button type="submit" className={buttonClassName}>
+                Узнать пол у "{valueInput}"
+            </button>
+        );
+    }
 }
 
 export { Button };

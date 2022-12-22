@@ -1,0 +1,5 @@
+const FETCH = {
+	
+}
+
+export {FETCH};
