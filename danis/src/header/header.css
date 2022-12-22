@@ -1,0 +1,14 @@
+form {
+    display: flex;
+}
+
+
+input[type=text] {
+    flex: 0 0 85%;
+}
+
+input {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
