@@ -1,0 +1,17 @@
+.wrapper {
+	width: 476px;
+	min-height: 688px;
+	margin-left: auto;
+    margin-right: auto;
+	border: 0.5px solid #989898;
+	border-radius: 6px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction:column;
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-bottom: 8px;
+}

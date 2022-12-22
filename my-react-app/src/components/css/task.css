@@ -1,0 +1,30 @@
+.task {
+	margin-top: 8px;
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	border: 1px solid #989898;
+	border-radius: 6px;
+	width: 460px;
+	min-height: 45px;
+}
+
+.element-task {
+	padding-top: 12px;
+}
+
+.checkbox {
+	/* margin-bottom: 16px; */
+	margin: 12px;
+}
+
+.deleteTask {
+	position: absolute;
+	margin-left: 440px;
+	margin-top: 5px;
+	color: #989898;
+}
+
+.task-table {
+	
+}
