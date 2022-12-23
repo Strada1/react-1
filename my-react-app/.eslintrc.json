@@ -19,12 +19,15 @@
         "sourceType": "module"
     },
     "plugins": [
+        "react-hooks",
         "react"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
         "import/prefer-default-export": "off",
         "react/prop-types": 0,
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn" // <--- THIS IS THE NEW RULE
     }
 }

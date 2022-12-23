@@ -1,6 +1,6 @@
 import './css/input.css';
 
-function Input(props) {
+function Header(props) {
     const { inputClass, inputPlaceholder } = props;
     return (
         <div className="">
@@ -14,4 +14,4 @@ function Input(props) {
     );
 }
 
-export { Input };
+export { Header };

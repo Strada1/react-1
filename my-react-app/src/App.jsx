@@ -1,33 +1,33 @@
 // import { useState } from 'react';
 import './App.css';
 import { Title } from './components/title';
-import { Input } from './components/input';
-import { Task } from './components/task';
+import { Header } from './components/Header';
+import { List } from './components/List';
 
 function App() {
     return (
         <div className="wrapper">
             <div className="container-high container">
                 <Title titleClass="title-high title-task" titleName="HIGH" />
-                <Input
+                <Header
                     inputClass="input-high input-task"
                     inputPlaceholder="Добавить важных дел"
-                 />
-                <Task
+                />
+                <List
                     taskContainerClass="task-table task-table-high"
-                    contentTask="сверстать тупой ту ду"
-                 />
+                    isListHigh
+                />
             </div>
             <div className="container-low container">
                 <Title titleClass="title-low title-task" titleName="LOW" />
-                <Input
+                <Header
                     inputClass="input-low input-task"
                     inputPlaceholder="Добавить"
-                 />
-                <Task
+                />
+                <List
                     taskContainerClass="task-table task-table-low"
-                    contentTask="Стилизовать этот ту ду"
-                 />
+                    isListHigh={false}
+                />
             </div>
         </div>
     );
