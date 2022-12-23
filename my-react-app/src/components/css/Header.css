@@ -6,10 +6,14 @@
 	padding: 12px 0px 12px 12px;
 }
 
-.add-task {
+.button-add-task {
 	position: absolute;
-	margin-left: 440px;
+	margin-left: 434px;
 	margin-top: -39px;
-	font-size: x-large;
 	color: #989898;
+	background-color: white;
+	border: none;
+	font-size: x-large;
+	width: 1px;
+	height: 1px;
 }

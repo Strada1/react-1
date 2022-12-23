@@ -1,16 +1,18 @@
-import './css/input.css';
+import './css/Header.css';
 
 function Header(props) {
     const { inputClass, inputPlaceholder } = props;
     return (
-        <div className="">
+        <form className="">
             <input
                 type="text"
                 className={inputClass}
                 placeholder={inputPlaceholder}
             />
-			<div className="add-task">+</div>
-        </div>
+            <button type="submit" className="button-add-task">
+                +
+            </button>
+        </form>
     );
 }
 

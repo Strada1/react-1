@@ -1,5 +1,6 @@
 // import { useState } from 'react';
 import './App.css';
+import './normilize.css';
 import { Title } from './components/title';
 import { Header } from './components/Header';
 import { List } from './components/List';
