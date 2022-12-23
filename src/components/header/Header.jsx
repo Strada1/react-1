@@ -1,10 +1,10 @@
 import React from 'react';
-import './formTask.sass'
+import './header.sass';
 
-function FormTask(props) {
-  const { taskPriority } = props
-  const className = taskPriority === 'low' ? 'list_low': 'list_high'
-  const nameTitle = taskPriority === 'low' ? 'low': 'high'
+function Header(props) {
+  const { taskPriority } = props;
+  const className = taskPriority === 'low' ? 'list_low' : 'list_high';
+  const nameTitle = taskPriority === 'low' ? 'low' : 'high';
   return (
     <form name={className} className='to-do__form'>
       <div className='to-do__title'>{nameTitle}</div>
@@ -19,4 +19,4 @@ function FormTask(props) {
   );
 }
 
-export default FormTask
+export default Header;

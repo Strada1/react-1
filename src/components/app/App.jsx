@@ -1,19 +1,19 @@
 import './app.sass';
 import React from 'react';
-import FormTask from "../formTask/formTask";
-import TaskList from "../taskList/taskList";
+import Header from '../header/Header';
+import List from '../list/List';
 
 function App() {
   return (
     <div className='to-do'>
       <div className='to-do__priority'>
-          <FormTask taskPriority = "high" />
-          <TaskList taskPriority = "high"/>
+        <Header taskPriority='high' />
+        <List taskPriority='high' />
       </div>
 
       <div className='to-do__priority'>
-          <FormTask taskPriority = "low" />
-          <TaskList taskPriority = "low"/>
+        <Header taskPriority='low' />
+        <List taskPriority='low' />
       </div>
     </div>
   );
