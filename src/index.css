@@ -1,0 +1,24 @@
+.height {
+    color: red;
+}
+
+.low {
+    color: yellowgreen;
+}
+
+.middle {
+    color: green;
+}
+
+.header, .container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80%;
+    margin: auto;
+    /* text-align: center; */
+    justify-content: space-around;
+}
+
+.MustDo, .Done {
+    justify-self: flex-start;
+}
