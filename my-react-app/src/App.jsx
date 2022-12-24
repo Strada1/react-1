@@ -5,6 +5,8 @@ import { Title } from './components/title';
 import { Header } from './components/Header';
 import { List } from './components/List';
 
+
+
 function App() {
     return (
         <div className="wrapper">
@@ -14,6 +16,7 @@ function App() {
                     inputClass="input-high input-task"
                     inputPlaceholder="Добавить важных дел"
                 />
+
                 <List
                     taskContainerClass="task-table task-table-high"
                     isListHigh

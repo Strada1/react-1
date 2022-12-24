@@ -1,9 +1,10 @@
 import './css/Header.css';
+import { CreateTask } from './PushTask';
 
 function Header(props) {
     const { inputClass, inputPlaceholder } = props;
     return (
-        <form className="">
+        <form onSubmit={CreateTask}>
             <input
                 type="text"
                 className={inputClass}
