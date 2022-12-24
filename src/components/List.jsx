@@ -23,7 +23,15 @@ export default function List({ tasks, priority, setTasks }) {
 						);
 				  })
 				: lowPriority.map(task => {
-						return <NewTask key={task.id} {...task} onClickDelete={onClickDelete} />;
+						return (
+							<NewTask
+								key={task.id}
+								{...task}
+								tasks={tasks}
+								setTasks={setTasks}
+								onClickDelete={onClickDelete}
+							/>
+						);
 				  })}
 		</ul>
 	);

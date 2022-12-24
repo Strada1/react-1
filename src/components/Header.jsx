@@ -17,6 +17,7 @@ export default function Header({ priority, tasks, id, setTasks, setId }) {
 				title: value,
 				priority: priority,
 				progress: 'In Progress',
+				completed: false,
 			},
 		]);
 		setValue('');

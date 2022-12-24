@@ -3,17 +3,19 @@ import { useState } from 'react';
 import deleteIcon from '../assets/delete.png';
 import checkIcon from '../assets/done.svg';
 
-export default function NewTask({ tasks, setTasks, title, id, onClickDelete }) {
-	const [checked, setChecked] = useState(false);
+export default function NewTask({ tasks, setTasks, title, id, completed, onClickDelete }) {
+	const [checked, setChecked] = useState(completed);
 
 	const onClickChecked = id => {
 		const checkedTasks = tasks.map(task => {
 			if (task.id === id) {
 				if (!checked) {
 					setChecked(true);
+					task.completed = true;
 					task.progress = 'DONE';
 				} else {
 					setChecked(false);
+					task.completed = false;
 					task.progress = 'In Progress';
 				}
 			}

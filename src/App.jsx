@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './App.css';
 
 import { levelsPriority } from './const';
@@ -7,10 +7,17 @@ import Header from './components/Header';
 function App() {
 	const [tasks, setTasks] = useState([]);
 	const [id, setId] = useState(0);
+	const dataFetchedRef = useRef(false);
+
+	console.log(tasks);
 
 	useEffect(() => {
-		const raw = localStorage.getItem('tasks') || [];
-		setTasks(JSON.parse(raw));
+		const raw = localStorage.getItem('tasks');
+		if (dataFetchedRef.current) return;
+		dataFetchedRef.current = true;
+		if (raw.length) {
+			setTasks(JSON.parse(raw));
+		}
 	}, []);
 
 	useEffect(() => localStorage.setItem('tasks', JSON.stringify(tasks)), [tasks]);
