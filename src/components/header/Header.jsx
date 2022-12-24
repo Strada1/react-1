@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './header.sass';
 
 function Header(props) {
-  const { taskPriority } = props;
-  const className = taskPriority === 'low' ? 'list_low' : 'list_high';
-  const nameTitle = taskPriority === 'low' ? 'low' : 'high';
+  const [inputValue, setInputValue] = useState('');
+  const { taskPriority, addTask } = props;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addTask(inputValue, taskPriority);
+    setInputValue('');
+  };
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
   return (
-    <form name={className} className='to-do__form'>
-      <div className='to-do__title'>{nameTitle}</div>
+    <form onSubmit={handleSubmit} className='to-do__form'>
+      <div className='to-do__title'>{taskPriority}</div>
       <div className='to-do__button-plus'>➕</div>
       <input
+        value={inputValue}
+        onChange={handleChange}
         className='to-do__text-input'
         placeholder='Добавить важных дел'
         type='text'
@@ -18,5 +29,10 @@ function Header(props) {
     </form>
   );
 }
+
+Header.propTypes = {
+  taskPriority: PropTypes.string,
+  addTask: PropTypes.func,
+};
 
 export default Header;
