@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './header.sass';
+import { isCheckingText } from '../../services/helpers';
 
 function Header(props) {
   const [inputValue, setInputValue] = useState('');
   const { taskPriority, addTask } = props;
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    addTask(inputValue, taskPriority);
+  const cleaningForm = () => {
     setInputValue('');
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!isCheckingText(inputValue)) {
+      return;
+    }
+    addTask(inputValue, taskPriority);
+    cleaningForm();
+  };
+
   const handleChange = (event) => {
     setInputValue(event.target.value);
   };
   return (
     <form onSubmit={handleSubmit} className='to-do__form'>
       <div className='to-do__title'>{taskPriority}</div>
-      <div onClick={handleSubmit} className='to-do__button-plus'>
+      <button
+        type='button'
+        onClick={handleSubmit}
+        className='to-do__button-plus'
+      >
         ➕
-      </div>
+      </button>
       <input
         value={inputValue}
         onChange={handleChange}
@@ -33,8 +46,8 @@ function Header(props) {
 }
 
 Header.propTypes = {
-  taskPriority: PropTypes.string,
-  addTask: PropTypes.func,
+  taskPriority: PropTypes.string.isRequired,
+  addTask: PropTypes.func.isRequired,
 };
 
 export default Header;

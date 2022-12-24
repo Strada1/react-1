@@ -13,3 +13,8 @@ export function getFilteredArray(array, priority) {
 
   return [...tasksProgress, ...taskDone];
 }
+
+export function isCheckingText(text) {
+  const minNumberCharacters = 1;
+  return text.length > minNumberCharacters;
+}
