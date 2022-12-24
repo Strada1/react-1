@@ -1,0 +1,10 @@
+.container {
+  width: 476px;
+  min-height: 688px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.to-do-list {
+  padding: 25px 8px;
+}

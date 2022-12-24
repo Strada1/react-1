@@ -1,0 +1,10 @@
+.btn-add {
+    background: url(./img/add-icon.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    padding: 0%;
+    width: 18px;
+    height: 18px;
+    border: 0;
+  }
