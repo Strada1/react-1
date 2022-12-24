@@ -1,15 +1,43 @@
-import React from 'react';
+import { useState } from 'react';
 
-import closeIcon from '../assets/close.png';
+import deleteIcon from '../assets/delete.png';
+import checkIcon from '../assets/done.svg';
 
-export default function NewTask() {
+export default function NewTask({ tasks, setTasks, title, id, onClickDelete }) {
+	const [checked, setChecked] = useState(false);
+
+	const onClickChecked = id => {
+		const checkedTasks = tasks.map(task => {
+			if (task.id === id) {
+				if (!checked) {
+					setChecked(true);
+					task.progress = 'DONE';
+				} else {
+					setChecked(false);
+					task.progress = 'In Progress';
+				}
+			}
+			return task;
+		});
+
+		return setTasks(checkedTasks);
+	};
+
 	return (
 		<li className="item">
 			<label className="item-label">
-				<div className="check"></div>
-				<span className="item-text">12412jgsaghakgjaksfgjasldnas,fmass, afsf asf afasfasfasf</span>
-				<button>
-					<img width={25} height={25} src={closeIcon} alt="Close" />
+				<div onClick={() => onClickChecked(id)} className={checked ? 'checked' : 'check'}>
+					<img src={checked ? checkIcon : ''} />
+				</div>
+				<span className="item-text">{title}</span>
+				<button className="delete">
+					<img
+						onClick={() => onClickDelete(id)}
+						width={25}
+						height={25}
+						src={deleteIcon}
+						alt="Delete"
+					/>
 				</button>
 			</label>
 		</li>
