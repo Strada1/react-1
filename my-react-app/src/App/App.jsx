@@ -5,14 +5,16 @@ import { tasks, PRIORITY } from "../Tasks/Tasks";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [tasksArr, setTasks] = useState(tasks);
-
+  const [tasksArr, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || tasks);
+  
   useEffect(() => {
-    if (localStorage.getItem("tasks")) {
-      localStorage.removeItem("tasks");
+    if (!localStorage.getItem("tasks")) {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    } else {
+      localStorage.setItem("tasks", JSON.stringify(tasksArr));
     }
-    localStorage.setItem("tasks", JSON.stringify(tasksArr));
-  }, [tasksArr]);
+
+  }, [tasksArr]);  
 
   return (
     <section className="container">
