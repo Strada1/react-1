@@ -17,7 +17,9 @@ function Header(props) {
   return (
     <form onSubmit={handleSubmit} className='to-do__form'>
       <div className='to-do__title'>{taskPriority}</div>
-      <div className='to-do__button-plus'>➕</div>
+      <div onClick={handleSubmit} className='to-do__button-plus'>
+        ➕
+      </div>
       <input
         value={inputValue}
         onChange={handleChange}

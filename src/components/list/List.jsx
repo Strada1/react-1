@@ -1,14 +1,12 @@
 import React from 'react';
 import './list.sass';
 import Task from '../task/Task';
+import { getFilteredArray } from '../../services/helpers';
 
 function List(props) {
   const { taskPriority, allTasks, deleteTask, changeStatus } = props;
   const className = `list_${taskPriority}`;
-  const FilteredPriority = allTasks.filter(
-    (taskData) => taskData.priority === taskPriority
-  );
-  const taskList = FilteredPriority.map((taskData) => (
+  const taskList = getFilteredArray(allTasks, taskPriority).map((taskData) => (
     <Task
       deleteTask={deleteTask}
       changeStatus={changeStatus}

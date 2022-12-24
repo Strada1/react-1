@@ -1,5 +1,5 @@
 import './app.sass';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../header/Header';
 import List from '../list/List';
@@ -7,6 +7,10 @@ import { TASK_PRIORITY, TASK_STATUS } from '../../services/const';
 
 function App() {
   const [allTasks, setAllTasks] = useState([]);
+
+  useEffect(() => {
+    // setAllTasks([...tasksProgress, ...taskDone]);
+  }, [allTasks]);
 
   function addTask(text, priority) {
     const task = {
