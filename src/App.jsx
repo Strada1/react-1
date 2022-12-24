@@ -9,8 +9,6 @@ function App() {
 	const [id, setId] = useState(0);
 	const dataFetchedRef = useRef(false);
 
-	console.log(tasks);
-
 	useEffect(() => {
 		const raw = localStorage.getItem('tasks');
 		if (dataFetchedRef.current) return;
