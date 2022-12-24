@@ -1,9 +1,15 @@
-import "./ButtonClose.css"
+import "./ButtonClose.css";
 
-function ButtonClose() {
-    return (
-    <button className="btn-exit" type="button"></button>
-    )
+function ButtonClose({ value, deleteTask }) {
+  return (
+    <button
+      className="btn-exit"
+      type="button"
+      onClick={() => {
+        deleteTask(value);
+      }}
+    ></button>
+  );
 }
 
-export {ButtonClose}
+export { ButtonClose };

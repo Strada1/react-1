@@ -1,13 +1,18 @@
-import "./PrioritySection.css"
+import "./PrioritySection.css";
 import { Form } from "../Form/Form";
 import { TasksList } from "../TasksList/TasksList";
 
-function PrioritySection({ title, tasks }) {
+function PrioritySection({ title, priority, setTasks, tasks }) {
   return (
     <fieldset className="tasks-wrapper">
       <legend>{title}</legend>
-      <Form />
-      <TasksList tasks={tasks} />
+      <Form priority={priority} setTasks={setTasks} tasks={tasks} />
+      <TasksList
+        tasksData={tasks}
+        priority={priority}
+        setTasks={setTasks}
+        tasks={tasks}
+      />
     </fieldset>
   );
 }
