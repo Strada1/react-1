@@ -1,0 +1,26 @@
+.task-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  margin: 0;
+  position: relative;
+}
+
+.task-item li {
+  min-height: 30px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 80%;
+}
+
+.task-item input[type='image'] {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 10px;
+  transform: rotate(45deg);
+}

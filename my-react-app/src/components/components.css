@@ -1,0 +1,18 @@
+.input {
+  font-size: 18px;
+}
+
+.input-red {
+  font-size: 18px;
+  border-color: red;
+}
+
+.button {
+  background-color: lightgray;
+}
+
+.flexed {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
