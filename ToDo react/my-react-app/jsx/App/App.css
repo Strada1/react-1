@@ -1,0 +1,21 @@
+body {
+  font-family: "Iosevka Slab";
+  background: url(https://images4.alphacoders.com/171/thumb-1920-171916.jpg);
+}
+
+.wrapper {
+  width: 430px;
+  min-height: 220px;
+  margin: 0 auto;
+  margin-top: 45px;
+  background-color: rgba(180, 192, 165, 0.35);
+  border-radius: 5px;
+  padding-bottom: 14px;
+  border: 1px solid rgb(110, 133, 102);
+}
+
+.chapter {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 8px;
+}

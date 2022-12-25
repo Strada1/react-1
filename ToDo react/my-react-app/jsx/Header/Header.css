@@ -1,0 +1,38 @@
+.inputTaskWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    width: 430px;
+    background-color: rgba(193, 226, 150, 0.4);
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid rgb(110, 133, 102);
+}
+
+.inputTask {
+    background-color: transparent;
+    border: none;
+    width: 370px;
+    min-height: 40px;
+    font-size: 18px;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid rgb(110, 133, 102);
+    border-radius: 3px;   
+    font-size: 18px;
+    transition: 0.2s linear;
+}
+
+button:hover {
+    box-shadow: 0px 0px 16px 4px rgba(204, 113, 192, 0.5);
+    transition: 0.2s linear;
+}
+
+button:active {
+    box-shadow: 0px 0px 8px 12px rgba(204, 113, 192, 0.5);
+    font-size: 14px;
+    padding-right: 9px;
+    transition: 0.1s linear;
+}

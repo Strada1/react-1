@@ -1,0 +1,24 @@
+.wrapperTask{
+    margin-top: 8px;
+    display: flex;
+    width: 430px;
+    background-color: rgba(193, 226, 150, 0.4);
+    border: 1px solid rgb(110, 133, 102);
+    border-radius:8px;
+}
+
+.wrapperTaskText {
+    display: flex;
+    justify-content: space-between;
+}
+
+p{
+    width: 372px;
+    min-height: 20px;
+}
+
+.buttonDone {
+    height: 40px;
+    box-sizing: border-box;
+    margin: auto;
+}
