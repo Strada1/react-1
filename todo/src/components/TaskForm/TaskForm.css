@@ -1,0 +1,30 @@
+.task-form {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  align-items: center;
+}
+
+.task-form input[type='text'] {
+  height: 30px;
+  width: 100%;
+  padding: 0;
+  padding-left: 10px;
+  border: 0;
+  font-size: 20px;
+}
+
+.task-form input[type='text']:focus {
+  outline: none;
+}
+
+.task-form input[type='image'] {
+  height: 15px;
+  width: 15px;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
