@@ -1,9 +1,12 @@
 import './app.sass';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../header/Header';
 import List from '../list/List';
 import { TASK_PRIORITY, TASK_STATUS } from '../../services/const';
+import { tasksName, updateLocalStorage } from '../../services/localStorage';
+
+const priorityList = [TASK_PRIORITY.HIGH, TASK_PRIORITY.LOW];
 
 function App() {
   const [allTasks, setAllTasks] = useState([]);
@@ -15,12 +18,14 @@ function App() {
       priority,
       id: uuidv4(),
     };
+    updateLocalStorage(tasksName, [task, ...allTasks]);
     setAllTasks([task, ...allTasks]);
   }
 
   const deleteTask = (id) => {
     const delList = allTasks.filter((task) => task.id !== id);
     setAllTasks([...delList]);
+    updateLocalStorage(tasksName, [...delList]);
   };
 
   const changeStatus = (id) => {
@@ -34,36 +39,37 @@ function App() {
       }
       return task;
     });
+    updateLocalStorage(tasksName, [...changelist]);
     setAllTasks(() => [...changelist]);
   };
 
+  useEffect(() => {
+    const tasks = localStorage.getItem('tasks');
+    if (tasks) {
+      try {
+        setAllTasks(JSON.parse(tasks));
+      } catch (e) {
+        throw new Error('Bad JSON');
+      }
+    }
+  }, []);
+
   return (
     <div className='to-do'>
-      <div className='to-do__priority'>
-        <Header
-          taskPriority={TASK_PRIORITY.HIGH}
-          addTask={(text, priority) => addTask(text, priority)}
-        />
-        <List
-          changeStatus={changeStatus}
-          allTasks={allTasks}
-          deleteTask={deleteTask}
-          taskPriority={TASK_PRIORITY.HIGH}
-        />
-      </div>
-
-      <div className='to-do__priority'>
-        <Header
-          taskPriority={TASK_PRIORITY.LOW}
-          addTask={(text, priority) => addTask(text, priority)}
-        />
-        <List
-          changeStatus={changeStatus}
-          deleteTask={deleteTask}
-          allTasks={allTasks}
-          taskPriority={TASK_PRIORITY.LOW}
-        />
-      </div>
+      {priorityList.map((priority) => (
+        <div key={priority} className='to-do__priority'>
+          <Header
+            taskPriority={priority}
+            addTask={(text, priorityTask) => addTask(text, priorityTask)}
+          />
+          <List
+            changeStatus={changeStatus}
+            allTasks={allTasks}
+            deleteTask={deleteTask}
+            taskPriority={priority}
+          />
+        </div>
+      ))}
     </div>
   );
 }
