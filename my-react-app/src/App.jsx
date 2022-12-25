@@ -1,13 +1,16 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import './normilize.css';
 import { Title } from './components/title';
 import { Header } from './components/Header';
-import { List } from './components/List';
-
-
+import { List } from './components/TaskList';
 
 function App() {
+    const taskList = JSON.parse(localStorage.getItem('taskList')) ?? false;
+    const [task, setTask] = useState(taskList)
+    
+
+
     return (
         <div className="wrapper">
             <div className="container-high container">
@@ -20,6 +23,7 @@ function App() {
                 <List
                     taskContainerClass="task-table task-table-high"
                     isListHigh
+                    taskList={task}
                 />
             </div>
             <div className="container-low container">
@@ -31,6 +35,7 @@ function App() {
                 <List
                     taskContainerClass="task-table task-table-low"
                     isListHigh={false}
+                    taskList={task}
                 />
             </div>
         </div>
