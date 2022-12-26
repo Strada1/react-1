@@ -1,0 +1,9 @@
+.btn-exit {
+  background: url(./img/close-icon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  width: 15px;
+  height: 15px;
+  border: 0;
+}

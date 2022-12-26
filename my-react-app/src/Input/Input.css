@@ -1,0 +1,15 @@
+input[type="text"]::placeholder {
+    color: #bbb;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  
+  input[type="text"] {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    width: 399px;
+    margin-right: 18px;
+  }

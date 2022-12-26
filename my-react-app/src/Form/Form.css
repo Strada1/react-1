@@ -1,0 +1,8 @@
+.to-do-form {
+    display: flex;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    display: flex;
+    margin-bottom: 8px;
+    padding: 12px;
+  }
