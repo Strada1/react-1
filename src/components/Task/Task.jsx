@@ -14,7 +14,7 @@ const Task = props => {
                 id={props.id}
                 isChecked={props.status ? 'checked': ''}
             />
-            <div className='task_text'>{props.taskText}</div>
+            <div className='task_text'>{props.text}</div>
             <TaskCloseButton
                 style='task_closebtn'
             />

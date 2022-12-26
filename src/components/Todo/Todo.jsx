@@ -4,59 +4,33 @@ import './Todo.css';
 import TodoForm from "../TodoForm/TodoForm";
 import PriorityBlock from '../PriorityBlock/PriorityBlock';
 import Task from '../Task/Task'
+import {TASKS} from '../../constans'
 
 
-const tasks = [
+
+const taskList = [
     {
-        task: 'Покормить кота',
-        priority: 'hight',
-        done: true,
-        id: '1'
+        text: 'Покормить кота',
+        priority: TASKS.PRIORITY_LOW,
+        isDone: true,
     },
      {
-        task: 'Прочитать книгу Стивена Кинга',
-        priority: 'low',
-        done: false,
-        id: '2'
+        text: 'Прочитать книгу Стивена Кинга',
+        priority:  TASKS.PRIORITY_HIGH,
+        isDone: false,
     },
     {
-        task: 'Постирать одежду',
-        priority: 'hight',
-        done: 'false',
-        id: '3'
+        text: 'Постирать одежду',
+        priority: TASKS.PRIORITY_HIGH,
+        isDone: false,
     },
      {
-        task: 'Проверить почту',
-        priority: 'hight',
-        done: false,
-        id: '4'
+        text: 'Проверить почту',
+        priority: TASKS.PRIORITY_LOW,
+        isDone: false,
+
     }
 ]
-
-const renderTasks = tasks.map(task => {
-                if (task.priority === 'hight') {
-
-                return <PriorityBlock
-                    header='Hight'
-                >
-                    <Task
-                        id={task.id}
-                        status={task.status}
-                        taskText = {task.task}
-                    />
-                </PriorityBlock>
-                }
-                return <PriorityBlock
-                    header='Low'
-                >
-                    <Task
-                        id={task.id}
-                        status={task.status}
-                        taskText = {task.task}
-                    />
-                </PriorityBlock>
-
-            })
 
 
 
@@ -64,8 +38,18 @@ const Todo = () => {
     return (
         <div className='todo'>
             <TodoForm />
-            {renderTasks}
 
+            <PriorityBlock
+                header='High'
+                priority='high'
+                tasks={taskList}
+            />
+
+            <PriorityBlock
+                header='Low'
+                priority='low'
+                tasks={taskList}
+            />
 
         </div>
     )
