@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import './normilize.css';
 import { Title } from './components/title';
@@ -6,10 +6,21 @@ import { Header } from './components/Header';
 import { List } from './components/TaskList';
 
 function App() {
-    const taskList = JSON.parse(localStorage.getItem('taskList')) ?? false;
-    const [task, setTask] = useState(taskList)
-    
+    const [task, setTask] = useState([]);
 
+    useEffect(() => {
+        if(task.length !== 0) {
+            localStorage.setItem('taskList', JSON.stringify(task));
+        }
+        
+    }, [task]);
+
+    useEffect(() => {
+        const tasks = JSON.parse(localStorage.getItem('taskList'));
+        if (tasks) {
+            setTask(tasks);
+        }
+    }, []);
 
     return (
         <div className="wrapper">
@@ -18,12 +29,15 @@ function App() {
                 <Header
                     inputClass="input-high input-task"
                     inputPlaceholder="Добавить важных дел"
+                    task={task}
+                    setTask={setTask}
                 />
 
                 <List
                     taskContainerClass="task-table task-table-high"
                     isListHigh
                     taskList={task}
+                    setTask={setTask}
                 />
             </div>
             <div className="container-low container">
@@ -31,11 +45,14 @@ function App() {
                 <Header
                     inputClass="input-low input-task"
                     inputPlaceholder="Добавить"
+                    task={task}
+                    setTask={setTask}
                 />
                 <List
                     taskContainerClass="task-table task-table-low"
                     isListHigh={false}
                     taskList={task}
+                    setTask={setTask}
                 />
             </div>
         </div>

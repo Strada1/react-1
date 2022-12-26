@@ -1,45 +1,33 @@
-import { useState, useEffect } from 'react';
-import App from '../App';
+import { useState } from 'react';
 import './css/Header.css';
 
+const defaultValue = '';
+
 function Header(props) {
-    const [listTask, setTask] = useState([]);
-    const [contentTask, setContentTask] = useState('');
-    const { inputClass, inputPlaceholder } = props;
-
-    window.onload = function () {
-        if (localStorage.getItem('taskList') !== null) {
-            // listTask.push(JSON.parse(localStorage.getItem('taskList')));
-            setTask([
-                ...listTask,
-                JSON.parse(localStorage.getItem('taskList')),
-            ]);
-        }
-    };
-
-    useEffect(() => {
-        if (localStorage.getItem('taskList') !== null) {
-            setTask(JSON.parse(localStorage.getItem('taskList')));
-            console.log('Effect Header');
-        }
-    }, []);
+    const { inputClass, inputPlaceholder, task, setTask } = props;
+    const [contentTask, setContentTask] = useState(defaultValue);
 
     const addTask = (event) => {
-        const priority =
-            event.target.firstChild.className === 'input-high input-task'
-                ? 'high'
-                : 'low';
         event.preventDefault();
-        const objectTask = {
-            task: contentTask,
-            status: 'Todo',
-            priority: priority,
-        };
-        setContentTask('');
-        setTask([...listTask, objectTask]);
-        console.log('listTask: ', listTask);
-        // listTask.push(objectTask);
-        localStorage.setItem('taskList', JSON.stringify(listTask));
+        const repeatTask = task.findIndex((item) => item.task === contentTask.trim());
+        if (!contentTask) {
+            alert('Пустая строка, введите задачу');
+        } else if (repeatTask === -1) {
+            const priority =
+                event.target.firstChild.className === 'input-high input-task'
+                    ? 'high'
+                    : 'low';
+            const objectTask = {
+                task: contentTask.trim(),
+                status: 'Todo',
+                priority,
+                checked: false,
+            };
+            setContentTask(defaultValue);
+            setTask([...task, objectTask]);
+        } else {
+            alert('Уже есть такая задача');
+        }
     };
 
     return (
