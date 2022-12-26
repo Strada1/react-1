@@ -1,0 +1,19 @@
+.input-task {
+	width: 460px;
+	height: 45px;
+	border: 1px solid #989898;
+	border-radius: 6px;
+	padding: 12px 0px 12px 12px;
+}
+
+.button-add-task {
+	position: absolute;
+	margin-left: 434px;
+	margin-top: -39px;
+	color: #989898;
+	background-color: white;
+	border: none;
+	font-size: x-large;
+	width: 1px;
+	height: 1px;
+}

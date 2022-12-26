@@ -1,0 +1,50 @@
+.task {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    width: 460px;
+    min-height: 45px;
+}
+
+.element-task {
+    padding-top: 12px;
+}
+
+.checkbox {
+    margin: 12px;
+}
+
+.button-deleteTask {
+    margin-left: auto;
+    transform: rotate(45deg);
+    font-size: x-large;
+    background-color: white;
+    border: none;
+    width: 1px;
+    height: 1px;
+    margin-top: 5px;
+    color: #989898;
+    margin-right: 2px;
+}
+
+.task-table {
+}
+
+.task-checked {
+	margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    width: 460px;
+    min-height: 45px;
+	background-color: #d9d9d9;
+}
+
+.statusTask {
+	font-size: 10px
+}
