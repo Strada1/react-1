@@ -5,8 +5,8 @@ function useScreen() {
 
     const [screenWidth, setScreenWidth] = useState(window.screen.width);
     const [isMobile, setIsMobile] = useState(false);
-    const [isDesktop, setIsDesktop] = useState(false);
 
+    const [isDesktop, setIsDesktop] = useState(false);
     window.onload = function () {
         if (screenWidth <= defaultWidthMobile) {
             setIsMobile(true);
@@ -14,6 +14,7 @@ function useScreen() {
             setIsDesktop(true);
         }
     };
+
     const result = { screenWidth, isMobile, isDesktop };
     return result;
 }

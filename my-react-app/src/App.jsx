@@ -2,12 +2,13 @@ import './App.css';
 import { useScreen } from './useScreen';
 
 function App() {
-    const { width, isMobile, isDesktop } = useScreen();
+    const { screenWidth, isMobile, isDesktop } = useScreen();
+
     return (
         <div className="">
-            <div className="">Screen width - {width}</div>
-            <div className="">isMobile - {isMobile}</div>
-            <div className="">isDesktop - {isDesktop}</div>
+            <div className="">Screen width - {screenWidth}</div>
+            <div className="">isMobile - {isMobile ? 'true' : 'false'}</div>
+            <div className="">isDesktop - {isDesktop ? 'true' : 'false'}</div>
         </div>
     );
 }
