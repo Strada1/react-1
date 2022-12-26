@@ -4,7 +4,7 @@ function Task(props) {
     <li className="task-todo">
       <div className="text-container">
         <input type="checkbox"></input>
-        <label htmlFor="checkbox">{textTask}</label>
+        <label htmlFor="checkbox">{props.text}</label>
         <button>X</button>
       </div>
     </li>

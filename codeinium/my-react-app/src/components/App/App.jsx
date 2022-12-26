@@ -2,33 +2,40 @@ import React, { useState } from "react";
 import "./App.css";
 import { Header } from "../Header/Header.jsx";
 import { defaultText, PRIORITY, STATUS } from "../const.jsx";
-const defaultArr = [];
+
+// const tasksConfig = [{ priority: PRIORITY.HIGH }, { priority: PRIORITY.LOW }];
 
 function App() {
-  const [tasks, setTasks] = useState(defaultArr);
-  const [textTaskHigh, setTextTaskHigh] = useState(defaultText);
-  const [textTaskLow, setTextTaskLow] = useState(defaultText);
-  const textHigh = textTaskHigh;
-  const textLow = textTaskLow;
+  const [tasks, setTasks] = useState();
+  const [tasksConfig] = useState([
+    { priority: PRIORITY.HIGH },
+    { priority: PRIORITY.LOW },
+  ]);
 
   return (
     <div className="App">
-      <p>{PRIORITY.HIGH}</p>
+      <div className="ToDo-container">
+        {tasksConfig.map(({ priority }) => {
+          <Header
+            name={priority}
+            text={priority === PRIORITY.HIGH ? "High" : "Low"}
+            priority={priority}
+            // onChange={(isHighTask) => {
+            //   setTasks(isHighTask);
+            // }}
+            setTasks={setTasks}
+          />;
+        })}
+      </div>
+
+      {/* <p>{PRIORITY.HIGH}</p>
       <Header
         name={PRIORITY.HIGH}
         text={textHigh}
         onChange={(textHigh) => {
           setTextTaskHigh(textHigh);
         }}
-        onSubmit={(e, textHigh) => {
-          e.preventDefault;
-          setTasks({
-            text: textHigh,
-            status: STATUS.TO_DO,
-            priority: PRIORITY.HIGH,
-          });
-        }}
-      ></Header>
+      />
       <p>{PRIORITY.LOW}</p>
       <Header
         name={PRIORITY.LOW}
@@ -36,7 +43,7 @@ function App() {
         onChange={(textLow) => {
           setTextTaskLow(textLow);
         }}
-      ></Header>
+      /> */}
     </div>
   );
 }
