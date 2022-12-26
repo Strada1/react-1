@@ -14,7 +14,7 @@ function useScreen() {
             setIsDesktop(true);
         }
     };
-    const result = [screenWidth, isMobile, isDesktop];
+    const result = { screenWidth, isMobile, isDesktop };
     return result;
 }
 
