@@ -1,62 +1,64 @@
-import React from 'react'
-import TextInput from '../TextInput/TextInput'
-import Button from '../Button/Button'
-import Result from '../Result/Result'
+import React, { useState } from 'react'
+import BlockWithTask from '../BlockWithTask/BlockWithTask'
 import './styleMainForm.css'
-import fetchRequest from '../../functions/fetchRequest'
+import idGenerator from '../../functions/idGenerator'
 
-class MainForm extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      inputValue: '',
-      gender: 'unknown',
-    }
-    this.handleChangeInput = this.handleChangeInput.bind(this)
-    this.handleSendRequest = this.handleSendRequest.bind(this)
+function MainForm() {
+  const [tasks, setTasks] = useState([
+    { text: 'Сделать задание', status: 'completed', priority: 'high', id: 1 },
+    { text: 'покушать', status: 'notCompleted', priority: 'low', id: 2 },
+  ])
+
+  const idGenForThis = () => idGenerator(tasks)
+
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask])
   }
-
-  handleChangeInput(event) {
-    this.setState({
-      inputValue: event.target.value,
-    })
+  const deleteTask = (id) => {
+    const newTasks = [...tasks]
+    const newTasksWithoutRemote = newTasks.filter((task) => task.id !== id)
+    setTasks(newTasksWithoutRemote)
   }
-
-  handleSendRequest(event) {
-    event.preventDefault()
-    const { inputValue } = this.state
-    fetchRequest(inputValue, 'https://api.genderize.io').then((result) => {
-      this.setState({
-        gender: result.gender,
+  const changeStatus = (id) => {
+    setTasks(
+      tasks.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            status: item.status === 'completed' ? 'notCompleted' : 'completed',
+          }
+        }
+        return item
       })
-    })
-  }
-
-  render() {
-    const { inputValue } = this.state
-    const { gender } = this.state
-    return (
-      <div className="block-main_wrapper">
-        <form className="form-main" onSubmit={this.handleSendRequest}>
-          <TextInput textchange={this.handleChangeInput} />
-          {inputValue.length <= 2 && (
-            <div className="text-result">Please enter more letters</div>
-          )}
-          <Button inputValue={inputValue} />
-          {gender !== 'unknown' ? (
-            <Result resultTextContent={gender} />
-          ) : (
-            <div className="text-result">
-              Enter a name to get the suggested gender
-            </div>
-          )}
-          {gender === null && (
-            <div className="text-result">Please enter another name</div>
-          )}
-        </form>
-      </div>
     )
   }
+  return (
+    <div>
+      <pre>{JSON.stringify(tasks, false, 2)}</pre>
+      <div className="block-main-wrapper">
+        <div className="form-main">
+          <BlockWithTask
+            massive={tasks.filter((task) => task.priority === 'high')}
+            addTask={addTask}
+            deleteTask={deleteTask}
+            idGenForThis={idGenForThis}
+            priorityText="High"
+            changeStatus={changeStatus}
+            priorityForObj="high"
+          />
+          <BlockWithTask
+            massive={tasks.filter((task) => task.priority === 'low')}
+            addTask={addTask}
+            deleteTask={deleteTask}
+            idGenForThis={idGenForThis}
+            priorityText="Low"
+            changeStatus={changeStatus}
+            priorityForObj="low"
+          />
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default MainForm

@@ -1,0 +1,36 @@
+.block-add-task {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 460px;
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.btn-add-task {
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  border: none;
+  background-color: #fff;
+}
+.btn-add-task:hover {
+  color: pink;
+}
+.btn-add-task:active {
+  color: #fff;
+}
+.input-name-task {
+  width: 400px;
+  height: 30px;
+  font-size: 22px;
+  font-weight: 200;
+  font-family: 'Nunito', sans-serif;
+  border: none;
+  outline: none;
+}
+.input-name-task::placeholder {
+  font-size: 18px;
+}
