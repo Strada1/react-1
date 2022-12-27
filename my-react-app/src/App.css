@@ -1,0 +1,42 @@
+@import url(normalize.css);
+@import url(components/SearchBox.css);
+@import url(components/DisplayData.css);
+@import url(components/DisplayDetails.css);
+@import url(components/DisplayForecast.css);
+@import url(components/CityList.css);
+@import url(components/Tabs.css);
+
+body {
+  background-color: rgb(204, 245, 245);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 621px;
+  min-height: 462px;
+  background-color: rgb(220, 255, 233);
+}
+
+.out-border {
+  width: 600px;
+  height: 435px;
+  border: 1px solid #000000;
+}
+
+.content {
+  display: flex;
+}
+
+.display {
+  display: none;
+}
+

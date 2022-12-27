@@ -1,0 +1,45 @@
+.container-city-list {
+	width: 302px;
+	height: 388px;
+	background-color: rgb(207, 242, 207);
+	border: 1px solid #000000;
+	border-right: none ;
+	border-bottom: none;
+}
+
+.header-city-list {
+	height: 68px;
+	border-bottom: 1px solid #000000;
+	font-size: 24px;
+	padding-top: 33px;
+	padding-left: 18px;
+}
+
+.city-list {
+	font-size: 24px;
+	padding-left: 18px;
+	padding-top: 15px;
+}
+
+.town-items {
+	display: flex;
+	flex-wrap: nowrap;
+	
+}
+
+.town {
+	display: inline-block;
+	padding-top: 10px;
+	width: 200px;
+}
+
+.button-delete-town {
+	position: absolute;
+	transform: rotate(45deg);
+	background-color: rgb(207, 242, 207);
+	border: none;
+	font-size: 25px;
+	margin-left: 240px;
+	margin-top: 5px;
+
+}

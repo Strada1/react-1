@@ -1,0 +1,65 @@
+.display-data:target {
+	display: block;
+	/* background-color: rgb(163, 202, 235); */
+	height: 345px;
+	width: 298px;
+	border: 1px solid #000000;
+	border-left: none;
+	border-right: none;
+}
+
+.temperature-data {
+	font-size: 70px;
+	padding-top: 20px;
+	padding-left: 23px;
+}
+
+.icon-data {
+	padding-left: 105px;
+	padding-top: 40px;
+}
+
+.city-name-data {
+	display: inline-block;
+	font-size: 24px;
+	padding-left: 12px;
+	padding-top: 50px;
+}
+
+.button-love {
+	display: inline;
+	margin-top: -10px;
+	margin-left: 135px;
+}
+
+.button-close {
+	transform: rotate(45deg);
+	background-color: rgb(247, 255, 251);
+	border: none;
+	font-size: 25px;
+	font-weight: 600;
+	margin-top: -150px;
+	margin-left: 50px;
+}
+
+
+.error {
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	background-color: rgb(247, 255, 251);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 100px;
+	margin-top: -200px;
+}
+
+.text-error {
+	color: red;
+	font-size: 24px;
+	font-weight: 600;
+	text-shadow: 1px 1px 1px #000;
+	letter-spacing: 1px;
+}
+
