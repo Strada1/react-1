@@ -39,7 +39,7 @@ class Tasks {
   }
 
   static findTask(tasks, task) {
-    return tasks.find((taskItem) => taskItem.name === task.name);
+    return tasks.find((taskItem) => taskItem.name.toLowerCase() === task.name.trim().toLowerCase());
   }
 }
 

@@ -20,9 +20,10 @@ const getSelectOptions = (priorities) => {
   return options;
 };
 
-
 const TodoForm = ({priorities, onSubmit, className}) => {
-  const [task, setTask] = useState(new Task('', priorities.HIGH.value));
+  const TASK_DEFAULT_VALUE = new Task('', priorities.HIGH.value);
+
+  const [task, setTask] = useState(TASK_DEFAULT_VALUE);
   const selectOptions = getSelectOptions(priorities);
 
   const handleSubmit = (event) => {
@@ -38,7 +39,7 @@ const TodoForm = ({priorities, onSubmit, className}) => {
     };
 
     onSubmit(newTask);
-    setTask(new Task('', priorities.HIGH.value));
+    setTask(TASK_DEFAULT_VALUE);
   };
 
   const handleTaskChange = (event) => {

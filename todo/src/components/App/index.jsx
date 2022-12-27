@@ -3,28 +3,37 @@ import TodoList from '../TodoList';
 import Error from '../Error';
 import { listPriority, Tasks } from '../../modules/tasks';
 import { Storage } from '../../modules/localstorage';
+import { errorMessages } from '../../modules/error';
 import {
   TodoAppContainer,
   TodoTitle,
   StyledTodoForm
 } from './styled';
 
-
-const getTasksList = () => Storage.getFromStorage() || [];
+const DEFAULT_TASKS_LIST = [];
+const DEFAULT_ERROR_VALUE = null;
 
 const App = () => {
-  const [tasks, setTasks] = useState(getTasksList());
+  const [tasks, setTasks] = useState(DEFAULT_TASKS_LIST);
   useEffect(() => {
-    Storage.saveToStorage(tasks);
-  }, [tasks]);
+    const [loadedTasks, storageError] = Storage.getFromStorage();
 
-  const [error, setError] = useState('');
+    if (storageError) {
+      setError(storageError);
+    }
+
+    if (loadedTasks) {
+      setTasks(loadedTasks);
+    }
+  }, []);
+
+  const [error, setError] = useState(DEFAULT_ERROR_VALUE);
   useEffect(() => {
     let timer;
 
     if (error) {
       timer = setTimeout(() => {
-        setError('');
+        setError(DEFAULT_ERROR_VALUE);
       }, 5000);
     }
 
@@ -33,10 +42,11 @@ const App = () => {
     };
   }, [error]);
 
-  const {width, isMobile, isDesktop} = useScreen();
-
   const deleteTask = (task) => {
-    setTasks(Tasks.deleteTask(tasks, task));
+    const updatedTasks = Tasks.deleteTask(tasks, task);
+    setTasks(updatedTasks);
+    const storageError = Storage.saveToStorage(updatedTasks);
+    storageError && setError(storageError);
   };
 
   const changeStatus = (task) => {
@@ -46,14 +56,19 @@ const App = () => {
     Tasks.changeStatus(newTask);
     newTasks.splice(taskIndex, 1, newTask)
     setTasks(newTasks);
+    const storageError = Storage.saveToStorage(newTasks);
+    storageError && setError(storageError);
   };
 
   const addTask = (task) => {
     const isTaskExsist = !!Tasks.findTask(tasks, task);
     if (isTaskExsist) {
-      setError('Такая задача уже есть.');
+      setError(errorMessages.TASK_EXISTS);
     } else {
-      setTasks([...tasks, task]);
+      const updatedTasks = [...tasks, task];
+      setTasks(updatedTasks);
+      const storageError = Storage.saveToStorage(updatedTasks);
+      storageError && setError(storageError);
     }
   };
 
