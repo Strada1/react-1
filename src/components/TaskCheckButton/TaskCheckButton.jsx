@@ -1,16 +1,21 @@
-import './TaskCheckButton.css'
+import './TaskCheckButton.css';
 
-const TaskCheckButton = props => {
+
+
+const TaskCheckButton = ({ style, id, isChecked}) => {
+
     return (
         <div className='checkbtn_box'>
             <input
                 type='checkbox'
-                className={props.style}
-                id={props.id}
-                defaultChecked = {props.isChecked}
-
+                className={style}
+                id={id}
+                checked={isChecked.toString()}
+                readOnly
             />
-            <label htmlFor={props.id}></label>
+            <label htmlFor={id}>
+
+            </label>
        </div>
     )
 }

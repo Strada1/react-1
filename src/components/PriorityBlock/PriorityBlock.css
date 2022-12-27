@@ -4,3 +4,12 @@
     margin-bottom: 12px;
     font-weight: 400;
 }
+
+.priority-block {
+    flex: 1 1 auto;
+    min-height: 200px;
+    margin-bottom: 10px;
+    /* border: 2px solid slateblue;
+    border-radius: 5px;
+    padding: 10px; */
+}

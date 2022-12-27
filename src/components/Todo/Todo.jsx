@@ -3,53 +3,67 @@ import './Todo.css';
 
 import TodoForm from "../TodoForm/TodoForm";
 import PriorityBlock from '../PriorityBlock/PriorityBlock';
-import Task from '../Task/Task'
-import {TASKS} from '../../constans'
 
 
 
-const taskList = [
-    {
-        text: 'Покормить кота',
-        priority: TASKS.PRIORITY_LOW,
-        isDone: true,
-    },
-     {
-        text: 'Прочитать книгу Стивена Кинга',
-        priority:  TASKS.PRIORITY_HIGH,
-        isDone: false,
-    },
-    {
-        text: 'Постирать одежду',
-        priority: TASKS.PRIORITY_HIGH,
-        isDone: false,
-    },
-     {
-        text: 'Проверить почту',
-        priority: TASKS.PRIORITY_LOW,
-        isDone: false,
 
-    }
-]
+
+// const taskList = [
+    // {
+    //     text: 'Покормить кота',
+    //     priority: TASKS.PRIORITY_LOW,
+    //     isDone: true,
+    // },
+//      {
+//         text: 'Прочитать книгу Стивена Кинга',
+//         priority:  TASKS.PRIORITY_HIGH,
+//         isDone: false,
+//     },
+//     {
+//         text: 'Постирать одежду',
+//         priority: TASKS.PRIORITY_HIGH,
+//         isDone: false,
+//     },
+//      {
+//         text: 'Проверить почту',
+//         priority: TASKS.PRIORITY_LOW,
+//         isDone: false,
+
+//     }
+// ]
+
 
 
 
 const Todo = () => {
+
+
+    const [tasks, setTasks] = useState([]);
+
+
+
     return (
         <div className='todo'>
-            <TodoForm />
-
-            <PriorityBlock
-                header='High'
-                priority='high'
-                tasks={taskList}
+            <TodoForm
+                setTasks={setTasks}
+                tasks = {tasks}
             />
 
-            <PriorityBlock
-                header='Low'
-                priority='low'
-                tasks={taskList}
-            />
+            <div className='todo-bar'>
+                <PriorityBlock
+                    header='High'
+                    priority='high'
+                    tasks={tasks}
+                    setTasks={setTasks}
+                />
+
+                <PriorityBlock
+                    header='Low'
+                    priority='low'
+                    tasks={tasks}
+                    setTasks={setTasks}
+                />
+            </div>
 
         </div>
     )

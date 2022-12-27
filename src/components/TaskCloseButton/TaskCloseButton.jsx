@@ -1,8 +1,11 @@
 import './TaskCloseButton.css'
 
-const TaskCloseButton = props => {
+const TaskCloseButton = ({style, onDelete}) => {
     return (
-        <button className={props.style}>
+        <button
+            className={style}
+            onClick={() => onDelete()}
+        >
 
         </button>
     )

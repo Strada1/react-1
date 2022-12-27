@@ -1,22 +1,27 @@
+
 import './Task.css'
 import TaskCloseButton from '../TaskCloseButton/TaskCloseButton';
 import TaskCheckButton from '../TaskCheckButton/TaskCheckButton';
 
-const Task = props => {
+const Task = ({onDelete, status, id, text, changeStatus}) => {
     return (
         <div
-            className={props.status ? 'task taskDone' : 'task taskInprogress'}
-            id={props.id}
-            status={props.status}
+            className={status ? 'task taskDone' : 'task taskInprogress'}
+            id={id}
+            status={status}
+            onClick={changeStatus}
         >
             <TaskCheckButton
                 style='task_checkBtn'
-                id={props.id}
-                isChecked={props.status ? 'checked': ''}
+                id={id}
+                isChecked={status ? 'checked' : ''}
+
             />
-            <div className='task_text'>{props.text}</div>
+            <div className='task_text'>{text}</div>
             <TaskCloseButton
                 style='task_closebtn'
+                onDelete={() => onDelete()}
+                id={id}
             />
         </div>
 

@@ -1,12 +1,14 @@
 import './TaskInput.css'
 
-const TaskInput = props => {
+const TaskInput = ({type, style, placeholder, changeHandler, value}) => {
     return (
 
         <input
-            type={props.type}
-            className = {props.style}
-            placeholder={props.placeholder}
+            type={type}
+            className = {style}
+            placeholder={placeholder}
+            onChange={e => changeHandler(e)}
+            value={value}
          />
     )
 }

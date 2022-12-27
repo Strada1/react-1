@@ -5,3 +5,8 @@
     margin: 0px auto;
     padding: 25px 8px;
 }
+
+.todo-bar {
+    display: flex;
+    flex-direction: column;
+}
