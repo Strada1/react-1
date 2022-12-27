@@ -3,14 +3,13 @@ function CityList(props) {
 
     const deleteFavoriteCity = (event) => {
         const deleteCity = event.target.parentNode.firstChild.textContent;
-        console.log('deleteCity: ', deleteCity);
-        console.log('cityList: ', cityList);
 
-        const cityys = cityList.filter((town) => {
-            town !== deleteCity;
-            console.log('town: ', town);
+        const cityys2 = cityList.filter((town) => {
+            return town !== deleteCity;
         });
-
+       
+        const cityys = cityList.filter((town) => town !== deleteCity);
+        console.log('cityys2: ', cityys2);
         console.log('cityys: ', cityys);
     };
 

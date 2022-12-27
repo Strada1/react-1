@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { SearchBox } from './components/SearchBox';
 import { DisplayData } from './components/DisplayData';
@@ -13,6 +13,23 @@ function App() {
     const [cityName, setCityName] = useState();
 
     const [cityList, setCityList] = useState([]);
+
+    useEffect(() => {
+        if(cityList.length !== 0) {
+            try {
+                localStorage.setItem("cityList", JSON.stringify(cityList))
+            } catch (error) {
+                alert(error)
+            }  
+        }
+    }, [cityList])
+
+    useEffect(() => {
+        const cities = JSON.parse(localStorage.getItem('cityList'));
+        if (cities) {
+            setCityList(cities);
+        }
+    }, []);
 
     return (
         <div className="wrapper">
