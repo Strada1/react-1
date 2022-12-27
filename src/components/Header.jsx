@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import CreateTask from './CreateTask';
 import List from './List';
 
+const defaultName = '';
+
 export default function Header({ priority, tasks, id, setTasks, setId }) {
-	const [value, setValue] = useState('');
+	const [value, setValue] = useState(defaultName);
 
 	const onClickSubmit = evt => {
 		evt.preventDefault();
@@ -20,13 +22,13 @@ export default function Header({ priority, tasks, id, setTasks, setId }) {
 				completed: false,
 			},
 		]);
-		setValue('');
+		setValue(defaultName);
 	};
 
 	return (
 		<>
 			<h1>{priority}</h1>
-			<CreateTask value={value} setValue={setValue} submit={onClickSubmit} priority={priority} />
+			<CreateTask value={value} setValue={setValue} submit={onClickSubmit} />
 			<List tasks={tasks} priority={priority} id={id} setTasks={setTasks} />
 		</>
 	);

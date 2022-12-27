@@ -1,4 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
+import useScreen from './hooks/useScreen';
 import './App.css';
 
 import { levelsPriority } from './const';
@@ -8,6 +10,8 @@ function App() {
 	const [tasks, setTasks] = useState([]);
 	const [id, setId] = useState(0);
 	const dataFetchedRef = useRef(false);
+
+	const { width, isMobile, isDesktop } = useScreen();
 
 	useEffect(() => {
 		const raw = localStorage.getItem('tasks');

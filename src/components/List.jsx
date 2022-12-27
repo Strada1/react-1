@@ -1,3 +1,4 @@
+import React from 'react';
 import NewTask from './NewTask';
 
 export default function List({ tasks, priority, setTasks }) {
@@ -9,7 +10,7 @@ export default function List({ tasks, priority, setTasks }) {
 	};
 
 	return (
-		<ul className={'todo-list'}>
+		<ul className={'todo-list ' + priority}>
 			{priority === 'HIGH'
 				? highPriority.map(task => {
 						return (

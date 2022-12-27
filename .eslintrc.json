@@ -1,0 +1,22 @@
+{
+	"env": {
+		"es2021": true
+	},
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"overrides": [],
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"plugins": ["react", "react-hooks"],
+	"globals": {
+		"localStorage": true,
+		"fetch": true,
+		"window": true
+	},
+	"rules": {
+		"react/prop-types": "off",
+		"react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+		"react-hooks/exhaustive-deps": "warn",
+		"no-mixed-spaces-and-tabs": 0
+	}
+}

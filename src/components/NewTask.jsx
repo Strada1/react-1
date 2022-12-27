@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import deleteIcon from '../assets/delete.png';
 import checkIcon from '../assets/done.svg';
