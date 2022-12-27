@@ -1,0 +1,36 @@
+.task-block {
+  display: flex;
+  align-items: center;
+  width: 460px;
+  min-height: 45px;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.task-block__text {
+  font-size: 22px;
+  font-weight: 200;
+  font-family: 'Nunito', sans-serif;
+}
+.task-block__btn_check {
+  margin-left: 15px;
+}
+.task-block__btn_check:checked ~ .task-block__text {
+  text-decoration: line-through;
+}
+.task-block__btn_del {
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  border: none;
+  background-color: #fff;
+  margin-right: 8px;
+  transform: rotate(45deg);
+}
+.task-block__btn_del:hover {
+  color: pink;
+}
+.task-block__btn_del:active {
+  color: #fff;
+}
