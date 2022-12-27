@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(236, 236, 236);
+}
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+img {
+  max-width: 300px;
+  min-height: 300px;
+}
