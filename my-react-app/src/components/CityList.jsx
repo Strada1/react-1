@@ -4,18 +4,12 @@ function CityList(props) {
     const deleteFavoriteCity = (event) => {
         const deleteCity = event.target.parentNode.firstChild.textContent;
 
-        const cityys2 = cityList.filter((town) => {
-            return town !== deleteCity;
-        });
-       
-        const cityys = cityList.filter((town) => town !== deleteCity);
-        console.log('cityys2: ', cityys2);
-        console.log('cityys: ', cityys);
+        setCityList(cityList.filter((town) => town !== deleteCity));
     };
 
     const allCityList = cityList.map((town) => (
         <div key={town} className="town-items">
-            <div className="town"> {town}</div>
+            <div className="town">{town}</div>
             <button
                 type="button"
                 className="button-delete-town"

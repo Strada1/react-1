@@ -15,14 +15,14 @@ function App() {
     const [cityList, setCityList] = useState([]);
 
     useEffect(() => {
-        if(cityList.length !== 0) {
+        if (cityList.length !== 0) {
             try {
-                localStorage.setItem("cityList", JSON.stringify(cityList))
+                localStorage.setItem('cityList', JSON.stringify(cityList));
             } catch (error) {
-                alert(error)
-            }  
+                alert(error);
+            }
         }
-    }, [cityList])
+    }, [cityList]);
 
     useEffect(() => {
         const cities = JSON.parse(localStorage.getItem('cityList'));

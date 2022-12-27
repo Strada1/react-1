@@ -15,7 +15,7 @@ function SearchBox(props) {
         const response = await getData(url);
         setTemperature(mathRound(response.main.temp));
         setIcon(linkImg(response.weather[0].icon));
-        setCityName(valueInput)
+        setCityName(response.name)
         setValueInput(defaultValue)
     };
 
