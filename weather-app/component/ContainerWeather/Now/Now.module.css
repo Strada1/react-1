@@ -1,0 +1,30 @@
+
+.Like {
+    width: 22px;
+    height: 22px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("src/img/like.png");
+    cursor: pointer;
+}
+
+.Degrees{
+    display: flex;
+    justify-content: flex-start;
+    margin: 25px;
+    font-family: 'Roboto', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 82px;
+}
+
+.NowFooter{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 100px;
+    width: 100%;
+}

@@ -1,0 +1,16 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.TabItems {
+    flex: 0 1 33.333%;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
