@@ -3,14 +3,16 @@ import { CityWrap } from "./CityWrap";
 function CityList(props) {
     const { cityList, setCityList } = props;
 
-    const deleteFavoriteCity = (event) => {
-        const deleteCity = event.target.parentNode.firstChild.textContent;
-
+    const deleteFavoriteCity = (deleteCity) => {
         setCityList(cityList.filter((town) => town !== deleteCity));
     };
 
+    const getCity = (town) => {
+        deleteFavoriteCity(town)
+    }
+
     const allCityList = cityList.map((town) => (
-        <CityWrap key={town} town={town} deleteFavoriteCity={deleteFavoriteCity}/>
+        <CityWrap key={town} town={town} getCity={getCity}/>
     ));
 
     return (

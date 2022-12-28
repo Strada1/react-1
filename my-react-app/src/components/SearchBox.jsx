@@ -11,12 +11,16 @@ function SearchBox(props) {
 
     const addTown = async (event) => {
         event.preventDefault();
+        if ((valueInput === defaultValue)) {
+            alert('Пустая строка, введите город!');
+            return null;
+        }
         const url = `${RESPONSE.serverUrl}?q=${valueInput}&appid=${RESPONSE.apiKey}&units=metric`;
         const response = await getData(url);
         setTemperature(mathRound(response.main.temp));
         setIcon(linkImg(response.weather[0].icon));
-        setCityName(response.name)
-        setValueInput(defaultValue)
+        setCityName(response.name);
+        setValueInput(defaultValue);
     };
 
     const changeInput = (event) => {
