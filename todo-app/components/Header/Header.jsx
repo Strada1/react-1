@@ -1,22 +1,25 @@
 import {useState} from "react";
 
 const defaultValue = '';
-const Header = ({addTask}) => {
-    const [name, setValue] = useState(defaultValue);
+const Header = ({priority, addTask,placeholder}) => {
+    const [name, setName] = useState(defaultValue);
     const handleChange = (e) => {
-        setValue(e.target.value);
+        setName(e.target.value);
     }
+
+
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (!name) return;
-        addTask(name);
-        setValue(defaultValue)
+        if(!name) return;
+        const task = {name, priority};
+        addTask(task);
+        setName(defaultValue)
     }
 
     return (
         <form onSubmit={onSubmit}>
-            <input onChange={handleChange} value={name} type="text" placeholder="Добавить важных дел" className="inputTask"/>
+            <input onChange={handleChange} value={name} type="text" placeholder={placeholder} className="inputTask"/>
             <button className="addTask"></button>
         </form>
     );

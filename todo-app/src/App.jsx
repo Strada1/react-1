@@ -12,21 +12,26 @@ function App() {
             return;
         }
         setTasks([...tasks, task]);
+        console.log(tasks)
     }
-
     const deleteTask = (task) => {
-        const tasksList = tasks.filter((item) => item.task !== task);
+        console.log(tasks)
+        const tasksList = tasks.filter((item) => item !== task);
         setTasks(tasksList);
     };
 
     return (
         <div className="container">
-            {taskSection.map(({title}) => (
+            {taskSection.map(({title, priority,placeholder}) => (
                 <PrioritySection
+                    key={Date.now() * Math.random() * 3}
                     addTask={addTask}
                     deleteTask={deleteTask}
+                    title={title}
+                    priority={priority}
+                    placeholder={placeholder}
                     tasks={tasks}
-                    title={title}/>
+                />
             ))}
 
         </div>

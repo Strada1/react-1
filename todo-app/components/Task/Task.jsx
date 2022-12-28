@@ -1,14 +1,14 @@
-const Task = ({task, deleteTask}) => {
+const Task = ({tasks, deleteTask}) => {
 
     return (
         <div className="todo">
             <div>
                 <input type="checkbox" className="custom-checkbox"/>
-                <label className="task_name">{task}</label>
+                <label className="task_name">{tasks.name}</label>
             </div>
             <button type="button"
                     onClick={() => {
-                        deleteTask(task);
+                        deleteTask(tasks);
                     }}
                     className="deleteTask"/>
         </div>

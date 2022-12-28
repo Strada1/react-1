@@ -1,11 +1,13 @@
 import React from 'react';
 import Task from "../Task/Task.jsx";
 
-const List = ({task, deleteTask}) => {
+const List = ({priority, tasks, deleteTask}) => {
+    const priorityTasks = tasks.filter((item) => item.priority === priority);
     return (
         <div className="content">
-            {task.map((item)=>(
-                <Task  task={item} deleteTask={deleteTask}/>
+            {priorityTasks.map((item)=>(
+                 <Task  key={Date.now() * Math.random()}  tasks={item} deleteTask={deleteTask}/>
+
             ))}
         </div>
     );
