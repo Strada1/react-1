@@ -1,3 +1,5 @@
+import { CityWrap } from "./CityWrap";
+
 function CityList(props) {
     const { cityList, setCityList } = props;
 
@@ -8,16 +10,7 @@ function CityList(props) {
     };
 
     const allCityList = cityList.map((town) => (
-        <div key={town} className="town-items">
-            <div className="town">{town}</div>
-            <button
-                type="button"
-                className="button-delete-town"
-                onClick={deleteFavoriteCity}
-            >
-                +
-            </button>
-        </div>
+        <CityWrap key={town} town={town} deleteFavoriteCity={deleteFavoriteCity}/>
     ));
 
     return (

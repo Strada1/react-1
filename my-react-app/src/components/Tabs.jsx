@@ -1,11 +1,14 @@
 function Tabs() {
 
     const openDisplay = (event) => {
-        event.target.parentNode.className = "tabs-container"
+        event.stopPropagation()
+         if(event.target.parentNode.className === "tabs-container onload") {
+            event.target.parentNode.className = "tabs-container"
+        } 
     }
 
     return (
-        <div className="tabs-container onload" onClick={openDisplay}>
+        <div className="tabs-container" onClick={openDisplay}>
             <a href="#display-data" className="tab1">
                 Now
             </a>
