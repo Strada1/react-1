@@ -1,0 +1,10 @@
+.CloseBtn {
+    background: url(../../public/closeButton.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    width: 15px;
+    height: 15px;
+    float:right;
+    border:none;
+  }

@@ -1,0 +1,9 @@
+.rectangle {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 476px;
+    min-height: 688px;
+    background: #FFFFFF; 
+    border: 1px solid #989898;
+  }

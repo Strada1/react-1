@@ -1,0 +1,32 @@
+#root {
+  position: absolute;
+  display: block;
+  width: 1500px;
+  height: 1500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  background-color: #E5E5E5;
+}
+
+
+
+.title {
+  font-family: 'Roboto';
+  font-style: 'Regular';
+  font-size: 18px;
+  line-height: 21px;
+  line-height: 100%;
+  text-align: left;
+  vertical-align: top;
+  text-align: center;    
+  text-decoration-style:solid;
+  font-weight: 400;
+}
+
+
+
