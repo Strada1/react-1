@@ -1,7 +1,6 @@
 .container-city-list {
 	width: 302px;
 	height: 388px;
-	background-color: rgb(207, 242, 207);
 	border: 1px solid #000000;
 	border-right: none ;
 	border-bottom: none;
@@ -41,10 +40,13 @@
 .button-delete-town {
 	position: absolute;
 	transform: rotate(45deg);
-	background-color: rgb(207, 242, 207);
+	background-color: rgb(255, 255, 255);
 	border: none;
 	font-size: 25px;
 	margin-left: 240px;
 	margin-top: 5px;
+}
 
+.button-delete-town:hover {
+	color: red;
 }

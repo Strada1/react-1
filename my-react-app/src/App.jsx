@@ -7,20 +7,21 @@ import { DisplayForecast } from './components/DisplayForecast';
 import { CityList } from './components/CityList';
 import { Tabs } from './components/Tabs';
 import { ShowResponse } from './components/ShowResponse';
+import { DEFAULT } from './js/const';
 
 function App() {
-    const [nowIsActive, setNowIsActive] = useState(true);
-    const [DetailsIsActive, setDetailsIsActive] = useState(false);
-    const [ForecastIsActive, setForecastActive] = useState(false);
-
-    const [tab, setTab] = useState('tab1')
+    const [tab, setTab] = useState('tab1');
 
     const [temperature, setTemperature] = useState();
     const [icon, setIcon] = useState();
     const [cityName, setCityName] = useState();
+    const [feelsLike, setFeelsLike] = useState();
+    const [weatherStatus, setWeatherStatus] = useState();
+    const [sunrise, setSunrise] = useState();
+    const [sunset, setSunset] = useState();
+    const [dataForecast, setDataForecast] = useState([]);
 
     const [cityList, setCityList] = useState([]);
-    
 
     useEffect(() => {
         if (cityList.length !== 0) {
@@ -33,11 +34,42 @@ function App() {
     }, [cityList]);
 
     useEffect(() => {
-        const cities = JSON.parse(localStorage.getItem('cityList'));
-        if (cities) {
-            setCityList(cities);
+        try {
+            const cities = JSON.parse(localStorage.getItem('cityList'));
+            if (cities) {
+                setCityList(cities);
+            }
+            const lastCity = JSON.parse(localStorage.getItem('lastCity'));
+            if (lastCity) {
+                ShowResponse(
+                    lastCity,
+                    null,
+                    setTemperature,
+                    setIcon,
+                    setCityName,
+                    setFeelsLike,
+                    setWeatherStatus,
+                    setSunrise,
+                    setSunset,
+                    setDataForecast
+                );
+            } else {
+                ShowResponse(
+                    DEFAULT.CITY,
+                    null,
+                    setTemperature,
+                    setIcon,
+                    setCityName,
+                    setFeelsLike,
+                    setWeatherStatus,
+                    setSunrise,
+                    setSunset,
+                    setDataForecast
+                );
+            }
+        } catch (error) {
+            alert(error);
         }
-        ShowResponse("Варшава", null, setTemperature, setIcon, setCityName)
     }, []);
     return (
         <div className="wrapper">
@@ -47,6 +79,11 @@ function App() {
                         setTemperature={setTemperature}
                         setIcon={setIcon}
                         setCityName={setCityName}
+                        setFeelsLike={setFeelsLike}
+                        setWeatherStatus={setWeatherStatus}
+                        setSunrise={setSunrise}
+                        setSunset={setSunset}
+                        setDataForecast={setDataForecast}
                     />
                     <div className="content">
                         <DisplayData
@@ -55,26 +92,36 @@ function App() {
                             cityName={cityName}
                             cityList={cityList}
                             setCityList={setCityList}
-                            nowIsActive={nowIsActive}
+                            tab={tab}
                         />
                         <DisplayDetalis
                             cityName={cityName}
-                            DetailsIsActive={DetailsIsActive}
+                            tab={tab}
+                            feelsLike={feelsLike}
+                            weatherStatus={weatherStatus}
+                            sunrise={sunrise}
+                            sunset={sunset}
+                            temperature={temperature}
                         />
-                        <DisplayForecast ForecastIsActive={ForecastIsActive} />
+                        <DisplayForecast
+                            tab={tab}
+                            dataForecast={dataForecast}
+                            cityName={cityName}
+                        />
                         <CityList
                             cityList={cityList}
                             setCityList={setCityList}
                             setTemperature={setTemperature}
                             setIcon={setIcon}
                             setCityName={setCityName}
+                            setFeelsLike={setFeelsLike}
+                            setWeatherStatus={setWeatherStatus}
+                            setSunrise={setSunrise}
+                            setSunset={setSunset}
+                            setDataForecast={setDataForecast}
                         />
                     </div>
-                    <Tabs
-                        setNowIsActive={setNowIsActive}
-                        setDetailsIsActive={setDetailsIsActive}
-                        setForecastActive={setForecastActive}
-                    />
+                    <Tabs setTab={setTab} />
                 </div>
             </div>
         </div>

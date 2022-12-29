@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ERROR_MESSAGE } from '../js/const';
 
 function DisplayData(props) {
-    const { temperature, icon, cityName, cityList, setCityList, nowIsActive } = props;
+    const { temperature, icon, cityName, cityList, setCityList, tab } = props;
     const [error, setError] = useState(false);
 
     const favoriteCity = () => {
@@ -15,11 +15,12 @@ function DisplayData(props) {
         }
     };
 
+    if (tab !== 'tab1') {
+        return null;
+    }
+
     return (
-        <motion.div
-            className={nowIsActive ? 'tab-active' : 'display'}
-            id="display-data"
-        >
+        <motion.div className="tab-active" id="display-data">
             <div className="temperature-data">{temperature}°</div>
             <img src={icon} alt="" className="icon-data" />
             <div className="city-name-data">{cityName}</div>

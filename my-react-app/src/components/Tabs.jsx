@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function Tabs(props) {
-    const { setNowIsActive, setDetailsIsActive, setForecastActive } = props;
+    const { setTab } = props;
     const [nowTabClassName, setNowTabClassName] = useState(true)
     const [DetailsClassName, setDetailsTabClassName] = useState(false)
     const [ForecastTabClassName, setForecastTabClassName] = useState(false)
@@ -12,13 +12,10 @@ function Tabs(props) {
                 type="button"
                 className={nowTabClassName ? "tab1 item-tab item-tab-active" : "tab1 item-tab"}
                 onClick={() => {
-                    setNowIsActive(true);
-                    setDetailsIsActive(false);
-                    setForecastActive(false);
-
                     setNowTabClassName(true)
                     setDetailsTabClassName(false)
                     setForecastTabClassName(false)
+                    setTab("tab1")
                 }}
             >
                 Now
@@ -27,13 +24,10 @@ function Tabs(props) {
                 type="button"
                 className={DetailsClassName ? "tab2 item-tab item-tab-active" : "tab2 item-tab"}
                 onClick={() => {
-                    setNowIsActive(false);
-                    setDetailsIsActive(true);
-                    setForecastActive(false);
-
                     setNowTabClassName(false)
                     setDetailsTabClassName(true)
                     setForecastTabClassName(false)
+                    setTab("tab2")
                 }}
             >
                 Details
@@ -42,13 +36,10 @@ function Tabs(props) {
                 type="button"
                 className={ForecastTabClassName ? "tab3 item-tab item-tab-active" : "tab3 item-tab"}
                 onClick={() => {
-                    setNowIsActive(false);
-                    setDetailsIsActive(false);
-                    setForecastActive(true);
-
                     setNowTabClassName(false)
                     setDetailsTabClassName(false)
                     setForecastTabClassName(true)
+                    setTab("tab3")
                 }}
             >
                 Forecast

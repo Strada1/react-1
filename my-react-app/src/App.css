@@ -7,7 +7,7 @@
 @import url(components/Tabs.css);
 
 body {
-  background-color: rgb(204, 245, 245);
+  background-image: url(../public/max.jpg);
 }
 
 .wrapper {
@@ -23,7 +23,8 @@ body {
   justify-content: center;
   width: 621px;
   min-height: 462px;
-  background-color: rgb(220, 255, 233);
+  background-color: #ffffff;
+  
 }
 
 .out-border {

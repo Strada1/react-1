@@ -1,18 +1,51 @@
-import { CityWrap } from "./CityWrap";
+import { CityWrap } from './CityWrap';
 import { ShowResponse } from './ShowResponse';
+
 function CityList(props) {
-    const { cityList, setCityList, setTemperature, setIcon, setCityName } = props;
+    const {
+        cityList,
+        setCityList,
+        setTemperature,
+        setIcon,
+        setCityName,
+        setFeelsLike,
+        setWeatherStatus,
+        setSunrise,
+        setSunset,
+        setDataForecast
+    } = props;
 
     const deleteFavoriteCity = (deleteCity) => {
         setCityList(cityList.filter((town) => town !== deleteCity));
     };
 
     const showCity = (city) => {
-        ShowResponse(city, null, setTemperature, setIcon, setCityName)
-    }
+        ShowResponse(
+            city,
+            null,
+            setTemperature,
+            setIcon,
+            setCityName,
+            setFeelsLike,
+            setWeatherStatus,
+            setSunrise,
+            setSunset,
+            setDataForecast
+        );
+    };
+
+    const lastSelectedCity = (city) => {
+        localStorage.setItem('lastCity', JSON.stringify(city));
+    };
 
     const allCityList = cityList.map((town) => (
-        <CityWrap key={town} town={town} deleteFavoriteCity={deleteFavoriteCity} showCity={showCity}/>
+        <CityWrap
+            key={town}
+            town={town}
+            deleteFavoriteCity={deleteFavoriteCity}
+            showCity={showCity}
+            lastSelectedCity={lastSelectedCity}
+        />
     ));
 
     return (

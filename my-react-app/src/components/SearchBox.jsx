@@ -1,22 +1,46 @@
 import { useState } from 'react';
-import { defaultValue } from '../js/const';
+import { DEFAULT } from '../js/const';
 import { ShowResponse } from './ShowResponse';
 
 function SearchBox(props) {
-    const { setTemperature, setIcon, setCityName } = props;
-    const [valueInput, setValueInput] = useState(defaultValue);
+    const {
+        setTemperature,
+        setIcon,
+        setCityName,
+        setFeelsLike,
+        setWeatherStatus,
+        setSunrise,
+        setSunset,
+        setDataForecast,
+    } = props;
+    const [valueInput, setValueInput] = useState(DEFAULT.VALUE);
 
     const addTown = (event) => {
         event.preventDefault();
-        if (valueInput === defaultValue) {
+        if (valueInput === DEFAULT.VALUE) {
             alert('Пустая строка, введите город!');
             return null;
         }
-        ShowResponse(valueInput, setValueInput, setTemperature, setIcon, setCityName)
+        ShowResponse(
+            valueInput,
+            setValueInput,
+            setTemperature,
+            setIcon,
+            setCityName,
+            setFeelsLike,
+            setWeatherStatus,
+            setSunrise,
+            setSunset,
+            setDataForecast
+        );
     };
 
     const changeInput = (event) => {
-        setValueInput(event.target.value);
+        if (event.target.value.search(/\d/) !== -1) {
+            alert('Вводите только буквы!');
+        } else {
+            setValueInput(event.target.value);
+        }
     };
 
     return (
