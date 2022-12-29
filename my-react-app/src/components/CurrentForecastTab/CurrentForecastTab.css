@@ -1,0 +1,25 @@
+.degrees-num {
+  margin-left: 23px;
+}
+
+.degrees {
+  display: flex;
+  margin-top: 20px;
+  font-size: 50px;
+  line-height: 82px;
+}
+
+.cloud {
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.forecast-months {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 17px;
+  justify-content: space-between;
+  margin-left: 12px;
+  margin-right: 26px;
+}

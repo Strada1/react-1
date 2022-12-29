@@ -1,0 +1,30 @@
+.forecast-form {
+    display: flex;
+    justify-content: flex-start;
+    height: 45px;
+    border-bottom: 1px solid #000;
+  }
+  
+  input[type="text"] {
+    font: inherit;
+    font-size: 18px;
+    line-height: 21px;
+    outline: none;
+    border: none;
+    width: 522px;
+    margin-left: 15px;
+  }
+  
+  .button {
+    margin-right: 15px;
+  
+    background: url(./magnifier.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+  }

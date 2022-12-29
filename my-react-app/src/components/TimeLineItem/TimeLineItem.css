@@ -1,0 +1,34 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 256px;
+  height: 120px;
+  border: 1px solid #000;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 8px;
+  margin-left: 18px;
+  margin-bottom: 9px;
+}
+
+.forecast-date,
+.forecast-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-icon {
+  display: flex;
+  flex-direction: column;
+}
+
+.rain {
+  line-height: 15px;
+}
+
+.forecast-icons {
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 40px;
+  height: auto;
+}

@@ -1,0 +1,10 @@
+.content {
+  width: 600px;
+  height: 435px;
+  border: 1px solid #000;
+}
+.forecast-container {
+  display: flex;
+  height: 388px;
+  width: 600px;
+}

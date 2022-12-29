@@ -1,0 +1,9 @@
+.button-exit {
+  background: url(./close-icon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}

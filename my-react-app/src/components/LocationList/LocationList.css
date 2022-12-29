@@ -1,0 +1,37 @@
+.locations-items {
+  height: 250px;
+  margin: 35px 0;
+  list-style-type: none;
+  overflow: auto;
+}
+
+.locations-items::-webkit-scrollbar {
+  width: 0;
+}
+
+.locations-items li {
+  cursor: pointer;
+}
+
+li {
+  margin: 14px 20px;
+}
+
+.locations-items li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.locations-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+.locations-items::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.locations-items::-webkit-scrollbar-thumb {
+  background-color: #9f9f9f;
+  border-radius: 100px;
+}

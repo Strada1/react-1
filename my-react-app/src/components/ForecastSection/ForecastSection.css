@@ -1,0 +1,40 @@
+.main-forecast {
+  display: flex;
+  flex-direction: column;
+  width: 298px;
+  border-right: 1px solid #000;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  height: 345px;
+}
+
+.forecast-weather {
+  margin-top: auto;
+}
+
+.like {
+  border: none;
+  background-color: transparent;
+}
+
+.like:hover svg {
+  fill: #000;
+}
+
+.like:active svg {
+  fill: #000;
+}
+
+.like-active {
+  fill: #000;
+}
+
+.locations-header {
+  height: 68px;
+  display: flex;
+  padding-bottom: 7px;
+  padding-left: 17px;
+}
