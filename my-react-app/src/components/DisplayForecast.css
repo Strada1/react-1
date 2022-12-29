@@ -1,9 +1,0 @@
-.display-forecast:target {
-	display: block;
-	/* background-color: rgb(251, 203, 193); */
-	height: 345px;
-	width: 298px;
-	border: 1px solid #000000;
-	border-left: none;
-	border-right: none;
-}

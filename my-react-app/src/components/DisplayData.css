@@ -1,4 +1,4 @@
-.display-data:target {
+.tab-active {
 	display: block;
 	/* background-color: rgb(163, 202, 235); */
 	height: 345px;
@@ -7,6 +7,8 @@
 	border-left: none;
 	border-right: none;
 }
+
+
 
 .temperature-data {
 	font-size: 70px;
@@ -20,16 +22,15 @@
 }
 
 .city-name-data {
-	display: inline-block;
 	font-size: 24px;
 	padding-left: 12px;
 	padding-top: 50px;
 }
 
 .button-love {
-	display: inline;
-	margin-top: -10px;
-	margin-left: 135px;
+	position: absolute;
+	margin-top: -30px;
+	margin-left: 250px;
 }
 
 .button-close {

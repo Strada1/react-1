@@ -1,12 +1,15 @@
-function DisplayForecast () {
+import { motion } from 'framer-motion';
 
-
-	return (
-<div className="display-forecast display" id="display-forecast">
-display-forecast
-</div>
-	)
-	
+function DisplayForecast(props) {
+    const { ForecastIsActive } = props;
+    return (
+        <motion.div
+            className={ForecastIsActive ? 'tab-active' : 'display'}
+            id="display-forecast"
+        >
+            display-forecast
+        </motion.div>
+    );
 }
 
-export {DisplayForecast}
+export { DisplayForecast };

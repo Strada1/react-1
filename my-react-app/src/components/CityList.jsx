@@ -1,18 +1,18 @@
 import { CityWrap } from "./CityWrap";
-
+import { ShowResponse } from './ShowResponse';
 function CityList(props) {
-    const { cityList, setCityList } = props;
+    const { cityList, setCityList, setTemperature, setIcon, setCityName } = props;
 
     const deleteFavoriteCity = (deleteCity) => {
         setCityList(cityList.filter((town) => town !== deleteCity));
     };
 
-    const getCity = (town) => {
-        deleteFavoriteCity(town)
+    const showCity = (city) => {
+        ShowResponse(city, null, setTemperature, setIcon, setCityName)
     }
 
     const allCityList = cityList.map((town) => (
-        <CityWrap key={town} town={town} getCity={getCity}/>
+        <CityWrap key={town} town={town} deleteFavoriteCity={deleteFavoriteCity} showCity={showCity}/>
     ));
 
     return (

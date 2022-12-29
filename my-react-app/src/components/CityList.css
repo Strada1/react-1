@@ -24,13 +24,18 @@
 .town-items {
 	display: flex;
 	flex-wrap: nowrap;
-	
 }
 
 .town {
 	display: inline-block;
 	padding-top: 10px;
 	width: 200px;
+}
+
+.town-items:hover {
+	display: flex;
+	flex-wrap: nowrap;
+	color: rgb(119, 131, 131);
 }
 
 .button-delete-town {

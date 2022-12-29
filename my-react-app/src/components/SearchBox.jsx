@@ -1,26 +1,18 @@
 import { useState } from 'react';
-import { RESPONSE, defaultValue } from '../js/const';
-import { mathRound } from '../js/mathRound';
-import { getData } from '../js/response';
+import { defaultValue } from '../js/const';
+import { ShowResponse } from './ShowResponse';
 
 function SearchBox(props) {
     const { setTemperature, setIcon, setCityName } = props;
     const [valueInput, setValueInput] = useState(defaultValue);
 
-    const linkImg = (icon) => `//openweathermap.org/img/wn/${icon}@2x.png`;
-
-    const addTown = async (event) => {
+    const addTown = (event) => {
         event.preventDefault();
-        if ((valueInput === defaultValue)) {
+        if (valueInput === defaultValue) {
             alert('Пустая строка, введите город!');
             return null;
         }
-        const url = `${RESPONSE.serverUrl}?q=${valueInput}&appid=${RESPONSE.apiKey}&units=metric`;
-        const response = await getData(url);
-        setTemperature(mathRound(response.main.temp));
-        setIcon(linkImg(response.weather[0].icon));
-        setCityName(response.name);
-        setValueInput(defaultValue);
+        ShowResponse(valueInput, setValueInput, setTemperature, setIcon, setCityName)
     };
 
     const changeInput = (event) => {

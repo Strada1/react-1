@@ -1,18 +1,36 @@
 .tabs-container {
-	display: flex;
-	justify-content: space-around;
 	width: 298px;
 	height: 45px;
-	margin-top: -30px;
+	margin-top: -43px;
 }
 
-.onload {
-	position: absolute;
-	background-color: rgb(255, 255, 255);
-	width: 636px;
-	height: 521px;
-	margin-left: -12px;
-	margin-top: -448px;
-	display: flex;
-	align-items: center;
+.item-tab {
+	border-top: none;
+	border-bottom: none;
+	width: 99px;
+	height: 43px;
+
+}
+
+.item-tab:hover {
+	background-color: #b1aca7;
+}
+
+.item-tab-active {
+	background-color: black;
+	color: white;
+}
+
+.tab1 {
+	border-left: none;
+	border-right: none;
+}
+
+.tab2 {
+
+}
+
+.tab3 {
+	border-right: none;
+	border-left: none;
 }

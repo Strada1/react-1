@@ -1,14 +1,21 @@
 function CityWrap(props) {
-    const { town, getCity } = props;
+    const { town, deleteFavoriteCity, showCity } = props;
     return (
         <div className="town-items">
-            <div className="town">{town}</div>
+            <div
+                className="town"
+                onClick={() => {
+                    showCity(town);
+                }}
+            >
+                {town}
+            </div>
             <button
                 type="button"
                 className="button-delete-town"
                 onClick={() => {
-					getCity(town)
-				}}
+                    deleteFavoriteCity(town);
+                }}
             >
                 +
             </button>
@@ -16,4 +23,4 @@ function CityWrap(props) {
     );
 }
 
-export {CityWrap}
+export { CityWrap };

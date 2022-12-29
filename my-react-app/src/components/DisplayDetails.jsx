@@ -1,9 +1,14 @@
+import { motion } from 'framer-motion';
+
 function DisplayDetalis(props) {
-	const {cityName} = props
+    const { cityName, DetailsIsActive } = props;
     return (
-        <div className="display-details display" id="display-details">
+        <motion.div
+            className={DetailsIsActive ? 'tab-active' : 'display'}
+            id="display-details"
+        >
             <div className="city-name-details">{cityName}</div>
-        </div>
+        </motion.div>
     );
 }
 
