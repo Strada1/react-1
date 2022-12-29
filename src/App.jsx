@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Headers } from "./Headers/Headers";
 import { ListTask } from "./List-Tasks/List-Tasks";
 
@@ -57,6 +57,7 @@ function App() {
    const task = (event.nativeEvent.path[0].value)
    setTodo([...todo].filter((item) => item.task !== task));
   }
+
 
   return (
     <div className="ToDo">
