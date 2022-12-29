@@ -1,13 +1,16 @@
 import React from "react";
-function Task(props) {
+
+function Task({ taskId, removeTask, text }) {
   return (
-    <li className="task-todo">
+    <div className="task-todo">
       <div className="text-container">
         <input type="checkbox"></input>
-        <label htmlFor="checkbox">{props.text}</label>
-        <button>X</button>
+        <label htmlFor="checkbox">{text}</label>
+        <button id={taskId} onClick={removeTask}>
+          X
+        </button>
       </div>
-    </li>
+    </div>
   );
 }
 

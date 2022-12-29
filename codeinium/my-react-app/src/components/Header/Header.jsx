@@ -1,20 +1,10 @@
 import React from "react";
 
-function Header(props) {
+function Header({ priority, onChange, onSubmit }) {
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-      className={props.priority}
-    >
-      <p>{props.priority}</p>
-      <input
-      // value={text}
-      // onChange={(e) => {
-      //   onChange(e.target.value);
-      // }}
-      ></input>
+    <form onSubmit={onSubmit}>
+      <p>{priority}</p>
+      <input key={"input" + priority} onChange={onChange}></input>
       <button>+</button>
     </form>
   );
