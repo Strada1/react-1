@@ -1,0 +1,20 @@
+.App {
+  width: 100%;
+  min-width: 320px;
+  max-width: 2134px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.weather--wrapper {
+  width: 622px;
+  padding: 14px;
+  height: 470px;
+  margin: 0 auto;
+}
+
+.weather--box {
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+}

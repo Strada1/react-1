@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+
+.weather--tabsbar,
+.weather--locatiosnbar {
+  width: 50%;
+  min-height: 300px;
+}
+
+.weather--details,
+.weather--now,
+.weather--forecast {
+  height: 290px;
+}
+
+.weather--locations,
+.location-headerbox {
+  padding: 33px 18px 0px;
+}
+
+.locations--item,
+.details--item {
+  margin-bottom: 16px;
+
+}
+
+.details--list,
+.weather--locationslist {
+  list-style-type: none;
+  font-size: 24px;
+}

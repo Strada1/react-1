@@ -1,0 +1,18 @@
+.tabs--btn {
+    width: 100%;
+    border: none;
+    background: #fff;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    padding: 9px 0px;
+    cursor: pointer;
+}
+
+.tabs--btn:last-child {
+    border-right: none;
+}
+
+.tabs--active {
+    background: #000;
+    color: #fff;
+}

@@ -1,0 +1,49 @@
+.forecast--card {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 12px;
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+
+.forecast--dateblock {
+    display: flex;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.forecast--date {
+    width: 50%;
+}
+
+.forecast--weatherblock {
+    display: flex;
+}
+
+
+.forecast--temperaturebox {
+    flex: 1
+}
+
+.forecast--weatherbox {
+    width: 30%;
+    text-align: right;
+    position: relative;
+}
+
+.forecast--date:last-child {
+    text-align: right;
+}
+
+.forecast--icon {
+    width: 31px;
+    height: 31px;
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 18px;
+    background: url('../../assets/rain_cloud_icon.png') no-repeat center;
+}

@@ -1,0 +1,60 @@
+.weather--now {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    width: 262px;
+}
+
+.now--temperature {
+    font-size: 70px;
+}
+
+.now--icon {
+    width: 150px;
+    height: 105px;
+    background: url('../../assets/big_cloud_icon.png') no-repeat center;
+    margin: 0 auto;
+}
+
+.now--location {
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.now-city {
+    flex: 1;
+}
+
+.now-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.now-btn::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 23px;
+    position: absolute;
+    right: 0;
+    top: 14px;
+    background: url('../../assets/like_icon.png') no-repeat center;
+    background-size: cover;
+}

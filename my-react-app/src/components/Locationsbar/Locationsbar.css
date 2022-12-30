@@ -1,0 +1,33 @@
+
+.weather--locatiosnbar {
+    width: 50%;
+    min-height: 300px;
+}
+
+.location-headerbox {
+    border-bottom: 1px solid #000;
+    padding: 33px 18px 0px;
+}
+
+.location-header {
+    margin-bottom: 7px;
+}
+
+.weather--locations {
+    padding-top: 35px;
+}
+
+.location-headerbox {
+    padding: 33px 18px 0px;
+}
+
+.weather--locationslist {
+    list-style-type: none;
+    font-size: 24px;
+}
+
+.details--list,
+.weather--locationslist {
+    list-style-type: none;
+    font-size: 24px;
+}

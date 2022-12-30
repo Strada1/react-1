@@ -1,0 +1,4 @@
+.weather--main {
+    display: flex;
+    flex-direction: row;
+}

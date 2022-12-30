@@ -1,0 +1,5 @@
+.weather--searchbar {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid black;
+}

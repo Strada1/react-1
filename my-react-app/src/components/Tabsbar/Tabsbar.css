@@ -1,0 +1,15 @@
+.weather--tabsbar {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+}
+
+.weather--screens {
+    display: flex;
+    flex: 2;
+    margin: 33px 18px 0;
+}
+
+.weather--tabs {
+    display: flex;
+}

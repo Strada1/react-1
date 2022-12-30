@@ -1,0 +1,20 @@
+.weather--forecast {
+    width: 100%;
+}
+
+.location-header {
+    margin-bottom: 7px;
+}
+
+.forecast--cards {
+    height: 255px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.forecast--cards::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

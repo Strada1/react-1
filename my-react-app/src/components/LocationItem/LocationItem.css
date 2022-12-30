@@ -1,0 +1,12 @@
+.locations--text {
+    flex: 1;
+}
+
+.locations-btn {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
