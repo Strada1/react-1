@@ -22,7 +22,7 @@ function SearchBox(props) {
             return null;
         }
         ShowResponse(
-            valueInput,
+            valueInput.trim(),
             setValueInput,
             setTemperature,
             setIcon,

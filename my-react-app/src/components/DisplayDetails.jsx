@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 function DisplayDetalis(props) {
     const {
-        cityName,
+        city,
         tab,
         feelsLike,
         weatherStatus,
@@ -15,7 +15,7 @@ function DisplayDetalis(props) {
     }
     return (
         <motion.div className="tab-active" id="display-details">
-            <div className="city-name-details">{cityName}</div>
+            <div className="city-name-details">{city}</div>
             <div className="data-list">
                 <div className="temperature-details">
                     Temperature: {temperature}°

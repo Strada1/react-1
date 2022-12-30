@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { formatTime, formatDay } from '../js/formatDate';
 
-
 function DisplayForecast(props) {
     const { tab, dataForecast, cityName } = props;
     if (tab !== 'tab3') {
