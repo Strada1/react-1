@@ -1,5 +1,6 @@
 import React from 'react';
 import './Tabs.sass';
+import PropTypes from 'prop-types';
 
 function Tabs(props) {
   const { onChangeTabs, activeTab } = props;
@@ -16,8 +17,11 @@ function Tabs(props) {
     case 'tab-3':
       classNamesTab3 += ' tabs-triggers__item_active';
       break;
+    default:
+      classNameTab1 += ' tabs-triggers__item_active';
+      break;
   }
-
+  // todo: сделать через map
   return (
     <div className='tabs'>
       <div className='tabs-triggers'>
@@ -49,5 +53,10 @@ function Tabs(props) {
     </div>
   );
 }
+
+Tabs.propTypes = {
+  onChangeTabs: PropTypes.func.isRequired,
+  activeTab: PropTypes.string.isRequired,
+};
 
 export default Tabs;

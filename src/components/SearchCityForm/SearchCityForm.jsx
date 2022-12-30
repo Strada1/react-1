@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import searchIcon from '../../resources/img/search-icon.svg';
 import './SearchCityForm.sass';
 
+const defaultInputValue = '';
 function SearchCityForm(props) {
-  const { inputValue, onChangeInput, onSubmit } = props;
+  const [searchCity, setSearchCity] = useState(defaultInputValue);
+  const { onRequest } = props;
+  const clearingInputValue = () => {
+    setSearchCity(defaultInputValue);
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    onRequest(searchCity);
+    clearingInputValue();
+  };
+  const onChangeInput = (event) => {
+    setSearchCity(event.target.value);
+  };
+
   return (
     <form onSubmit={onSubmit} className='weather__form'>
       <input
         onChange={onChangeInput}
-        value={inputValue}
+        value={searchCity}
         className='weather__input'
         placeholder='enter the city'
         type='text'
@@ -22,9 +37,7 @@ function SearchCityForm(props) {
 }
 
 SearchCityForm.propTypes = {
-  inputValue: PropTypes.string.isRequired,
-  onChangeInput: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+  onRequest: PropTypes.func.isRequired,
 };
 
 export default SearchCityForm;

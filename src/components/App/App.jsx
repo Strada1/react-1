@@ -6,50 +6,75 @@ import FavoriteCities from '../FavoriteCities/FavoriteCities';
 import Tabs from '../Tabs/Tabs';
 import Details from '../Details/Details';
 import ForecastList from '../ForecastList/ForecastList';
+import WeatherRequests from '../../services/requests';
+import Template from '../Template/Template';
 
-const defaultInputValue = '';
 const defaultActiveTab = 'tab-1';
+
 function App() {
-  const [searchCity, setSearchCity] = useState(defaultInputValue);
+  const weatherRequests = new WeatherRequests();
+
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
-  const onChangeInput = (event) => {
-    setSearchCity(event.target.value);
-  };
-  const clearingInput = () => {
-    setSearchCity(defaultInputValue);
-  };
+  const [nowDetailsData, SetNowDetailsData] = useState(null);
+  const [forecastData, SetForecastData] = useState(null);
+  const [favoriteCites, setFavoriteCities] = useState(new Set());
 
   const onChangeTabs = (event) => {
     setActiveTab(event.target.id);
   };
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log(`reg... ${searchCity}`);
-    clearingInput();
+  // todo: добавить попап для ошибок
+  const onRequest = (searchCity) => {
+    weatherRequests
+      .getCityWeather(searchCity)
+      .then((res) => SetNowDetailsData(res))
+      .catch((error) => console.log(error));
+    weatherRequests
+      .getCityForecast(searchCity)
+      .then((res) => SetForecastData(res))
+      .catch((error) => console.log(error));
   };
 
-  let content = <Now />;
-  if (activeTab === 'tab-2') {
-    content = <Details />;
-  } else if (activeTab === 'tab-3') {
-    content = <ForecastList />;
+  const addFavoriteCities = (nameCity) => {
+    setFavoriteCities(new Set([...favoriteCites, nameCity]));
+  };
+
+  const deleteFavoriteCities = (nameCity) => {
+    favoriteCites.delete(nameCity);
+    setFavoriteCities(new Set([...favoriteCites]));
+  };
+
+  let content = <Template />;
+
+  if (nowDetailsData && activeTab === 'tab-2') {
+    content = <Details cityWeather={nowDetailsData} />;
+  } else if (forecastData && activeTab === 'tab-3') {
+    content = <ForecastList cityWeather={forecastData} />;
+  } else if (nowDetailsData && activeTab === 'tab-1') {
+    content = (
+      <Now
+        deleteFavoriteCities={deleteFavoriteCities}
+        favoriteCites={favoriteCites}
+        addFavoriteCities={addFavoriteCities}
+        cityWeather={nowDetailsData}
+      />
+    );
+  } else {
+    content = <Template />;
   }
 
   return (
     <div className='weather'>
-      <SearchCityForm
-        inputValue={searchCity}
-        onChangeInput={onChangeInput}
-        onSubmit={onSubmit}
-      />
-
+      <SearchCityForm onRequest={onRequest} />
       <div className='weather__body'>
         <div className='weather__tabs'>
           <div className='tabs-content'>{content}</div>
           <Tabs onChangeTabs={onChangeTabs} activeTab={activeTab} />
         </div>
-        <FavoriteCities />
+        <FavoriteCities
+          onRequest={onRequest}
+          favoriteCites={new Set(favoriteCites)}
+          deleteFavoriteCities={deleteFavoriteCities}
+        />
       </div>
     </div>
   );
