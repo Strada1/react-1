@@ -6,5 +6,3 @@ export const PRIORITY = {
   HIGH: "High",
   LOW: "Low",
 };
-
-export const list = [];
