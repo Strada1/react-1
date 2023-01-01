@@ -1,0 +1,29 @@
+.tabsBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  outline: 2px solid #464646;
+}
+
+.tab {
+  overflow: hidden;
+  padding: 12px 6px;
+  font-size: 18px;
+  color: #242424;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.tab:not(:nth-child(3n)) {
+  border-right: 2px solid #464646;
+}
+
+.tab:hover,
+.tab.isActive {
+  color: #ffffff;
+  background-color: #57c74b;
+}

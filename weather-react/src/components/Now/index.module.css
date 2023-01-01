@@ -1,0 +1,68 @@
+.mainWrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  padding: 20px 26px 17px 12px;
+}
+
+.temperature {
+  margin: 0 0 0 12px;
+  font-size: 70px;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.addButton {
+  width: 24px;
+  height: 25px;
+  padding: 0;
+  background-color: var(--white-color);
+  border: none;
+  cursor: pointer;
+}
+
+.addButton:active .icon {
+  width: 20px;
+  height: auto;
+}
+
+.icon,
+.icon path {
+  transition: all 0.3s ease;
+}
+
+.addButton:hover .icon path {
+  stroke: #208b44;
+}
+
+.addButton--active .icon,
+.addButton.isAdded .icon {
+  fill: #208b44;
+}
+
+.addButton--active .icon path,
+.addButton.isAdded .icon path {
+  stroke: #208b44;
+}

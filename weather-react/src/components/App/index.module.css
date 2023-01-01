@@ -1,0 +1,57 @@
+.app {
+  width: 600px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.appHeader {
+  padding: 0 30px;
+}
+
+.appTitle {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.appMain {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 1fr;
+  height: 440px;
+  outline: 2px solid #464646;
+}
+
+.weatherForm {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  border-bottom: 2px solid #464646;
+}
+
+.weatherMain {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  outline: 2px solid #464646;
+}
+
+.weatherList {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.weatherContent {
+  flex-grow: 1;
+}
+
+.isError {
+  padding: 30px 0;
+  font-size: 20px;
+  color: #e04226;
+  font-weight: 500;
+  text-align: center;
+}
