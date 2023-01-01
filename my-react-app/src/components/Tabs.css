@@ -1,0 +1,37 @@
+.tabs-container {
+	width: 298px;
+	height: 45px;
+	margin-top: -43px;
+}
+
+.item-tab {
+	border-top: none;
+	border-bottom: none;
+	width: 99px;
+	height: 43px;
+
+}
+
+.item-tab:hover {
+	background-color: #b1aca7;
+}
+
+.item-tab-active {
+	background-color: black;
+	color: white;
+}
+
+.tab1 {
+	border-left: none;
+	border-right: none;
+}
+
+.tab2 {
+	border: 1px solid #000000;
+	border-top: none;
+}
+
+.tab3 {
+	border-right: none;
+	border-left: none;
+}
