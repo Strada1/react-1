@@ -11,3 +11,12 @@
 .FooterButton:not(:last-child) {
     border-right: 1px solid #000000;
 }
+
+.FooterButton:hover {
+    color: #fff;
+    background: #000000;
+    tansition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+}
+

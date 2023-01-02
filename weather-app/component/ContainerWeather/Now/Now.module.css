@@ -1,3 +1,6 @@
+.Content {
+
+}
 
 .Like {
     width: 22px;
@@ -7,10 +10,31 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("src/img/like.png");
+    fill: #000;
     cursor: pointer;
 }
 
-.Degrees{
+.Like:hover {
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("src/img/like.png");
+    fill: #ff0000;
+    tansition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+}
+
+.Like:active {
+    fill: #005aff;
+}
+
+.like-active {
+    fill: #00ff3f;
+}
+
+.Degrees {
     display: flex;
     justify-content: flex-start;
     margin: 25px;
@@ -21,10 +45,10 @@
     line-height: 82px;
 }
 
-.NowFooter{
+.NowFooter {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    margin-top: 100px;
+    margin-top: 55px;
     width: 100%;
 }

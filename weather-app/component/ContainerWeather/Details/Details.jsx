@@ -1,14 +1,27 @@
 import style from "./Details.module.css";
 
-const Details = () => {
+const Details = ({data}) => {
+    if (!data) {
+        return
+    }
+
+    const detailsData = {
+        cityName: data.name,
+        degrees: data.main.temp.toFixed(0),
+        feelsLike: data.main.feels_like,
+        descriptions: data.weather[0].description,
+        sunrise: new Date(data.sys.sunrise * 1000).toLocaleTimeString(),
+        sunset: new Date(data.sys.sunset * 1000).toLocaleTimeString(),
+    }
+
     return (
         <div className={style.Container}>
-            <h2>Aktobe</h2>
-            <p>Temperature: 14</p>
-            <p>Feels like: 10</p>
-            <p>Weather: Clouds</p>
-            <p>Sunrise: 03:21</p>
-            <p>Sunset: 18:54</p>
+            <h2>{detailsData.cityName}</h2>
+            <p>Temperature: {detailsData.degrees}°</p>
+            <p>Feels like: {detailsData.feelsLike}</p>
+            <p>Weather: {detailsData.descriptions}</p>
+            <p>Sunrise: {detailsData.sunrise}</p>
+            <p>Sunset: {detailsData.sunset}</p>
         </div>
     );
 };
