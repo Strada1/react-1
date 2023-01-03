@@ -2,7 +2,7 @@ import style from "./Details.module.css";
 
 const Details = ({data}) => {
     if (!data) {
-        return
+        return 'Нет данных...';
     }
 
     const detailsData = {

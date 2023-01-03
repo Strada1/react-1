@@ -4,9 +4,11 @@ import ContainerLocation from "../component/ContainerLocation/ContainerLocation.
 import {useState} from "react";
 import {getData} from "../JS/getData.js";
 
+
 function App() {
     const [value, setValue] = useState("")
     const [data, setData] = useState()
+    const [favoriteCities, setFavoriteCities] = useState([])
 
     function handleChange(event) {
         setValue(event.target.value)
@@ -28,8 +30,8 @@ function App() {
                 </form>
 
                 <article className={app.Wrapper}>
-                    <ContainerWeather data={data}/>
-                    <ContainerLocation/>
+                    <ContainerWeather favoriteCities={favoriteCities} setFavoriteCities={setFavoriteCities} data={data}/>
+                    <ContainerLocation setFavoriteCities={setFavoriteCities} favoriteCities={favoriteCities}/>
                 </article>
             </div>
 

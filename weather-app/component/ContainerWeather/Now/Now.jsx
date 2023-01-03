@@ -1,8 +1,9 @@
 import style from "./Now.module.css";
+import {getStorage, setStorage, STORAGE_KEY} from "../../../JS/localStorage.js";
 
-const Now = ({data}) => {
+const Now = ({data, setFavoriteCities, favoriteCities}) => {
     if (!data) {
-        return;
+        return 'Нет данных...';
     }
     const serverImgUrl = `http://openweathermap.org/img/wn/`;
 
@@ -12,9 +13,10 @@ const Now = ({data}) => {
         src: `${serverImgUrl}${data.weather[0]['icon']}@2x.png`,
     }
 
-    //TODO: ПРОДОЛЖИТЬ ТУТ
-    function setFavoriteCity(cityName) {
-        localStorage.setItem("cityName", JSON.stringify(cityName))
+    function saveFavoriteCity() {
+        setStorage(nowData.cityName)
+        const cities = getStorage(STORAGE_KEY)
+        setFavoriteCities(cities);
     }
 
     return (
@@ -25,7 +27,7 @@ const Now = ({data}) => {
             <img src={nowData.src}/>
             <div className={style.NowFooter}>
                 <p>{nowData.cityName}</p>
-                <button onClick={() => setFavoriteCity(nowData.cityName)} className={style.Like}>
+                <button onClick={() => saveFavoriteCity()} className={style.Like}>
                 </button>
             </div>
         </div>

@@ -5,7 +5,7 @@ import Details from "./Details/Details.jsx";
 import Forecast from "./Forecast/Forecast.jsx";
 import {useState} from "react";
 
-const ContainerWeather = ({data}) => {
+const ContainerWeather = ({data, setFavoriteCities, favoriteCities}) => {
     const [active, setActive] = useState({
         now: true,
         details: false,
@@ -14,10 +14,10 @@ const ContainerWeather = ({data}) => {
 
     return (
         <section className={style.Content}>
-            { active.now && <Now data={data}/> }
-            { active.details && <Details data={data}/> }
-            { active.forecast &&<Forecast/> }
-            <Footer setActive={setActive} />
+            {active.now && <Now favoriteCities={favoriteCities} setFavoriteCities={setFavoriteCities} data={data}/>}
+            {active.details && <Details data={data}/>}
+            {active.forecast && <Forecast/>}
+            <Footer setActive={setActive}/>
         </section>
     );
 };
