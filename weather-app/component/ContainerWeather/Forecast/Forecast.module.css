@@ -1,3 +1,45 @@
-.Container{
+.Container {
+    height: 390px;
+}
 
+.Title {
+    padding: 15px;
+}
+
+.Content {
+    width: 265px;
+    height: 110px;
+    border: 1px solid black;
+    margin-bottom: 8px;
+}
+
+.Wrapper {
+    max-height: calc(100% - 90px);
+    margin-top: -13px;
+    overflow: auto;
+    margin-left: 9px;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.Data {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 30px;
+}
+
+.Temp {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Img {
+    width: 50px;
+    height: 50px;
 }

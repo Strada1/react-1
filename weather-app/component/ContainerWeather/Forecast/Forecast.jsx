@@ -1,8 +1,17 @@
 import style from "./Forecast.module.css"
-const Forecast = () => {
+import Content from "./Content.jsx";
+
+const Forecast = ({setDataForecast, dataForecast}) => {
+    if (!dataForecast) {
+        return "НЕТ ДЫННЫХ"
+    }
     return (
         <div className={style.Container}>
-            <h2>Forecast</h2>
+            <h2 className={style.Title}>{dataForecast.city.name}</h2>
+            <div className={style.Wrapper}>
+                {dataForecast.list.map((item, index) => <Content key={index} item={item}/> )}
+            </div>
+
         </div>
     );
 };
