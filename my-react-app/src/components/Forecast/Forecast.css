@@ -1,7 +1,8 @@
 .content {
   width: 600px;
   height: 435px;
-  border: 1px solid #000;
+  border: 2px solid #fff;
+  background: linear-gradient(6.74deg, rgba(149, 214, 252, 0.5) -20.07%, rgba(158, 212, 247, 0.5) 118.01%);
 }
 .forecast-container {
   display: flex;

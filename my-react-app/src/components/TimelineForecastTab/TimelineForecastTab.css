@@ -3,7 +3,7 @@
 }
 
 .table-items {
-  height: 275px;
+  height: 262px;
   overflow: auto;
 }
 
@@ -13,11 +13,11 @@
 }
 
 .table-items::-webkit-scrollbar-track {
-  background-color: #e4e4e4;
+  background-color: rgba(255, 255, 255, 0.2);;
   border-radius: 100px;
 }
 
 .table-items::-webkit-scrollbar-thumb {
-  background-color: #9f9f9f;
+  background-color: rgba(255, 255, 255, 0.6);;
   border-radius: 100px;
 }

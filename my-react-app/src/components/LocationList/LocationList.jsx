@@ -9,10 +9,10 @@ const LocationList = ({
 }) => {
   return (
     <ul className="locations-items">
-      {favoriteCities.map((city) => (
+      {favoriteCities.map(({city, id}) => (
         <LocationItem
-          key={city.id}
-          city={city.city}
+          key={id}
+          city={city}
           getForecast={getForecast}
           setCity={setCity}
           deleteFavoriteCity={deleteFavoriteCity}

@@ -11,11 +11,12 @@ const TimeLineItem = ({day, month, time, temperature, feelsLike, weather, icon})
         </div>
         <div className="forecast-weather">
           <div>
-            <p>
-              Temperature: <span>{typeof temperature === 'undefined' ? '--': temperature}</span>°
-            </p>
-            <p>
-              Feels like: <span>{typeof feelsLike === 'undefined' ? '--': feelsLike}</span>°
+            <div className='temperature-wrapper'>
+            <img className='temperature-img' src="./temperature.svg" alt="" />
+            <span>{typeof temperature === 'undefined' ? '--': temperature}</span>°
+            </div>
+            <p className='feels-like'>
+              Like: <span>{typeof feelsLike === 'undefined' ? '--': feelsLike}</span>°
             </p>
           </div>
           <div className="weather-icon">

@@ -7,7 +7,9 @@ const DetailsForecastTab = ({currentForecast})=> {
         <p className="text-locations">{currentForecast?.forecastCity || 'City'}</p>
       </div>
       <ul className="details-items">
-        <li>Temperature: <span>{typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}</span>&#176;</li>
+        <li>
+          <img src="./temperature.svg" alt="" />
+          <span>{typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}</span>&#176;</li>
         <li>Feels like: <span>{typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}</span>&#176;</li>
         <li>Weather: <span>{currentForecast?.detailsWeather|| '--'}</span></li>
         <li>Sunrise: <span>{currentForecast?.sunrise|| '--'}</span></li>

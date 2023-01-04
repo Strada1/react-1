@@ -5,7 +5,8 @@ const CurrentForecastTab = ({currentForecast, addFavoriteCity, favoriteCities})=
     return (
         <div className="forecast" >
           <div className="degrees">
-            <p className="degrees-num">{typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}</p>
+            <img src="./temperature.svg" alt="" />
+            <p className="degrees-num">{` ${typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}`}</p>
             <span>&#176;</span>
           </div>
           <img
@@ -13,7 +14,6 @@ const CurrentForecastTab = ({currentForecast, addFavoriteCity, favoriteCities})=
             src={currentForecast?.icon ? `http://openweathermap.org/img/wn/${currentForecast.icon}@4x.png`: './cloud.svg'}
             alt="icon of cloud"
             width="90px"
-            height="60px"
           />
 
           <div className="forecast-months">
@@ -27,11 +27,9 @@ const CurrentForecastTab = ({currentForecast, addFavoriteCity, favoriteCities})=
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  opacity="0.54"
                   fill-rule="evenodd"
                   clip-rule="evenodd"
                   d="M17.5 1C15.0556 1 12.8556 2.7875 12 5.125C11.1444 2.7875 8.94444 1 6.5 1C3.44444 1 1 3.6125 1 7.1875C1 12 5.27778 16.125 12 23C18.7222 16.125 23 12 23 7.1875C23 3.6125 20.5556 1 17.5 1Z"
-                  stroke="black"
                   stroke-width="2"
                 />
               </svg>

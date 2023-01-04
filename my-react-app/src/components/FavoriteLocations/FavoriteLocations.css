@@ -3,7 +3,9 @@
 }
 
 .main-locations .locations-header {
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #fff;
+  font-weight: 600;
+    font-size: 24px;
 }
 
 .text-locations {
