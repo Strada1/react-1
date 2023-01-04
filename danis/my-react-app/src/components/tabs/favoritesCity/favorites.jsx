@@ -13,7 +13,7 @@ export default function Favorites(props) {
         <h1>Added Locations:</h1>
       </div>
       <div className="favorits-city">
-        {items.map((item) => (
+        {items && items.map((item) => (
           <FavoriteCity
             key = {item}
             cityItem={item}
