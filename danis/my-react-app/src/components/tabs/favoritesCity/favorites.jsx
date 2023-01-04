@@ -15,6 +15,7 @@ export default function Favorites(props) {
       <div className="favorits-city">
         {items.map((item) => (
           <FavoriteCity
+            key = {item}
             cityItem={item}
             setFavoriteCity={setFavoriteCity}
             favoriteCity={favoriteCity}

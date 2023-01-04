@@ -1,16 +1,11 @@
 import React from "react";
 
-export default function Card(props) {
-const {future} = props
-const data = future.map((city) => (
+export default function Card({day, hours}) {
   
-      <div className="date-forecast">{city.dt}</div>
-     
-));
 
   return (
     <div>
-      <h1>{data}</h1>
+      {day} {hours}
      
     </div>
   );
