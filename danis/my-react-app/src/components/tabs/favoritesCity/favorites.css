@@ -1,0 +1,12 @@
+.favorits-title {
+    padding: 1rem;
+}
+
+.favorites__city {
+    border-right: 1px solid #1A1A1A;
+    width: 100%;
+}
+
+.favorits-city {
+    padding: 1rem;
+}
