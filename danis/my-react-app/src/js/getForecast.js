@@ -1,5 +1,3 @@
-import { convetData } from "./covertData";
-
 export async function getForecast(urlMy) {
     const result = await fetch(urlMy);
     const response = await result.json();

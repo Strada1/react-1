@@ -1,7 +1,4 @@
 import React from "react";
-import Card from "./card";
-import { formatDay } from "../../../js/converDay";
-import { converHours } from "../../../js/converHours";
 
 
 export default function Forecast({ namecity, className, future}) {
