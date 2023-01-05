@@ -1,6 +1,6 @@
 import React from "react";
 
-function WeatherNow({ city, addCity}) {
+function WeatherNow({ city, addCity }) {
   const src = `https://openweathermap.org/img/wn/${city.icon}@4x.png`;
   return (
     <div className="forecast-now forecast" id="tab-01">
@@ -15,7 +15,8 @@ function WeatherNow({ city, addCity}) {
 
       <div className="forecast-months">
         <p>{city.name}</p>
-        <img onClick={addCity}
+        <img
+          onClick={addCity}
           src="\svg\heart.svg"
           alt="icon of heart"
           width="22px"

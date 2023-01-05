@@ -16,6 +16,7 @@ function App() {
   const [weatherForecast, setWeatherForecast] = useState(defaultValue);
   const [city, setCity] = useState(defaultValue);
   const [likedCity, setLikedCity] = useState([]);
+  const [cityAddStatus, setCityAddStatus] = useState(false);
 
   useEffect(() => {
     if (city === defaultValue) {
@@ -24,9 +25,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    JSON.parse(localStorage.getItem("weather")),
-      JSON.parse(localStorage.getItem("forecast")),
-      JSON.parse(localStorage.getItem("likedCity"));
+    const cities = JSON.parse(localStorage.getItem("likedCity"));
+    if (cities) {
+      setLikedCity(cities);
+    }
   }, []);
 
   function getValue(event) {
@@ -116,14 +118,27 @@ function App() {
   }
 
   function addCity() {
-    setLikedCity([
-      ...likedCity,
-      {
-        id: nanoid(),
-        name: city.name,
-      },
-    ]);
-    setStorage("likedCity", likedCity);
+    likedCity.forEach((item) => {
+      if (item.name === city.name) {
+        setCityAddStatus(true);
+      } else {
+        setCityAddStatus(false);
+      }
+    });
+
+    if (cityAddStatus) {
+      alert("This city is already in the favorites");
+    } else {
+      console.log(likedCity);
+      setLikedCity([
+        ...likedCity,
+        {
+          id: nanoid(),
+          name: city.name,
+        },
+      ]);
+      setStorage("likedCity", likedCity);
+    }
   }
 
   function deleteCity(city) {
