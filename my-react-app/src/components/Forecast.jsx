@@ -1,7 +1,7 @@
-export function Forecast() {
+export function Forecast({ cityName }) {
   return (
     <div id="tab_3" className="weather_block">
-      <div className="name__current_city tab3__name ">Aktobe</div>
+      <div className="name__current_city tab3__name ">{cityName}</div>
       <div className="current__item">
         <div className="data_wrapper">
           <div className="date_current">17 May</div>

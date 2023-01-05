@@ -86,7 +86,7 @@ function App() {
                 sunset={cityNow?.sunset}
                 sunrise={cityNow?.sunrise}
               />
-              <Forecast />
+              <Forecast cityName={cityNow?.cityName} />
               <ChooseSection />
             </div>
             <CityList
