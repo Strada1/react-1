@@ -1,0 +1,9 @@
+.favorite__city {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.favorite__city h2 {
+    margin: 0;
+}

@@ -1,0 +1,23 @@
+.left__block-bottom button {
+    border: 1px solid #1A1A1A;
+    padding: 1rem;
+    width: -webkit-fill-available;
+    cursor: pointer;
+}
+
+.tab {
+    display: none;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left__block-top {
+    padding: 1rem;
+    border: 1px solid #1A1A1A;
+    border-top: none;
+    border-bottom: none;
+    width: 100%;
+}

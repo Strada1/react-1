@@ -1,0 +1,28 @@
+.future__block {
+    border: 1px solid #1a1a1a;
+    padding: 0.5rem;
+}
+
+.only__data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image__weather-block {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-end;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
