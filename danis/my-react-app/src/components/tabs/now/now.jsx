@@ -4,24 +4,16 @@ import CityTitle from "./CityTitle";
 import Imgage from "./image";
 import "./now.css";
 
-export default function Now(props) {
-  const {
-    namecity,
-    temperature,
-    image,
-    className,
-    setFavoriteCity,
-    favoriteCity,
-  } = props;
+export default function Now({dataWeather, className, setFavoriteCity, favoriteCity}) {
 
   return (
     <div className={`left__block-top ${className}`}>
-      <Temperature temperature={temperature} />
-      <Imgage image={image} />
+      <Temperature temperature={dataWeather.temperature} />
+      <Imgage image={dataWeather.image} />
       <CityTitle
-        namecity={namecity}
-        setFavoriteCity={setFavoriteCity}
-        favoriteCity={favoriteCity}
+        namecity={dataWeather.name}
+        setFavoriteCity = {setFavoriteCity}
+        favoriteCity = {favoriteCity}
       />
     </div>
   );

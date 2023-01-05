@@ -6,51 +6,40 @@ import "./tabs.css";
 import Favorites from "./favoritesCity";
 
 export default function Tabs(props) {
-  const {
-    nameCity,
-    display,
-    setValue,
-    temperature,
-    image,
-    setFavoriteCity,
-    favoriteCity,
-    feelsLike,
-    weather,
-    sunrice,
-    sunset,
-    future,
-  } = props;
+  const { dataWeather, future, display, setFavoriteCity, favoriteCity, setdataWeather, setFuture } = props;
+
+  if (!dataWeather) return;
 
   return (
     <div className="tabs">
-      <Now
-        className={display === "tab-1" ? "tabs-active" : "tab"}
-        namecity={nameCity}
-        temperature={temperature}
-        image={image}
-        setFavoriteCity={setFavoriteCity}
-        favoriteCity={favoriteCity}
-      />
-      <Details
-        className={display === "tab-2" ? "tabs-active" : "tab"}
-        namecity={nameCity}
-        temperature={temperature}
-        feelsLike={feelsLike}
-        weather={weather}
-        sunrice={sunrice}
-        sunset={sunset}
-      />
-      <Forecast
-        className={display === "tab-3" ? "tabs-active" : "tab"}
-        namecity={nameCity}
-        future={future}
-      />
-      <div className="favorites__city">
-        <Favorites
-          namecity={nameCity}
+      {
+        <Now
+          className={display === "tab-1" ? "tabs-active" : "tab"}
+          dataWeather={dataWeather}
           setFavoriteCity={setFavoriteCity}
           favoriteCity={favoriteCity}
-          setValue={setValue}
+        />
+      }
+      {
+        <Details
+          className={display === "tab-2" ? "tabs-active" : "tab"}
+          dataWeather={dataWeather}
+        />
+      }
+      {
+        <Forecast
+          className={display === "tab-3" ? "tabs-active" : "tab"}
+          future={future}
+          cityItem={dataWeather.name}
+        />
+      }
+      <div className="favorites__city">
+        <Favorites
+          setFavoriteCity={setFavoriteCity}
+          favoriteCity={favoriteCity}
+          cityItem={dataWeather.name}
+          setdataWeather={setdataWeather}
+          setFuture={setFuture}
         />
       </div>
     </div>
