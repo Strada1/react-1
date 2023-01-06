@@ -3,7 +3,6 @@ import { Navigation } from "../Navigation/Navigation";
 import { CurrentForecastTab } from "../CurrentForecastTab/CurrentForecastTab";
 import { DetailsForecastTab } from "../DetailsForecastTab/DetailsForecastTab";
 import { TimelineForecastTab } from "../TimelineForecastTab/TimelineForecastTab";
-import { CSSTransition } from "react-transition-group";
 import './ForecastSection.css'
 
 const ForecastSection = ({ currentForecast, timeLineForecast, addFavoriteCity, favoriteCities}) => {

@@ -5,13 +5,10 @@ import "./Forecast.css";
 import { nanoid } from "nanoid";
 
 const Forecast = ({
-  getForecast,
   currentForecast,
-  setCurrentForecast,
   timeLineForecast,
-  setTimeLineForecast,
   favoriteCities,
-  setFavoriteCities
+  setFavoriteCities,
 }) => {
   const addFavoriteCity = () => {
     if (!currentForecast.forecastCity) return;
@@ -43,11 +40,7 @@ const Forecast = ({
 
   return (
     <div className="content">
-      <ForecastForm
-        setCurrentForecast={setCurrentForecast}
-        setTimeLineForecast={setTimeLineForecast}
-        getForecast={getForecast}
-      />
+      <ForecastForm />
       <div className="forecast-container">
         <ForecastSection
           currentForecast={currentForecast}
@@ -57,7 +50,6 @@ const Forecast = ({
         />
         <FavoriteLocations
           favoriteCities={favoriteCities}
-          getForecast={getForecast}
           deleteFavoriteCity={deleteFavoriteCity}
         />
       </div>

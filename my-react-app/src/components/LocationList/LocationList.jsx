@@ -3,7 +3,6 @@ import './LocationList.css'
 
 const LocationList = ({
   favoriteCities,
-  getForecast,
   setCity,
   deleteFavoriteCity,
 }) => {
@@ -13,7 +12,6 @@ const LocationList = ({
         <LocationItem
           key={id}
           city={city}
-          getForecast={getForecast}
           setCity={setCity}
           deleteFavoriteCity={deleteFavoriteCity}
         />

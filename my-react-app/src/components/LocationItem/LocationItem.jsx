@@ -1,9 +1,13 @@
+import { useContext } from "react";
+import { ForecastContext } from "../../js/ForecastContext";
 import "./LocationItem.css";
 
-const LocationItem = ({ city, getForecast, deleteFavoriteCity }) => {
+const LocationItem = ({ city, deleteFavoriteCity }) => {
+const value = useContext(ForecastContext)
+
   return (
     <li>
-      <p onClick={() => {getForecast(city);}}>
+      <p onClick={() => {value.getForecast(city);}}>
         {city}
       </p>
       <button

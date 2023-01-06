@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ForecastContext } from "../../js/ForecastContext";
 import "./ForecastForm.css"
 const defaultValue = "";
 
-const ForecastForm = ({ getForecast }) => {
+const ForecastForm = () => {
   const [city, setCity] = useState(defaultValue);
+  const value = useContext(ForecastContext);
 
   const onChange = (e) => {
     setCity(e.target.value);
@@ -15,7 +17,7 @@ const ForecastForm = ({ getForecast }) => {
       action="post"
       onSubmit={(e) => {
         e.preventDefault();
-        getForecast(city);
+        value.getForecast(city);
         setCity(defaultValue);
       }}
     >
