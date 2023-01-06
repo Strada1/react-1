@@ -1,5 +1,5 @@
-import style from "./Details.module.css";
 import {useContext} from "react";
+import style from "./Details.module.css";
 import {MyContextWeather} from "../../../JS/myContextLocation.js";
 
 function Details() {

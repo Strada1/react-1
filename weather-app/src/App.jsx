@@ -36,7 +36,7 @@ function App() {
 
                 <article className={app.Wrapper}>
 
-                    <MyContextWeather.Provider value={{setFavoriteCities, data, dataForecast}}>
+                    <MyContextWeather.Provider value={{setFavoriteCities, favoriteCities, data, dataForecast}}>
                         <ContainerWeather/>
                     </MyContextWeather.Provider>
 

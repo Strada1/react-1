@@ -1,12 +1,17 @@
 import {nanoid} from 'nanoid'
+import {useContext, useEffect} from "react";
 import style from "./Now.module.css";
 import {getStorage, setStorage, STORAGE_KEY} from "../../../JS/localStorage.js";
 import {SERVER} from "../../../JS/getData.js";
-import {useContext} from "react";
 import {MyContextWeather} from "../../../JS/myContextLocation.js";
 
 function Now() {
-    const {data, setFavoriteCities} = useContext(MyContextWeather)
+
+    useEffect(() => {
+        setStorage(favoriteCities)
+    })
+
+    const {data, setFavoriteCities, favoriteCities} = useContext(MyContextWeather)
     if (!data) {
         return 'Нет данных...';
     }
@@ -18,9 +23,12 @@ function Now() {
     }
 
     function saveFavoriteCity() {
-        setStorage({name: dataNow.cityName, id: nanoid()})
-        const cities = getStorage(STORAGE_KEY)
-        setFavoriteCities(cities);
+        // : TODO куда изначально нужно пушить ?
+        //      В стейт или в setStorage[{name: dataNow.cityName, id: nanoid()}, ...favoriteCities]  ----------->
+        //      -> value = getStorage ()  -> setFavoriteCities(value) ?
+        //
+        setFavoriteCities([{name: dataNow.cityName, id: nanoid()}, ...favoriteCities]);
+
     }
 
     return (

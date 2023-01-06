@@ -1,28 +1,32 @@
-import {getStorage, STORAGE_KEY} from "../../../JS/localStorage.js";
-import City from "../City.jsx";
-import {useContext} from "react";
-import {MyContextLocation} from "../../../JS/myContextLocation.js";
-
+import {useContext, useEffect} from "react";
+import {getStorage, setStorage, STORAGE_KEY} from "../../../JS/localStorage";
+import City from "../City";
+import {MyContextLocation} from "../../../JS/myContextLocation";
 
 function DeleteCity() {
-const {favoriteCities, setFavoriteCities} = useContext(MyContextLocation)
+    const {favoriteCities, setFavoriteCities} = useContext(MyContextLocation)
 
-    const cities = getStorage(STORAGE_KEY)
-    if (!cities) {
+    useEffect(() => {
+        setStorage(favoriteCities);
+    })
+
+    if (!favoriteCities.length) {
         return "Нет избранных городов"
     }
 
     function deleteFavorite(id) {
         const newFavoriteCities = favoriteCities.filter((item) => item.id !== id)
-        localStorage.setItem(STORAGE_KEY, JSON.stringify([...newFavoriteCities]))
-        const cities = getStorage(STORAGE_KEY)
-        setFavoriteCities(cities);
-        console.log(cities)
+        setFavoriteCities(newFavoriteCities);
     }
+
+    const storageCity = getStorage(STORAGE_KEY)
+    // TODO:  тут все асинхронно не пойму от куда рендерить из useState или  Storage ?
+    //  мб не нужно использовать storageCity для рендера ?
+    //  Или тут нужно использовать useContext для рендера ?
 
     return (
         <div>
-            {cities.map(({name, id}) => <City key={id} city={name} id={id} deleteFavorite={deleteFavorite}/>)}
+            {favoriteCities.map(({name, id}) => <City key={id} city={name} id={id} deleteFavorite={deleteFavorite}/>)}
         </div>
     );
 }

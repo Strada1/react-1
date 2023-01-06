@@ -1,6 +1,6 @@
+import {useContext} from "react";
 import style from "./Forecast.module.css"
 import Content from "./Content.jsx";
-import {useContext} from "react";
 import {MyContextWeather} from "../../../JS/myContextLocation.js";
 
 function Forecast() {

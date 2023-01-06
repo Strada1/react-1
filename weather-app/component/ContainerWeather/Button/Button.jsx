@@ -1,8 +1,6 @@
 import style from "./Button.module.css";
+import {name} from "../Footer/constTabName.js";
 
-const name = {
-    now: 'Now', details: 'Details', forecast: 'Forecast',
-}
 
 function Button({title, setActive}) {
     function setActiveTab(nameTab) {
@@ -24,7 +22,7 @@ function Button({title, setActive}) {
 
     return (<button onClick={() => {
         setActiveTab(title)
-    }} className={style.FooterButton}>{title}</button>);
+    }} className={style.FooterButton} type="button">{title}</button>);
 }
 
 export default Button;
