@@ -2,54 +2,31 @@ import React from 'react';
 import './Tabs.sass';
 import PropTypes from 'prop-types';
 
+const tabs = [
+  { tab: { name: 'Now', id: 'tab-1' } },
+  { tab: { name: 'Details', id: 'tab-2' } },
+  { tab: { name: 'Forecast', id: 'tab-3' } },
+];
+
 function Tabs(props) {
   const { onChangeTabs, activeTab } = props;
-  let classNameTab1 = 'tabs-triggers__item';
-  let classNamesTab2 = 'tabs-triggers__item';
-  let classNamesTab3 = 'tabs-triggers__item';
-  switch (activeTab) {
-    case 'tab-1':
-      classNameTab1 += ' tabs-triggers__item_active';
-      break;
-    case 'tab-2':
-      classNamesTab2 += ' tabs-triggers__item_active';
-      break;
-    case 'tab-3':
-      classNamesTab3 += ' tabs-triggers__item_active';
-      break;
-    default:
-      classNameTab1 += ' tabs-triggers__item_active';
-      break;
-  }
-  // todo: сделать через map
+  const classNameTab = 'tabs-triggers__item';
+  const classNameActiveTab = 'tabs-triggers__item tabs-triggers__item_active';
+
+  const content = tabs.map(({ tab: { name, id } }) => (
+    <button
+      key={id}
+      type='button'
+      onClick={onChangeTabs}
+      id={id}
+      className={activeTab === id ? classNameActiveTab : classNameTab}
+    >
+      {name}
+    </button>
+  ));
   return (
     <div className='tabs'>
-      <div className='tabs-triggers'>
-        <button
-          type='button'
-          onClick={onChangeTabs}
-          id='tab-1'
-          className={classNameTab1}
-        >
-          Now
-        </button>
-        <button
-          type='button'
-          onClick={onChangeTabs}
-          id='tab-2'
-          className={classNamesTab2}
-        >
-          Details
-        </button>
-        <button
-          type='button'
-          onClick={onChangeTabs}
-          id='tab-3'
-          className={classNamesTab3}
-        >
-          Forecast
-        </button>
-      </div>
+      <div className='tabs-triggers'>{content}</div>
     </div>
   );
 }

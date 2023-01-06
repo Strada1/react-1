@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ForecastList.sass';
+import { v4 as uuidv4 } from 'uuid';
 import ForecastItem from '../ForecastItem/ForecastItem';
 
 function ForecastList(props) {
   const { cityWeather } = props;
   const content = cityWeather.map((item) => (
-    <ForecastItem
-      key={item.timeDifference.day + item.timeDifference.hours}
-      dayWeather={item.timeDifference}
-    />
+    <ForecastItem key={uuidv4()} dayWeather={item.timeDifference} />
   ));
   return (
     <div className='forecast'>

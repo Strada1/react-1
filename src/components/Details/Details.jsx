@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Details.sass';
-import PropTypes from 'prop-types';
+import nowContext from '../../hooks/context';
 
-function Details(props) {
-  const {
-    cityWeather: { name, temperature, feelsLike, weather, sunrise, sunset },
-  } = props;
+function Details() {
+  const context = useContext(nowContext);
+  const { name, temperature, feelsLike, weather, sunrise, sunset } = context;
   return (
     <div className='details'>
       <div className='details__city'>{name} </div>
@@ -19,18 +18,5 @@ function Details(props) {
     </div>
   );
 }
-
-Details.propTypes = {
-  cityWeather: PropTypes.exact({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    temperature: PropTypes.string,
-    feelsLike: PropTypes.number,
-    weather: PropTypes.string,
-    sunrise: PropTypes.string,
-    sunset: PropTypes.string,
-    image: PropTypes.string,
-  }).isRequired,
-};
 
 export default Details;

@@ -9,6 +9,7 @@ import ForecastList from '../ForecastList/ForecastList';
 import Template from '../Template/Template';
 import useRequests from '../../hooks/useRequest';
 import Error from '../Error/Error';
+import nowContext from '../../hooks/context';
 
 const defaultActiveTab = 'tab-1';
 
@@ -16,8 +17,8 @@ function App() {
   const { getCityForecast, getCityWeather, error, setError } = useRequests();
 
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
-  const [nowDetailsData, SetNowDetailsData] = useState(null);
-  const [forecastData, SetForecastData] = useState(null);
+  const [nowDetails, SetNowDetails] = useState(null);
+  const [forecast, SetForecast] = useState(null);
   const [favoriteCites, setFavoriteCities] = useState(new Set());
 
   const onChangeTabs = (event) => {
@@ -25,8 +26,8 @@ function App() {
   };
   const onRequest = (searchCity) => {
     setError(false);
-    getCityWeather(searchCity).then((res) => SetNowDetailsData(res));
-    getCityForecast(searchCity).then((res) => SetForecastData(res));
+    getCityWeather(searchCity).then((res) => SetNowDetails(res));
+    getCityForecast(searchCity).then((res) => SetForecast(res));
   };
 
   const addFavoriteCities = (nameCity) => {
@@ -38,19 +39,18 @@ function App() {
     setFavoriteCities(new Set([...favoriteCites]));
   };
 
-  let content = <Template />;
+  let content;
 
-  if (!error && nowDetailsData && activeTab === 'tab-2') {
-    content = <Details cityWeather={nowDetailsData} />;
-  } else if (!error && forecastData && activeTab === 'tab-3') {
-    content = <ForecastList cityWeather={forecastData} />;
-  } else if (!error && nowDetailsData && activeTab === 'tab-1') {
+  if (!error && nowDetails && activeTab === 'tab-2') {
+    content = <Details />;
+  } else if (!error && forecast && activeTab === 'tab-3') {
+    content = <ForecastList cityWeather={forecast} />;
+  } else if (!error && nowDetails && activeTab === 'tab-1') {
     content = (
       <Now
         deleteFavoriteCities={deleteFavoriteCities}
         favoriteCites={favoriteCites}
         addFavoriteCities={addFavoriteCities}
-        cityWeather={nowDetailsData}
       />
     );
   } else {
@@ -62,8 +62,9 @@ function App() {
       <SearchCityForm onRequest={onRequest} />
       <div className='weather__body'>
         <div className='weather__tabs'>
-          <div className='tabs-content'>{content}</div>
-
+          <nowContext.Provider value={nowDetails}>
+            <div className='tabs-content'>{content}</div>
+          </nowContext.Provider>
           <Tabs onChangeTabs={onChangeTabs} activeTab={activeTab} />
         </div>
         <FavoriteCities

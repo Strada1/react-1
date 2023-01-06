@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import addFavorites from '../../resources/img/add-favorites.svg';
 import './Now.sass';
 import addFavoritesActive from '../../resources/img/add-favorites-active.svg';
+import nowContext from '../../hooks/context';
 
 function Now(props) {
-  const {
-    cityWeather: { name, temperature, image },
-    addFavoriteCities,
-    deleteFavoriteCities,
-    favoriteCites,
-  } = props;
+  const context = useContext(nowContext);
+  const { name, temperature, image } = context;
+  const { addFavoriteCities, deleteFavoriteCities, favoriteCites } = props;
 
   const imageAddFavorites = favoriteCites.has(name)
     ? addFavoritesActive
@@ -30,29 +28,19 @@ function Now(props) {
       </div>
       <div className='now__button'>
         <div className='now__city'>{name}</div>
-        <div className='now__add-favorite'>
-          <img
-            onClick={imageAction}
-            alt='icon add favorites'
-            src={imageAddFavorites}
-          />
-        </div>
+        <button
+          type='button'
+          onClick={imageAction}
+          className='now__add-favorite'
+        >
+          <img alt='icon add favorites' src={imageAddFavorites} />
+        </button>
       </div>
     </div>
   );
 }
 
 Now.propTypes = {
-  cityWeather: PropTypes.exact({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    temperature: PropTypes.string,
-    feelsLike: PropTypes.number,
-    weather: PropTypes.string,
-    sunrise: PropTypes.string,
-    sunset: PropTypes.string,
-    image: PropTypes.string,
-  }).isRequired,
   addFavoriteCities: PropTypes.func.isRequired,
   deleteFavoriteCities: PropTypes.func.isRequired,
   favoriteCites: PropTypes.objectOf(PropTypes.number).isRequired,
