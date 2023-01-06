@@ -16,7 +16,7 @@ function DeleteCity() {
 
     function deleteFavorite(id) {
         const newFavoriteCities = favoriteCities.filter((item) => item.id !== id)
-        setFavoriteCities(newFavoriteCities);
+        setFavoriteCities(newFavoriteCities );
     }
 
     const storageCity = getStorage(STORAGE_KEY)
