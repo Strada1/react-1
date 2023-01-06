@@ -1,0 +1,40 @@
+.Container {
+    width: 50%;
+    border-top: 1px solid #000000;
+    color: black;
+}
+
+.Content {
+    max-height: calc(100% - 70px);
+    overflow: auto;
+}
+
+.Title {
+    border-bottom: 1px solid #000000;
+    padding: 15px;
+}
+
+.Name {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Delete {
+    width: 22px;
+    height: 22px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("src/img/delete-icon.svg");
+    cursor: pointer;
+}
+
+.CityName {
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+

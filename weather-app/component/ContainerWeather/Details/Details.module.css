@@ -1,0 +1,18 @@
+.Container {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+h2 {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+p {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
