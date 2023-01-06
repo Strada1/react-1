@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ForecastContext } from "../../js/ForecastContext";
-import "./LocationItem.css";
+import LocationItemCss from "./LocationItem.module.css";
 
 const LocationItem = ({ city, deleteFavoriteCity }) => {
 const value = useContext(ForecastContext)
@@ -11,7 +11,7 @@ const value = useContext(ForecastContext)
         {city}
       </p>
       <button
-        className="button-exit"
+        className={LocationItemCss.buttonExit}
         onClick={() => { deleteFavoriteCity(city);}}
       />
     </li>

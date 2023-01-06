@@ -2,13 +2,15 @@
   width: 299px;
 }
 
-.main-locations .locations-header {
+.locations-header {
+  display: flex;
   border-bottom: 2px solid #fff;
   font-weight: 600;
     font-size: 24px;
+    height: 80px;
 }
 
 .text-locations {
   display: inline-block;
-  margin-top: auto;
+  margin: auto 22px;
 }

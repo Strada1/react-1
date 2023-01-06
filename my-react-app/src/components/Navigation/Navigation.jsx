@@ -1,5 +1,5 @@
 import { NavLink } from "../NavLink/NavLink";
-import './Navigation.css'
+import NavigationCss from './Navigation.module.css'
 
 const Navigation = ({ changeTab, tab }) => {
   const navLinks = [
@@ -8,12 +8,12 @@ const Navigation = ({ changeTab, tab }) => {
     { tabIndex: 3, name: "Forecast" },
   ];
   return (
-    <nav className="tabs-items">
+    <nav className={NavigationCss.tabsItems}>
       {navLinks.map(({name, tabIndex}) => (
         <NavLink
 
           tabName={name}
-          className={ `tabs-item  ${tab === tabIndex && "tabs-item-active "}`}
+          className={tab === tabIndex ? NavigationCss.tabsItemActive : NavigationCss.tabsItem }
           changeTab={changeTab}
           tabIndex={tabIndex}
           key = {tabIndex}

@@ -7,7 +7,7 @@
   
 }
 
-.tabs-item {
+.tabs-item, .tabs-item-active {
   font-size: 18px;
   line-height: 21px;
   text-decoration: none;
@@ -23,15 +23,15 @@
 }
 
 
-.tabs-item:nth-child(1) {
+.tabs-item:nth-child(1), .tabs-item-active:nth-child(1) {
   padding: 0 32px;
   border-right: 2px solid #fff;
 }
-.tabs-item:nth-child(2) {
+.tabs-item:nth-child(2), .tabs-item-active:nth-child(2) {
   padding: 0 23px;
 }
 
-.tabs-item:nth-child(3) {
+.tabs-item:nth-child(3), .tabs-item-active:nth-child(3) {
   padding: 0 12px;
   border-left: 2px solid #fff;
 }

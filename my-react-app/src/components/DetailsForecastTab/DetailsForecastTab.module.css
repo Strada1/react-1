@@ -1,3 +1,20 @@
+.forecast {
+  display: flex;
+  flex-direction: column;
+  height: 345px;
+}
+
+
+.locations-header {
+  display: flex;
+  padding-bottom: 7px;
+  padding-left: 17px;
+  font-size: 36px;
+  line-height: 75px;
+  font-weight: 600;
+  height: 80px;
+}
+
 .details-items {
   list-style-type: none;
   margin: 16px 20px;
@@ -28,4 +45,9 @@
 
 .details-items li:last-child {
   margin: 0 0 20px;
+}
+
+.text-locations {
+  display: inline-block;
+  margin-top: auto;
 }

@@ -1,7 +1,7 @@
 import { ForecastForm } from "../ForecastForm/ForecastForm";
 import { ForecastSection } from "../ForecastSection/ForecastSection";
 import { FavoriteLocations } from "../FavoriteLocations/FavoriteLocations";
-import "./Forecast.css";
+import ForecastCss from "./Forecast.module.css";
 import { nanoid } from "nanoid";
 
 const Forecast = ({
@@ -39,9 +39,9 @@ const Forecast = ({
   };
 
   return (
-    <div className="content">
+    <div className={ForecastCss.content}>
       <ForecastForm />
-      <div className="forecast-container">
+      <div className={ForecastCss.forecastContainer}>
         <ForecastSection
           currentForecast={currentForecast}
           timeLineForecast={timeLineForecast}

@@ -1,5 +1,5 @@
 import { LocationItem } from "../LocationItem/LocationItem";
-import './LocationList.css'
+import LocationListCss from './LocationList.module.css'
 
 const LocationList = ({
   favoriteCities,
@@ -7,7 +7,7 @@ const LocationList = ({
   deleteFavoriteCity,
 }) => {
   return (
-    <ul className="locations-items">
+    <ul className={LocationListCss.locationsItems}>
       {favoriteCities.map(({city, id}) => (
         <LocationItem
           key={id}

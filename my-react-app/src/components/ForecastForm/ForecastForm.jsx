@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { ForecastContext } from "../../js/ForecastContext";
-import "./ForecastForm.css"
+import ForecastFormCss from "./ForecastForm.module.css"
 const defaultValue = "";
 
 const ForecastForm = () => {
@@ -13,7 +13,7 @@ const ForecastForm = () => {
 
   return (
     <form
-      className="forecast-form"
+      className={ForecastFormCss.forecastForm}
       action="post"
       onSubmit={(e) => {
         e.preventDefault();
@@ -28,7 +28,7 @@ const ForecastForm = () => {
         onChange={onChange}
         value={city}
       />
-      <button className="button" type="submit"></button>
+      <button className={ForecastFormCss.button} type="submit"></button>
     </form>
   );
 };

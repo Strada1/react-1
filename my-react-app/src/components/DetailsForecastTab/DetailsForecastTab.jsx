@@ -1,12 +1,12 @@
-import './DetailsForecastTab.css'
+import DetailsForecastTabCss from './DetailsForecastTab.module.css'
 
 const DetailsForecastTab = ({currentForecast})=> {
     return (
-      <div className='forecast' >
-      <div className="locations-header">
-        <p className="text-locations">{currentForecast?.forecastCity || 'City'}</p>
+      <div className={DetailsForecastTabCss.forecast} >
+      <div className={DetailsForecastTabCss.locationsHeader}>
+        <p className={DetailsForecastTabCss.textLocations}>{currentForecast?.forecastCity || 'City'}</p>
       </div>
-      <ul className="details-items">
+      <ul className={DetailsForecastTabCss.detailsItems}>
         <li>
           <img src="./temperature.svg" alt="" />
           <span>{typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}</span>&#176;</li>

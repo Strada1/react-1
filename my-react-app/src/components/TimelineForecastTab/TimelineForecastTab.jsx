@@ -1,14 +1,14 @@
 import { TimeLineItem } from "../TimeLineItem/TimeLineItem";
-import './TimelineForecastTab.css'
+import TimelineForecastTabCss from './TimelineForecastTab.module.css'
 
 const TimelineForecastTab = ({  timeLineForecast, currentForecast }) => {
 
   return (
-    <div className="forecast-table forecast">
-      <div className="locations-header">
-        <p className="text-locations">{currentForecast?.forecastCity || 'City'}</p>
+    <div className={TimelineForecastTabCss.forecastTable}>
+      <div className={TimelineForecastTabCss.locationsHeader}>
+        <p className={TimelineForecastTabCss.textLocations}>{currentForecast?.forecastCity || 'City'}</p>
       </div>
-      <div className="table-items">
+      <div className={TimelineForecastTabCss.tableItems}>
         {timeLineForecast ? (timeLineForecast.map(
           ({ day, month, time, temperature, feelsLike, weather, icon }) => 
           <TimeLineItem

@@ -1,25 +1,25 @@
-import './CurrentForecastTab.css'
+import CurrentForecastTabCss from './CurrentForecastTab.module.css'
 
 const CurrentForecastTab = ({currentForecast, addFavoriteCity, favoriteCities})=> {
 
     return (
-        <div className="forecast" >
-          <div className="degrees">
+        <div className={CurrentForecastTabCss.forecast} >
+          <div className={CurrentForecastTabCss.degrees}>
             <img src="./temperature.svg" alt="" />
-            <p className="degrees-num">{` ${typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}`}</p>
+            <p className={CurrentForecastTabCss.degreesNum}>{` ${typeof currentForecast?.degrees === 'undefined' ? '--' : currentForecast.degrees}`}</p>
             <span>&#176;</span>
           </div>
           <img
-            class="cloud"
+            class={CurrentForecastTabCss.cloud}
             src={currentForecast?.icon ? `http://openweathermap.org/img/wn/${currentForecast.icon}@4x.png`: './cloud.svg'}
             alt="icon of cloud"
             width="90px"
           />
 
-          <div className="forecast-months">
-            <p className="city-name">{currentForecast?.forecastCity || 'City'}</p>
-            <button className='like' onClick = {addFavoriteCity}>
-              <svg className={favoriteCities.find(item => item.city === currentForecast?.forecastCity) ? 'like-active' : ''}
+          <div className={CurrentForecastTabCss.forecastMonths}>
+            <p>{currentForecast?.forecastCity || 'City'}</p>
+            <button className={CurrentForecastTabCss.like} onClick = {addFavoriteCity}>
+              <svg className={favoriteCities.find(item => item.city === currentForecast?.forecastCity) ? CurrentForecastTabCss.likeActive : ''}
                 width="24"
                 height="25"
                 viewBox="0 0 24 25"

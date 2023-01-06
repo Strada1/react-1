@@ -39,6 +39,10 @@
   justify-content: space-between;
 }
 
+.forecast-weather {
+  margin: auto 0 0;
+}
+
 .weather-icon {
   display: flex;
   flex-direction: column;

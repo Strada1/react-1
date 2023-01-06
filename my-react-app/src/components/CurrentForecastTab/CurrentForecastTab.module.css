@@ -1,3 +1,9 @@
+.forecast {
+  display: flex;
+  flex-direction: column;
+  height: 345px;
+}
+
 .degrees-num {
   margin-left: 15px;
 }
@@ -32,4 +38,26 @@
   font-weight: 400;
   font-size: 28px;
   font-weight: 700;
+}
+
+.like {
+  border: none;
+  background-color: transparent;
+  stroke: #fff;
+  fill: #fff;
+}
+
+.like:hover svg {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}
+
+.like:active svg {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}
+
+.like-active {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
 }
