@@ -1,0 +1,17 @@
+.block-info {
+  grid-area: i;
+  border-right: 1px solid black;
+}
+.info {
+  height: 88.5%;
+}
+.info-null {
+  height: 88.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu {
+  height: 11.5%;
+  border-top: 1px solid black;
+}

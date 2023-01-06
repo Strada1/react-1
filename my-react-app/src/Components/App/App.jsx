@@ -1,34 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import useLocalStorage from '../../customHooks/useLocalStorage';
+import SearchCity from '../SearchCity/SearchCity';
+import Information from '../Information/Information';
+import AddedLocations from '../AddedLocations/AddedLocations';
+import sendWeatherRequest from '../../additional/sendWeatherRequest';
+import {
+  SERVER_URL_WEATHER,
+  SERVER_URL_FORECAST,
+  API_KEY,
+} from '../../additional/const';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [city, setCity] = useState('');
+  const [forecast, setForecast] = useState('');
+  const [cityWeatherInfo, setCityWeatherInfo] = useState(null);
+  const [selectedCities, setSelectedCities] = useLocalStorage(
+    [],
+    'selectedCities'
+  );
+  const deleteSelectedCity = (id) => {
+    const copySelectedCities = [...selectedCities];
+    const newSelectedCities = copySelectedCities.filter(
+      (selectedCity) => selectedCity.id !== id
+    );
+    setSelectedCities(newSelectedCities);
+  };
+  useEffect(() => {
+    async function fetchDataWeather() {
+      if (city !== '') {
+        const responseJSON = await sendWeatherRequest(
+          SERVER_URL_WEATHER,
+          API_KEY,
+          city
+        );
+        setCityWeatherInfo(responseJSON);
+      }
+    }
+    async function fetchDataForecast() {
+      if (city !== '') {
+        const responseJSON = await sendWeatherRequest(
+          SERVER_URL_FORECAST,
+          API_KEY,
+          city
+        );
+        setForecast(responseJSON);
+      }
+    }
+    fetchDataWeather();
+    fetchDataForecast();
+  }, [city]);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="wrapper">
+      <div className="block-wrapper">
+        <div className="block">
+          <SearchCity setCity={setCity} />
+          <Information
+            cityWeatherInfo={cityWeatherInfo}
+            forecast={forecast}
+            setSelectedCities={setSelectedCities}
+            selectedCities={selectedCities}
+          />
+          <AddedLocations
+            selectedCities={selectedCities}
+            deleteSelectedCity={deleteSelectedCity}
+            setCity={setCity}
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

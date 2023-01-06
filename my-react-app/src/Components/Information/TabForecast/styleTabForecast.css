@@ -1,0 +1,8 @@
+.tabForecast {
+  max-height: 345px;
+  overflow: scroll;
+}
+.tabForecast__city-name {
+  font-size: 24px;
+  margin: 20px 0 10px 18px;
+}

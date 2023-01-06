@@ -1,0 +1,30 @@
+.search-section {
+  grid-area: s;
+  border-bottom: 1px solid black;
+}
+.search-form {
+  display: flex;
+  justify-content: space-around;
+  max-height: 100%;
+  align-items: center;
+}
+.form__input {
+  width: 475px;
+  height: 43px;
+  border: none;
+  outline: none;
+  font-size: 22px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.form__input::placeholder {
+  font-size: 22px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.form__button {
+  width: 22px;
+  height: 22px;
+  background-image: url(../../img/magnify.png);
+  background-repeat: no-repeat;
+  background-color: white;
+  border: none;
+}

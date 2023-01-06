@@ -1,0 +1,15 @@
+.tabDetails {
+  width: 100%;
+  height: 100%;
+}
+.tabDetails__city {
+  padding: 33px 0 0 17px;
+  font-size: 24px;
+}
+.tabDetails__block-info {
+  margin: 30px 0 0 17px;
+}
+.tabDetails__element {
+  font-size: 24px;
+  padding-top: 7px;
+}

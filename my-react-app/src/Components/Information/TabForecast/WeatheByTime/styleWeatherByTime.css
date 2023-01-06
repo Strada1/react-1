@@ -1,0 +1,38 @@
+.weatherByTime {
+  width: 265px;
+  height: 120px;
+  margin: 0 0 10px 18px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 22% 1fr 23% 23%;
+  grid-template-areas: 'a a b b' 'o o o o' 'c c c d' 'e e e f';
+}
+.weatherByTime__date {
+  grid-area: a;
+  font-size: 18px;
+  justify-self: center;
+}
+.weatherByTime__time {
+  grid-area: b;
+  font-size: 18px;
+  justify-self: center;
+}
+.weatherByTime__temp {
+  grid-area: c;
+  padding-left: 5px;
+}
+.weatherByTime__feels_like {
+  grid-area: e;
+  padding-left: 5px;
+}
+.weatherByTime__conditions__main {
+  grid-area: d;
+  justify-self: center;
+}
+.weatherByTime__conditions__img {
+  grid-area: f;
+  width: 31px;
+  height: 31px;
+  justify-self: center;
+}
