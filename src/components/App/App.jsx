@@ -6,13 +6,14 @@ import FavoriteCities from '../FavoriteCities/FavoriteCities';
 import Tabs from '../Tabs/Tabs';
 import Details from '../Details/Details';
 import ForecastList from '../ForecastList/ForecastList';
-import WeatherRequests from '../../services/requests';
 import Template from '../Template/Template';
+import useRequests from '../../hooks/useRequest';
+import Error from '../Error/Error';
 
 const defaultActiveTab = 'tab-1';
 
 function App() {
-  const weatherRequests = new WeatherRequests();
+  const { getCityForecast, getCityWeather, error, setError } = useRequests();
 
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
   const [nowDetailsData, SetNowDetailsData] = useState(null);
@@ -22,16 +23,10 @@ function App() {
   const onChangeTabs = (event) => {
     setActiveTab(event.target.id);
   };
-  // todo: добавить попап для ошибок
   const onRequest = (searchCity) => {
-    weatherRequests
-      .getCityWeather(searchCity)
-      .then((res) => SetNowDetailsData(res))
-      .catch((error) => console.log(error));
-    weatherRequests
-      .getCityForecast(searchCity)
-      .then((res) => SetForecastData(res))
-      .catch((error) => console.log(error));
+    setError(false);
+    getCityWeather(searchCity).then((res) => SetNowDetailsData(res));
+    getCityForecast(searchCity).then((res) => SetForecastData(res));
   };
 
   const addFavoriteCities = (nameCity) => {
@@ -45,11 +40,11 @@ function App() {
 
   let content = <Template />;
 
-  if (nowDetailsData && activeTab === 'tab-2') {
+  if (!error && nowDetailsData && activeTab === 'tab-2') {
     content = <Details cityWeather={nowDetailsData} />;
-  } else if (forecastData && activeTab === 'tab-3') {
+  } else if (!error && forecastData && activeTab === 'tab-3') {
     content = <ForecastList cityWeather={forecastData} />;
-  } else if (nowDetailsData && activeTab === 'tab-1') {
+  } else if (!error && nowDetailsData && activeTab === 'tab-1') {
     content = (
       <Now
         deleteFavoriteCities={deleteFavoriteCities}
@@ -59,7 +54,7 @@ function App() {
       />
     );
   } else {
-    content = <Template />;
+    content = error ? <Error /> : <Template />;
   }
 
   return (
@@ -68,6 +63,7 @@ function App() {
       <div className='weather__body'>
         <div className='weather__tabs'>
           <div className='tabs-content'>{content}</div>
+
           <Tabs onChangeTabs={onChangeTabs} activeTab={activeTab} />
         </div>
         <FavoriteCities

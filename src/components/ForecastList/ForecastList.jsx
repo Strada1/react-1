@@ -5,7 +5,6 @@ import ForecastItem from '../ForecastItem/ForecastItem';
 
 function ForecastList(props) {
   const { cityWeather } = props;
-  console.log(cityWeather);
   const content = cityWeather.map((item) => (
     <ForecastItem
       key={item.timeDifference.day + item.timeDifference.hours}
