@@ -1,7 +1,11 @@
 import style from "./Forecast.module.css"
 import Content from "./Content.jsx";
+import {useContext} from "react";
+import {MyContextWeather} from "../../../JS/myContextLocation.js";
 
-const Forecast = ({setDataForecast, dataForecast}) => {
+function Forecast() {
+    const {dataForecast} = useContext(MyContextWeather)
+
     if (!dataForecast) {
         return "НЕТ ДЫННЫХ"
     }
@@ -11,9 +15,8 @@ const Forecast = ({setDataForecast, dataForecast}) => {
             <div className={style.Wrapper}>
                 {dataForecast.list.map((item, index) => <Content key={index} item={item}/> )}
             </div>
-
         </div>
     );
-};
+}
 
 export default Forecast;

@@ -17,11 +17,11 @@ const tabItems = [
 ];
 
 
-const Footer = ({setActive}) => {
+function Footer({setActive}) {
     return (
         <footer>
             <div className={style.TabItems}>
-                {tabItems.map(({id, icon, title}) =>
+                {tabItems.map(({id, title}) =>
                     <Button
                     setActive={setActive}
                     key={id}
@@ -29,6 +29,6 @@ const Footer = ({setActive}) => {
             </div>
         </footer>
     );
-};
+}
 
 export default Footer;

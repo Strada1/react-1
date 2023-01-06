@@ -1,6 +1,9 @@
 import style from "./Details.module.css";
+import {useContext} from "react";
+import {MyContextWeather} from "../../../JS/myContextLocation.js";
 
-const Details = ({data}) => {
+function Details() {
+    const {data} = useContext(MyContextWeather)
     if (!data) {
         return 'Нет данных...';
     }
@@ -24,6 +27,6 @@ const Details = ({data}) => {
             <p>Sunset: {detailsData.sunset}</p>
         </div>
     );
-};
+}
 
 export default Details;

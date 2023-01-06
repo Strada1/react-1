@@ -1,8 +1,10 @@
 const SERVER = {
     url: 'http://api.openweathermap.org/data/2.5/',
-    apiKey: '45876c3eba84aaa58c57239678e80439',
+    imgUrl : `http://openweathermap.org/img/wn/`,
+    apiKey: '06291dc6ae309f27a9d786ae6c788fd2',
     metric: `&units=metric`,
 }
+
 const URL_TYPE = {
     weather: "weather",
     forecast: "forecast",
@@ -22,9 +24,9 @@ async function getData(url, cityName) {
         const resolve = await response.json();
         return resolve;
     } catch (error) {
-        alert(error.message);
+        console.dir(error.message);
     }
 }
 
 
-export {getData, URL_TYPE}
+export {getData, URL_TYPE,SERVER}

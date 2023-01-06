@@ -1,31 +1,42 @@
 import React from 'react';
-import style from "./Forecast.module.css";
 import {format} from "date-fns";
+import style from "./Forecast.module.css";
+import {SERVER} from "../../../JS/getData.js";
 
-const Content = ({item}) => {
+function Content({item}) {
+    if (!item) {
+        return;
+    }
 
-    const serverImgUrl = `http://openweathermap.org/img/wn/`;
-
-    const  src = `${serverImgUrl}${item.weather[0]['icon']}.png`
+    const forecastData = {
+        date: {
+            month: format(new Date(item.dt_txt), "d MMM"),
+            time: format(new Date(item.dt_txt), "hh:mm"),
+        },
+        temperature: Math.round(item.main.temp),
+        feelsLike: Math.round(item.main.feels_like),
+        text: item.weather[0].main,
+        img: `${SERVER.imgUrl}${item.weather[0].icon}.png`,
+    }
 
     return (
         <div className={style.Content}>
             <div className={style.Header}>
-                <span>{format(new Date(item.dt_txt), "d MMM")}</span>
-                <span>{format(new Date(item.dt_txt), "hh:mm")}</span>
+                <span>{forecastData.date.month}</span>
+                <span>{forecastData.date.time}</span>
             </div>
             <div className={style.Data}>
                 <div className={style.Temp}>
-                    <span>Temperature: {Math.round(item.main.temp)}°</span>
-                    <span>Feels like: {Math.round(item.main.feels_like)}°</span>
+                    <span>Temperature: {forecastData.temperature}°</span>
+                    <span>Feels like: {forecastData.feelsLike}°</span>
                 </div>
                 <div className={style.Temp}>
-                    <span>{item.weather[0].main}</span>
-                    <img className={style.Img} src={src} alt=""/>
+                    <span>{forecastData.text}</span>
+                    <img className={style.Img} src={forecastData.img} alt=""/>
                 </div>
             </div>
         </div>
     );
-};
+}
 
 export default Content;

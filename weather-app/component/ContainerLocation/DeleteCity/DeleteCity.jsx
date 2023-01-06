@@ -1,36 +1,30 @@
-import style from "../ContainerLocation.module.css";
-import {getStorage, setStorage, STORAGE_KEY} from "../../../JS/localStorage.js";
+import {getStorage, STORAGE_KEY} from "../../../JS/localStorage.js";
+import City from "../City.jsx";
+import {useContext} from "react";
+import {MyContextLocation} from "../../../JS/myContextLocation.js";
 
-// TODO: НУЖНО ВЫНЕСТИ В ОТДЕЛЬНЫЙ КОМПОНЕНТ
-function City({city, deleteFavorite}) {
-    return (
-        <div className={style.Name}>
-            <button className={style.CityName}>{city}</button>
-            <button onClick={() => deleteFavorite(city)} className={style.Delete}></button>
-        </div>
-    );
-}
 
-const DeleteCity = ({favoriteCities, setFavoriteCities}) => {
+function DeleteCity() {
+const {favoriteCities, setFavoriteCities} = useContext(MyContextLocation)
 
     const cities = getStorage(STORAGE_KEY)
-    if (!cities.length) {
+    if (!cities) {
         return "Нет избранных городов"
     }
 
-    function deleteFavorite(city) {
-        const newFavoriteCities = favoriteCities.filter((item) => item !== city)
+    function deleteFavorite(id) {
+        const newFavoriteCities = favoriteCities.filter((item) => item.id !== id)
         localStorage.setItem(STORAGE_KEY, JSON.stringify([...newFavoriteCities]))
         const cities = getStorage(STORAGE_KEY)
         setFavoriteCities(cities);
+        console.log(cities)
     }
 
-    // TODO: ИСПРАВИТЬ KEY
     return (
         <div>
-            {cities.map((city, index) => <City key={index} city={city} deleteFavorite={deleteFavorite}/>)}
+            {cities.map(({name, id}) => <City key={id} city={name} id={id} deleteFavorite={deleteFavorite}/>)}
         </div>
     );
-};
+}
 
 export default DeleteCity;

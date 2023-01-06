@@ -1,11 +1,11 @@
+import {useState} from "react";
 import style from "./ContainerWeather.module.css";
 import Now from "./Now/Now.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Details from "./Details/Details.jsx";
 import Forecast from "./Forecast/Forecast.jsx";
-import {useState} from "react";
 
-const ContainerWeather = ({data, setFavoriteCities, setDataForecast, dataForecast, favoriteCities}) => {
+function ContainerWeather({dataForecast}) {
     const [active, setActive] = useState({
         now: true,
         details: false,
@@ -14,12 +14,12 @@ const ContainerWeather = ({data, setFavoriteCities, setDataForecast, dataForecas
 
     return (
         <section className={style.Content}>
-            {active.now && <Now favoriteCities={favoriteCities} setFavoriteCities={setFavoriteCities} data={data}/>}
-            {active.details && <Details data={data}/>}
-            {active.forecast && <Forecast setDataForecast={setDataForecast} dataForecast={dataForecast}/>}
+            {active.now && <Now/>}
+            {active.details && <Details/>}
+            {active.forecast && <Forecast/>}
             <Footer setActive={setActive}/>
         </section>
     );
-};
+}
 
 export default ContainerWeather;

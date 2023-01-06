@@ -1,20 +1,24 @@
+import {nanoid} from 'nanoid'
 import style from "./Now.module.css";
 import {getStorage, setStorage, STORAGE_KEY} from "../../../JS/localStorage.js";
+import {SERVER} from "../../../JS/getData.js";
+import {useContext} from "react";
+import {MyContextWeather} from "../../../JS/myContextLocation.js";
 
-const Now = ({data, setFavoriteCities, favoriteCities}) => {
+function Now() {
+    const {data, setFavoriteCities} = useContext(MyContextWeather)
     if (!data) {
         return 'Нет данных...';
     }
-    const serverImgUrl = `http://openweathermap.org/img/wn/`;
 
-    const nowData = {
+    const dataNow = {
         cityName: data.name,
         degrees: data.main.temp.toFixed(0),
-        src: `${serverImgUrl}${data.weather[0]['icon']}@2x.png`,
+        src: `${SERVER.imgUrl}${data.weather[0].icon}@2x.png`,
     }
 
     function saveFavoriteCity() {
-        setStorage(nowData.cityName)
+        setStorage({name: dataNow.cityName, id: nanoid()})
         const cities = getStorage(STORAGE_KEY)
         setFavoriteCities(cities);
     }
@@ -22,16 +26,15 @@ const Now = ({data, setFavoriteCities, favoriteCities}) => {
     return (
         <div className={style.Content}>
             <h2 className={style.Degrees}>
-                <span>{nowData.degrees}°</span>
+                <span>{dataNow.degrees}°</span>
             </h2>
-            <img src={nowData.src}/>
+            <img src={dataNow.src}/>
             <div className={style.NowFooter}>
-                <p>{nowData.cityName}</p>
-                <button onClick={() => saveFavoriteCity()} className={style.Like}>
-                </button>
+                <p>{dataNow.cityName}</p>
+                <button onClick={() => saveFavoriteCity()} className={style.Like}/>
             </div>
         </div>
     );
-};
-//
+}
+
 export default Now;

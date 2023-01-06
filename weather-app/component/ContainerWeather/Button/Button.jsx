@@ -4,7 +4,7 @@ const name = {
     now: 'Now', details: 'Details', forecast: 'Forecast',
 }
 
-const Button = ({title, setActive}) => {
+function Button({title, setActive}) {
     function setActiveTab(nameTab) {
         if (nameTab === name.now) {
             setActive({now: true})
@@ -25,6 +25,6 @@ const Button = ({title, setActive}) => {
     return (<button onClick={() => {
         setActiveTab(title)
     }} className={style.FooterButton}>{title}</button>);
-};
+}
 
 export default Button;
