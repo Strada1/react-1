@@ -1,0 +1,48 @@
+.tab__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align-last: left;
+  padding: 20px;
+  height: 306px;
+  width: 257px;
+}
+
+.tab__image {
+  margin: 0 auto;
+  width: 80px;
+}
+
+.tab__block-top {
+  text-align-last: left;
+  font-size: 70px;
+  line-height: 82px;
+}
+
+.tab__block-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab__block-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.tab__block-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.tab__block-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.tab__block-button--active path {
+  stroke: #CF0505;
+}

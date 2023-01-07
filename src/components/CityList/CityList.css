@@ -1,0 +1,11 @@
+.weather__block-header {
+  padding: 10px 20px 10px 20px;
+  border-bottom: 1px solid #000;
+}
+
+.weather__block-list {
+  height: 298px;
+  list-style: none;
+  padding: 20px;
+  overflow-y: auto;
+}

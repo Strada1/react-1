@@ -1,0 +1,21 @@
+.weather {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 600px;
+  height: 435px;
+}
+
+.weather__bottom {
+  width: 600px;
+  display: flex;
+}
+
+.weather__block {
+  width: 100%;
+  border: 1px solid #000;
+  border-top: none;
+}
+
+.weather__block+.weather__block {
+  border-left: none;
+}

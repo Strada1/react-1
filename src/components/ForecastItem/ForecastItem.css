@@ -1,0 +1,26 @@
+.forecast__item {
+  padding: 10px;
+  width: 235px;
+  border: 1px solid #000;
+  font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.forecast__item+.forecast__item{
+  margin-top: 10px;
+}
+
+.forecast__item-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast__item-section+.forecast__item-section{
+  margin-top: 30px;
+}
+
+.forecast__item-img{
+  width: 50px;
+  height: 50px;
+}
