@@ -1,0 +1,14 @@
+.forecast {
+	height: 100%;
+	padding: 33px 18px;
+	height: 345px;
+	overflow: auto;
+}
+
+.forecast__city {
+	margin: 0;
+	margin-bottom: 7px;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+}

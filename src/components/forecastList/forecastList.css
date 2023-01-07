@@ -1,0 +1,42 @@
+.forecast-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.forecast-item {
+	border: 1px solid #000;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+	padding: 6px 8px;
+	margin-bottom: 9px;
+}
+
+.forecast-item:last-child {
+	margin-bottom: 0;
+}
+
+.forecast-item__box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin-bottom: 38px;
+}
+
+.forecast-item__box:last-child {
+	margin-bottom: 0;
+}
+
+.forecast-item__icon {
+	width: 31px;
+	display: flex;
+	margin: auto;
+}
+
+.forecast-item__icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
