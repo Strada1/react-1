@@ -2,9 +2,6 @@ import style from "./Footer.module.css";
 import Button from "../Button/Button.jsx";
 import {tabItems} from "./constTabName.js";
 
-
-
-
 function Footer({setActive}) {
     return (
         <footer>

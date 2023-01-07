@@ -12,6 +12,7 @@ function getStorage() {
 
 function setStorage(cityName) {
     try {
+        // TODO: Сделать проверку на сущ-ий город в localStorage
         // const cities = new Set();
         // cities.add(cityName)
         const stringValue = JSON.stringify([...cityName])

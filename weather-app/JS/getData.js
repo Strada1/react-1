@@ -24,7 +24,7 @@ async function getData(url, cityName) {
         const resolve = await response.json();
         return resolve;
     } catch (error) {
-        console.dir(error.message);
+        console.error(error);
     }
 }
 

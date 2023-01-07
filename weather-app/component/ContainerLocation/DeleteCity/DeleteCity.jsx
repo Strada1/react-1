@@ -19,9 +19,9 @@ function DeleteCity() {
         setFavoriteCities(newFavoriteCities );
     }
 
-    const storageCity = getStorage(STORAGE_KEY)
+    //const storageCity = getStorage(STORAGE_KEY)
     // TODO:  тут все асинхронно не пойму от куда рендерить из useState или  Storage ?
-    //  мб не нужно использовать storageCity для рендера ?
+    //  мб не нужно использовать данные из storageCity для рендера ?
     //  Или тут нужно использовать useContext для рендера ?
 
     return (

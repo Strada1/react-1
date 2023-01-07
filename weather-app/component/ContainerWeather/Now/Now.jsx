@@ -28,7 +28,6 @@ function Now() {
         //      -> value = getStorage ()  -> setFavoriteCities(value) ?
         //
         setFavoriteCities([{name: dataNow.cityName, id: nanoid()}, ...favoriteCities]);
-
     }
 
     return (
