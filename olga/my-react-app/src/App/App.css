@@ -1,0 +1,32 @@
+#root {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+}
+.weather__wrapper {
+  max-width: 39rem;
+  margin: 0 auto;
+  padding: 12px;
+  border: 1px solid #e5e5e5;
+}
+.weather__inner {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid #000;
+}
+.weather__items--container {
+  display: grid;
+  border-right: 1px solid #000;
+}
+.weather__item--main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
