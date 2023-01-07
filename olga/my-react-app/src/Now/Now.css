@@ -1,0 +1,13 @@
+#now .temperature {
+  font-size: 70px;
+}
+.weather__item-town {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10rem;
+  width: 100%;
+}
+#now .weather__item--name {
+  font-size: 24px;
+}
