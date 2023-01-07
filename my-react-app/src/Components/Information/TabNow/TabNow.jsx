@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import generateId from '../../../additional/generateId';
 import listHasThisCity from '../../../additional/listHasThisCity';
 import './styleTabNow.css';
+import selectedCityContext from '../../App/selectedCityContext';
 
 function TabNow(props) {
-  const { cityWeatherInfo, selectedCities, setSelectedCities } = props;
+  const value = useContext(selectedCityContext);
+  const { cityWeatherInfo, setSelectedCities } = props;
   const {
     main: { temp },
     name: nameCity,
@@ -13,20 +15,20 @@ function TabNow(props) {
   const { icon } = weather[0];
   const srcIcon = `http://openweathermap.org/img/wn/${icon}@4x.png`;
   const handleChangeSelected = () => {
-    if (listHasThisCity(selectedCities, nameCity)) {
-      const copySelectedCities = [...selectedCities];
+    if (listHasThisCity(value.selectedCities, nameCity)) {
+      const copySelectedCities = [...value.selectedCities];
       const newSelectedCities = copySelectedCities.filter(
         (selectedCity) => selectedCity.nameCity !== nameCity
       );
       setSelectedCities(newSelectedCities);
     } else {
       setSelectedCities([
-        ...selectedCities,
-        { nameCity, id: generateId(selectedCities) },
+        ...value.selectedCities,
+        { nameCity, id: generateId(value.selectedCities) },
       ]);
     }
   };
-  const likeButtonClass = listHasThisCity(selectedCities, nameCity)
+  const likeButtonClass = listHasThisCity(value.selectedCities, nameCity)
     ? 'tabNow__btn_liked'
     : '';
 

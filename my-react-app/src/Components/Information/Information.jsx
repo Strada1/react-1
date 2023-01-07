@@ -6,8 +6,7 @@ import TabForecast from './TabForecast/TabForecast';
 import './styleInformation.css';
 
 function Information(props) {
-  const { cityWeatherInfo, forecast, selectedCities, setSelectedCities } =
-    props;
+  const { cityWeatherInfo, forecast, setSelectedCities } = props;
   const [activeButton, setActiveButton] = useState('1');
   return (
     <div className="block-info">
@@ -20,7 +19,6 @@ function Information(props) {
                   <TabNow
                     cityWeatherInfo={cityWeatherInfo}
                     setSelectedCities={setSelectedCities}
-                    selectedCities={selectedCities}
                   />
                 );
               case '2':

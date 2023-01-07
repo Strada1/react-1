@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import selectedCityContext from './selectedCityContext';
 import useLocalStorage from '../../customHooks/useLocalStorage';
 import SearchCity from '../SearchCity/SearchCity';
 import Information from '../Information/Information';
@@ -50,24 +51,26 @@ function App() {
     fetchDataWeather();
     fetchDataForecast();
   }, [city]);
-
+  const contextValue = {
+    selectedCities,
+  };
   return (
     <div className="wrapper">
       <div className="block-wrapper">
-        <div className="block">
-          <SearchCity setCity={setCity} />
-          <Information
-            cityWeatherInfo={cityWeatherInfo}
-            forecast={forecast}
-            setSelectedCities={setSelectedCities}
-            selectedCities={selectedCities}
-          />
-          <AddedLocations
-            selectedCities={selectedCities}
-            deleteSelectedCity={deleteSelectedCity}
-            setCity={setCity}
-          />
-        </div>
+        <selectedCityContext.Provider value={contextValue}>
+          <div className="block">
+            <SearchCity setCity={setCity} />
+            <Information
+              cityWeatherInfo={cityWeatherInfo}
+              forecast={forecast}
+              setSelectedCities={setSelectedCities}
+            />
+            <AddedLocations
+              deleteSelectedCity={deleteSelectedCity}
+              setCity={setCity}
+            />
+          </div>
+        </selectedCityContext.Provider>
       </div>
     </div>
   );

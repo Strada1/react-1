@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ChosenCity from './ChosenCity/ChosenCity';
 import './styleAddedLocations.css';
+import selectedCityContext from '../App/selectedCityContext';
 
 function AddedLocations(props) {
-  const { selectedCities, deleteSelectedCity, setCity } = props;
-  const displayChosenCities = selectedCities.map((obj) => (
+  const value = useContext(selectedCityContext);
+  const { deleteSelectedCity, setCity } = props;
+  const displayChosenCities = value.selectedCities.map((obj) => (
     <ChosenCity
       data={obj}
       key={obj.id}
