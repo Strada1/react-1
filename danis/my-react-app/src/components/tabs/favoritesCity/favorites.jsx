@@ -5,7 +5,7 @@ import FavoriteCity from "./favoriteCity/favoriteCity";
 export default function Favorites(props) {
   const items = JSON.parse(localStorage.getItem("favoriteCity"));
 
-  const { setFavoriteCity, favoriteCity, setdataWeather, setFuture } = props;
+  const { setFavoriteCity, favoriteCity } = props;
 
   return (
     <div className="favorits-container">
@@ -20,8 +20,6 @@ export default function Favorites(props) {
               cityItem={item}
               setFavoriteCity={setFavoriteCity}
               favoriteCity={favoriteCity}
-              setdataWeather={setdataWeather}
-              setFuture={setFuture}
             />
           ))}
       </div>

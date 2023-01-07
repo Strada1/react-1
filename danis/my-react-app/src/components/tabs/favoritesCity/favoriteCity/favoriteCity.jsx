@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./favoriteCity.css";
-import { localstorageCity, serverUrl, forecastURL, apiKey } from "../../../../js/consts";
+import {
+  localstorageCity,
+  serverUrl,
+  forecastURL,
+  apiKey,
+} from "../../../../js/consts";
 import { getData } from "../../../../js/getData";
 import { getForecast } from "../../../../js/getForecast";
+import { WeatherContext } from "../../../../js/context";
 
 export default function FavoriteCity(props) {
-  const { setFavoriteCity, favoriteCity, cityItem, setdataWeather, setFuture } = props;
+  const { setFavoriteCity, favoriteCity, cityItem } = props;
+
+  const { setdataWeather, setFuture } = useContext(WeatherContext);
 
   function deleteCity(value) {
     const result = new Set(favoriteCity);
-    result.delete(value)
-    localStorage.setItem(localstorageCity, JSON.stringify(Array.from(result))); 
+    result.delete(value);
+    localStorage.setItem(localstorageCity, JSON.stringify(Array.from(result)));
     setFavoriteCity(Array.from(result));
   }
 
   function changeCity() {
-    getFirstData(cityItem)
+    getFirstData(cityItem);
   }
 
   async function getFirstData(city) {
@@ -28,7 +36,6 @@ export default function FavoriteCity(props) {
     const forecast = await getForecast(urlsForecast);
     setFuture(forecast);
   }
-  
 
   return (
     <div>

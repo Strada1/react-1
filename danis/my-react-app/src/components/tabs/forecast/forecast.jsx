@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./forecst.css";
+import { WeatherContext } from "../../../js/context";
 
-export default function Forecast({ className, future, cityItem }) {
- 
+export default function Forecast({ className, cityItem }) {
+  const { future } = useContext(WeatherContext);
+
   if (!future) return;
 
   const result = future.map((item) => (

@@ -6,7 +6,7 @@ import "./tabs.css";
 import Favorites from "./favoritesCity";
 
 export default function Tabs(props) {
-  const { dataWeather, future, display, setFavoriteCity, favoriteCity, setdataWeather, setFuture } = props;
+  const { dataWeather, display, setFavoriteCity, favoriteCity } = props;
 
   if (!dataWeather) return;
 
@@ -29,7 +29,6 @@ export default function Tabs(props) {
       {
         <Forecast
           className={display === "tab-3" ? "tabs-active" : "tab"}
-          future={future}
           cityItem={dataWeather.name}
         />
       }
@@ -38,8 +37,6 @@ export default function Tabs(props) {
           setFavoriteCity={setFavoriteCity}
           favoriteCity={favoriteCity}
           cityItem={dataWeather.name}
-          setdataWeather={setdataWeather}
-          setFuture={setFuture}
         />
       </div>
     </div>

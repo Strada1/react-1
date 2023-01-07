@@ -3,6 +3,7 @@ import Search from "./components/search";
 import Tabs from "./components/tabs/tabs";
 import "./app.css";
 import { localstorageCity } from "./js/consts";
+import { WeatherContext } from "./js/context.js";
 
 function App() {
   const [dataWeather, setdataWeather] = useState("");
@@ -30,15 +31,14 @@ function App() {
         favoriteCity={favoriteCity}
       />
       <div className="main__block">
-        <Tabs
-          dataWeather={dataWeather}
-          display={display}
-          future={future}
-          setFavoriteCity={setFavoriteCity}
-          favoriteCity={favoriteCity}
-          setdataWeather={setdataWeather}
-          setFuture={setFuture}
-        />
+        <WeatherContext.Provider value={{setdataWeather, setFuture, future}}>
+          <Tabs
+            dataWeather={dataWeather}
+            display={display}
+            setFavoriteCity={setFavoriteCity}
+            favoriteCity={favoriteCity}
+          />
+        </WeatherContext.Provider>
         <div className="left__block-bottom">
           <button onClick={() => displayTab("tab-1")}>Now</button>
           <button onClick={() => displayTab("tab-2")}>Details</button>
