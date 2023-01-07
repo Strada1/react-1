@@ -1,0 +1,27 @@
+.temperature {
+	font-size: 24px;
+	display: inline-block;
+}
+
+.temperature:after {
+	content: "";
+	width: 0.15em;
+	height: 0.15em;
+	border-radius: 50%;
+	border: 0.05em solid #000;
+	display: inline-block;
+	margin-top: 0.2em;
+	vertical-align: top;
+}
+
+.temperature--size-lg {
+	font-weight: 400;
+	font-size: 70px;
+	line-height: 82px;
+}
+
+.temperature--size-sm {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+}

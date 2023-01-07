@@ -1,0 +1,30 @@
+.weather-details {
+	padding: 33px 15px;
+	height: 100%;
+}
+
+.weather-details__city {
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+	margin: 0;
+	margin-bottom: 42px;
+}
+
+.weather-details__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.weather-details__item {
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+	margin-bottom: 15px;
+}
+
+.weather-details__item:last-child {
+	margin-bottom: 0;
+}
+

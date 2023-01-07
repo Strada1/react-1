@@ -1,0 +1,36 @@
+.weather-review {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 20px 17px;
+}
+
+.weather-review .temperature {
+	margin-bottom: 40px;
+}
+
+.weather-review__icon {
+	width: 78px;
+	height: 59px;
+	margin: 0 auto;
+}
+
+.weather-review__icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.weather-review__box {
+	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.weather-review__city {
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+}

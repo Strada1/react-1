@@ -1,0 +1,41 @@
+.tabs {
+	height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.tabs__item {
+	display: none;
+	height: 100%;
+}
+
+.tabs__item--active {
+	display: block;
+}
+
+.tabs__controls {
+	display: flex;
+}
+
+.tabs__button {
+	cursor: pointer;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+	font-family: inherit;
+	background-color: transparent;
+	border: 1px solid #000;
+	flex: 1;
+	padding: 12px 8px;
+	border-left: none;
+	border-bottom: none;
+}
+
+.tabs__button:last-child {
+	border-right: none;
+}
+
+.tabs__button--active {
+	background-color: #000;
+	color: #fff;
+}
