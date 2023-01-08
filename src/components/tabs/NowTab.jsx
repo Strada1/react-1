@@ -3,25 +3,27 @@ import React from 'react';
 import cloudIcon from '../../assets/img/cloud.png';
 import { CurrentCityContext } from '../../App';
 
-export default function NowTab({ currentCity, addToFavoriteCity }) {
+export default function NowTab({ addToFavoriteCity }) {
 	return (
 		<CurrentCityContext.Consumer>
-			{value => (
+			{currentCity => (
 				<div className="main_weather__city-now ">
-					<h1 className="temperature">{value !== undefined ? value.main.temp + '°C' : '12°C'}</h1>
+					<h1 className="temperature">
+						{currentCity !== undefined ? currentCity.main.temp + '°C' : '12°C'}
+					</h1>
 					<div className="image_cloud">
 						<img
 							className="cloud"
 							src={
-								value !== undefined
-									? 'http://openweathermap.org/img/wn/' + value.weather[0].icon + '@2x.png'
+								currentCity !== undefined
+									? 'http://openweathermap.org/img/wn/' + currentCity.weather[0].icon + '@2x.png'
 									: cloudIcon
 							}
 							alt="Cloud"
 						/>
 					</div>
 					<div className="favorite">
-						<p className="name_city">{value !== undefined ? value.name : 'Sochi'}</p>
+						<p className="name_city">{currentCity !== undefined ? currentCity.name : 'Sochi'}</p>
 						<svg
 							onClick={addToFavoriteCity}
 							className="favorite_btn"

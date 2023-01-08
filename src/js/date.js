@@ -39,11 +39,7 @@ export function getConvertDate(time) {
 
 	let month = convertTime.getMonth();
 
-	if (month < 10) {
-		month = '0' + month;
-	}
-
-	return `${date} ${months[month - 1]}`;
+	return `${date} ${months[month]}`;
 }
 
 export function calcTimeSun(time) {

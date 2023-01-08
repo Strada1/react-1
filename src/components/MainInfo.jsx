@@ -5,7 +5,7 @@ import DetailsTab from './tabs/DetailsTab';
 import ForecastTab from './tabs/ForecastTab';
 import Navigation from './Navigation';
 
-export default function MainInfo({ forecastCity, addToFavoriteCity }) {
+export default function MainInfo({ addToFavoriteCity }) {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const changeTab = tabIndex => {
@@ -18,7 +18,7 @@ export default function MainInfo({ forecastCity, addToFavoriteCity }) {
 		<div className="main_weather">
 			{activeIndex === 0 && <NowTab addToFavoriteCity={addToFavoriteCity} />}
 			{activeIndex === 1 && <DetailsTab />}
-			{activeIndex === 2 && <ForecastTab forecastCity={forecastCity} />}
+			{activeIndex === 2 && <ForecastTab />}
 
 			<Navigation activeIndex={activeIndex} changeTab={changeTab} />
 		</div>

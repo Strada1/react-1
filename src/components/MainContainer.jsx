@@ -12,7 +12,7 @@ export default function MainContainer({
 }) {
 	return (
 		<div className="container">
-			<MainInfo forecastCity={forecastCity} addToFavoriteCity={addToFavoriteCity} />
+			<MainInfo addToFavoriteCity={addToFavoriteCity} />
 			<CityList
 				favoriteCities={favoriteCities}
 				deleteFavoriteCity={deleteFavoriteCity}
