@@ -11,12 +11,14 @@
 	"globals": {
 		"localStorage": true,
 		"fetch": true,
-		"window": true
+		"window": true,
+		"document": true
 	},
 	"rules": {
 		"react/prop-types": "off",
 		"react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
 		"react-hooks/exhaustive-deps": "warn",
-		"no-mixed-spaces-and-tabs": 0
+		"no-mixed-spaces-and-tabs": 0,
+		"react/no-unknown-property": ["<enabled>", { "ignore": " <ignore>" }]
 	}
 }
