@@ -48,5 +48,6 @@ export function getConvertDate(time) {
 
 export function calcTimeSun(time) {
 	const result = new Date(time * 1000);
+
 	return result.toLocaleTimeString();
 }
