@@ -1,0 +1,15 @@
+.search {
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 17px;
+  }
+  .search__input::placeholder {
+    font-size: 18px;
+  }
+  .search__btn {
+    margin-top: 7px;
+    cursor: pointer;
+  }

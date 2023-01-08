@@ -1,0 +1,56 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('components/search/seach.css');
+@import url('components/now/now.css');
+@import url('components/details/details.css');
+@import url('components/forecast/forecast.css');
+@import url('components/navigation/navigation.css');
+@import url('components/listcity/listCity.css');
+
+body {
+  font-family: 'Roboto';
+  font-weight: 400;
+  background-color: #e5e5e5;
+  font-size: 24px;
+  color: #000000;
+}
+.container {
+  margin-top: 232px;
+  max-width: 621px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 462px;
+  background-color: white;
+  padding: 10px 9px 17px 12px;
+}
+.main {
+  min-height: 390px;
+  display: flex;
+  justify-content: space-between;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+.tabs {
+  width: 50%;
+  border-right: 1px solid #000000;
+}
+.tabs__body {
+  min-height: 345px;
+}
+.tabs__block {
+  display: none;
+  position: relative;
+}
+.tabs__block::before {
+  content: '';
+  height: 45px;
+  width: 33.333%;
+  position: absolute;
+  top: 346px;
+}
+.tabs__block:target {
+  display: block;
+}
+
+

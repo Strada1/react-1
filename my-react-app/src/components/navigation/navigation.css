@@ -1,0 +1,22 @@
+.tabs-items {
+    display: flex;
+    border-top: 1px solid #000000;
+}
+.tabs-item {
+  flex: 0 1 33.333%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.tabs-item span {
+  position: relative;
+  z-index: 2;
+}
+.center {
+  position: relative;
+  z-index: 2;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
