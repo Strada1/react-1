@@ -1,0 +1,16 @@
+.details {
+    padding-top: 33px;
+    padding-left: 15px;
+  }
+  .details::before {
+    background-color: rgb(163, 233, 233);
+    left: 33.333%;
+  }
+  .details__city {
+    margin-bottom: 42px;
+  }
+  .details__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }

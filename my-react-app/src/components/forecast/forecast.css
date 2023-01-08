@@ -1,0 +1,41 @@
+.forecast {
+    padding-top: 33px;
+    padding-left: 18px;
+    padding-right: 16px;
+  }
+  .forecast::before {
+    background-color: rgb(163, 233, 233);
+    right: 0;
+  }
+  .forecast__city {
+    margin-bottom: 7px;
+  }
+  .forecast__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+    overflow: auto;
+    height: 276px;
+  }
+  .forecast__item {
+    border: 1px solid #000000;
+    font-size: 18px;
+    padding: 6px 12px 13px 8px;
+  }
+  .forecast__time {
+    display: flex;
+    justify-content: space-between;
+  }
+  .forecast__temperature {
+    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+  }
+  .forecast__icon {
+    margin-top: 47px;
+   
+  }
+  .forecast__weather {
+    display: flex;
+    justify-content: space-between;
+  }

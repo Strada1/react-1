@@ -1,0 +1,41 @@
+.now {
+    position: relative;
+  }
+  .now::before {
+    background-color: rgb(163, 233, 233);
+    left: 0;
+  }
+  .now__icon-img {
+    left: 110px;
+    top: 146px;
+    position: absolute;
+  }
+  .now__icon-img img {
+    width: 78px;
+    height: 59px;
+  }
+  .now__temperature {
+    padding-top: 20px;
+    font-size: 70px;
+    margin-left: 23px;
+    position: relative;
+  }
+  .now__city {
+    margin-top: 197px;
+    margin-left: 17px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+  .now__heart {
+    margin-right: 20px;
+  }
+  .now__heart img {
+    width: 25px;
+    height: 25px;
+  }
+  .now__city-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

@@ -1,0 +1,36 @@
+.locations {
+    width: 50%;
+  }
+  .title {
+    border-bottom: 1px solid #000000;
+    padding-top: 33px;
+    padding-left: 18px;
+    padding-bottom: 7px;
+  }
+  .list {
+    padding-left: 18px;
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    overflow: auto;
+    height: 291px;
+  }
+  .list-item {
+    width: 97%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .locations__delete {
+    color: #807777;
+    font-weight: 100;
+    font-size: 25px;
+    cursor: pointer;
+    padding-right: 10px;
+
+    line-height: 70%;
+    opacity: 0.45;
+    transform: rotate(-45deg);
+  }
