@@ -26,8 +26,10 @@
 .now--icon {
     width: 150px;
     height: 105px;
-    background: url('../../assets/big_cloud_icon.png') no-repeat center;
-    margin: 0 auto;
+    margin: 0 auto 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .now--location {
@@ -50,7 +52,7 @@
 .now-btn::after {
     content: "";
     display: block;
-    width: 22px;
+    width: 23px;
     height: 23px;
     position: absolute;
     right: 0;

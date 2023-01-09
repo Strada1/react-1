@@ -7,7 +7,7 @@
 .weather--screens {
     display: flex;
     flex: 2;
-    margin: 33px 18px 0;
+    margin: 60px 18px 0;
 }
 
 .weather--tabs {

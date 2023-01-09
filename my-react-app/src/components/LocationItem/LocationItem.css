@@ -1,3 +1,12 @@
+.locations--item {
+    margin-bottom: 16px;
+}
+
+.locations--item {
+    cursor: pointer;
+    display: flex;
+}
+
 .locations--text {
     flex: 1;
 }
@@ -9,4 +18,24 @@
     background: transparent;
     border: none;
     cursor: pointer;
+}
+
+.locations-btn::before,
+.locations-btn::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #cccccc;
+    position: absolute;
+    bottom: 10px
+}
+
+.locations-btn::before {
+    transform: rotate(45deg);
+
+}
+
+.locations-btn::after {
+    transform: rotate(-45deg);
 }

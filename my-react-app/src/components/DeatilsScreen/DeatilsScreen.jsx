@@ -1,13 +1,19 @@
 import './DeatilsScreen.css'
 
+import { useContext } from 'react';
+import { CitiesContext } from '../../context';
+import { detailsGetTime } from '../../helpers/helpers';
+
 const DeatilsScreen = () => {
 
+    const currentCity = useContext(CitiesContext);
+
     const details = [
-        { name: 'Temp', value: '0' },
-        { name: 'Feels like', value: '0' },
-        { name: 'Weather', value: 'Clouds' },
-        { name: 'Sunrise', value: '08:32' },
-        { name: 'Sunset', value: '17:35'},
+        { name: 'Temp', value: currentCity.temperature },
+        { name: 'Feels like', value: currentCity.feelsLike },
+        { name: 'Weather', value: currentCity.weather  },
+        { name: 'Sunrise', value: detailsGetTime(currentCity.sunrise) },
+        { name: 'Sunset', value: detailsGetTime(currentCity.sunset)},
     ]
 
     const detailsList = details.map((item, index) => {

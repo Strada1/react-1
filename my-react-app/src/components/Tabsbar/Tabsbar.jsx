@@ -1,32 +1,41 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Tabsbar.css'
 import NowScreen from '../NowScreen/NowScreen';
 import TabButton from '../TabButton/TabButton.jsx';
 import DeatilsScreen from '../DeatilsScreen/DeatilsScreen'
 import ForecastScreen from '../ForecastScreen/ForecastScreen';
 
+import { TABSBAR } from '../../constans/constans';
 
 
-const Tabsbar = () => {
+
+const Tabsbar = ({locationList, setlocationList}) => {
 
     const tabsName = [{
-        name: 'Now',
+        name: TABSBAR.NOW,
         isActive: true,
-        component: <NowScreen  key='0'/>
+        component: <NowScreen
+            key='0'
+            locationList={locationList}
+            setlocationList = {setlocationList}
+        />
     },
     {
-        name: 'Details',
+        name: TABSBAR.DETAILS,
         isActive: false,
-        component: <DeatilsScreen key='1'/>
+        component: <DeatilsScreen key='1' />
     },
     {
-        name: 'Forecast',
+        name: TABSBAR.FORECAST,
         isActive: false,
-        component: <ForecastScreen  key='2'/>
+        component: <ForecastScreen  key='2' />
     }]
 
     const [tabs, setTabs] = useState(tabsName)
-
+    // useEffect(() => {
+    //     setTabs(tabsName)
+    //     console.log('useEffect Tabsbar');
+    // }, [city])
 
     const changeTab = (button) => {
         const newTabs = tabsName.map(tab => {
@@ -46,6 +55,11 @@ const Tabsbar = () => {
         })
        setTabs(newTabs)
     }
+
+    // useEffect(() => {
+    //     setTabs(tabsName)
+    // }, [])
+
 
     return (
         <div className='weather--tabsbar'>
