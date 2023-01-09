@@ -92,10 +92,6 @@ input[type="text"] {
   background-color: #000;
   color: #fff;
 }
-.tabs-item:active {
-  background-color: #000;
-  color: #fff;
-}
 
 .tabs-item-1 {
   padding: 12px 32px;

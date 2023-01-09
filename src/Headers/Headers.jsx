@@ -1,6 +1,7 @@
 import React from "react";
 
 function Headers(props) {
+
   return (
     <form className="forecast-form" onSubmit={props.form}>
       <input type="text" placeholder="city" className="inputForm" onChange={props.input} value={props.value}/>

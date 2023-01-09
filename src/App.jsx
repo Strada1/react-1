@@ -16,7 +16,6 @@ function App() {
   const [weatherForecast, setWeatherForecast] = useState(defaultValue);
   const [city, setCity] = useState(defaultValue);
   const [likedCity, setLikedCity] = useState([]);
-  const [cityAddStatus, setCityAddStatus] = useState(false);
 
   useEffect(() => {
     if (city === defaultValue) {
@@ -31,11 +30,7 @@ function App() {
     }
   }, []);
 
-  function getValue(event) {
-    setInput(event.target.value);
-  }
-
-  function beforeRequest(event) {
+  function defaultForecast(event) {
     event.preventDefault();
     request(input);
   }
@@ -64,7 +59,6 @@ function App() {
     } catch (eror) {
       console.log(eror);
     }
-    setInput(defaultValue);
   }
 
   function weather(item) {
@@ -118,18 +112,19 @@ function App() {
   }
 
   function addCity() {
+    console.log(likedCity);
+    let checkLikedCity;
     likedCity.forEach((item) => {
       if (item.name === city.name) {
-        setCityAddStatus(true);
+        checkLikedCity = true;
       } else {
-        setCityAddStatus(false);
+        checkLikedCity = false;
       }
     });
 
-    if (cityAddStatus) {
+    if (checkLikedCity === true) {
       alert("This city is already in the favorites");
     } else {
-      console.log(likedCity);
       setLikedCity([
         ...likedCity,
         {
@@ -148,7 +143,7 @@ function App() {
   return (
     <div className="container">
       <div className="content">
-        <Headers value={input} input={getValue} form={beforeRequest} />
+        <Headers value={input} input={(event) => {setInput(event.target.value)}} form={defaultForecast} />
         <div className="forecast-container">
           <section className="main-forecast">
             <WeatherNow city={city} addCity={addCity} />
