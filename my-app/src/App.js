@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
 
 const MOUSE_CLICK = "MOUSE_CLICK";
@@ -52,9 +52,8 @@ const App = () => {
   return (
     <div className="container">
       <View label="left" />
-      <View label="right" />
     </div>
   );
 };
 
-export default App;
+export { App, reducer };
