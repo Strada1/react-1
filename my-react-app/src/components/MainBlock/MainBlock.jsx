@@ -11,7 +11,13 @@ const MainBlock = () => {
     const [locationList, setlocationList] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE.FAVOURITE_CITIES)) || null);
 
 
-    // useEffect(() => setlocationList(JSON.parse(localStorage.getItem(LOCAL_STORAGE.FAVOURITE_CITIES)) || null), [])
+    const deleteCity = (id) => {
+        let newLocationList = locationList.filter(elem => elem.id !== id)
+        setlocationList(newLocationList)
+    }
+    useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE.FAVOURITE_CITIES, JSON.stringify(locationList));
+    }, [locationList])
 
     return (
         <div className='weather--main'>
@@ -21,7 +27,8 @@ const MainBlock = () => {
             />
             <Locationsbar
                 locationList={locationList}
-                setlocationList = {setlocationList}
+                setlocationList={setlocationList}
+                deleteCity = {(id) => deleteCity(id)}
             />
         </div>
     )

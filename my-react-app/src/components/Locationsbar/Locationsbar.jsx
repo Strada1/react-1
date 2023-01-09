@@ -1,7 +1,7 @@
 import LocationItem from '../LocationItem/LocationItem'
 import './Locationsbar.css'
 
-const Locationsbar = ({ locationList, setlocationList }) => {
+const Locationsbar = ({ locationList, setlocationList , deleteCity }) => {
 
 
 
@@ -13,7 +13,7 @@ const Locationsbar = ({ locationList, setlocationList }) => {
                 </div>
                 <div className='weather--locations'>
                     <ul className='weather--locationslist'>
-                        {locationList ? locationList.map((item, id) => <LocationItem key={id} name={item.cityName} id={item.id} />) : null}
+                        {locationList ? locationList.map((item, id) => <LocationItem key={id} name={item.cityName} id={item.id} deleteCity={() => deleteCity(item.id)} />) : null}
                     </ul>
                 </div>
             </div>
