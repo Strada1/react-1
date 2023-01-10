@@ -1,0 +1,63 @@
+.forecast {
+  display: flex;
+  flex-direction: column;
+  height: 345px;
+}
+
+.degrees-num {
+  margin-left: 15px;
+}
+
+.degrees {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 44px;
+  line-height: 82px;
+  font-weight: 600;
+}
+
+.degrees img {
+  height: 40px;
+}
+
+.cloud {
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.forecast-months {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 17px;
+  justify-content: space-between;
+  margin-left: 12px;
+  margin-right: 26px;
+  font-weight: 400;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.like {
+  border: none;
+  background-color: transparent;
+  stroke: #fff;
+  fill: #fff;
+}
+
+.like:hover svg {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}
+
+.like:active svg {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}
+
+.like-active {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}

@@ -1,0 +1,11 @@
+.content {
+  width: 600px;
+  height: 435px;
+  border: 2px solid #fff;
+  background: linear-gradient(6.74deg, rgba(149, 214, 252, 0.5) -20.07%, rgba(158, 212, 247, 0.5) 118.01%);
+}
+.forecast-container {
+  display: flex;
+  height: 388px;
+  width: 600px;
+}

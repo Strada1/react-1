@@ -1,0 +1,62 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 256px;
+  height: 130px;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 16px 12px;
+  margin-left: 18px;
+  margin-bottom: 9px;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 134, 207, 0.246) -6.38%,
+    rgba(2, 110, 189, 0.408) 107.1%
+  );
+  border-radius: 10px;
+}
+
+.temperature-img {
+  margin: 0 10px 0 0;
+}
+.temperature-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 0 8px;
+}
+.feels-like, .rain {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.forecast-date:first-child {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.forecast-date,
+.forecast-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast-weather {
+  margin: auto 0 0;
+}
+
+.weather-icon {
+  display: flex;
+  flex-direction: column;
+}
+
+.rain {
+  line-height: 15px;
+  text-align: center;
+}
+
+.forecast-icons {
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 40px;
+  height: auto;
+  margin: 0 auto;
+}

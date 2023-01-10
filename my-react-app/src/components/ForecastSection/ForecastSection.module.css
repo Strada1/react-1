@@ -1,0 +1,10 @@
+.main-forecast {
+  display: flex;
+  flex-direction: column;
+  width: 298px;
+  border-right: 2px solid #fff;
+}
+
+.forecast-weather {
+  margin-top: auto;
+}
