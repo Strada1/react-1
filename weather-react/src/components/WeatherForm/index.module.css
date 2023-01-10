@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.button {
+  min-width: 64px;
+  background-image: url("../../assets/img/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.button:active {
+  opacity: 0.4;
+}
+

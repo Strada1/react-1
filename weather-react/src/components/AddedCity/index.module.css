@@ -1,0 +1,50 @@
+.cityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cityLink {
+  font-size: 24px;
+  color: #3527b6;
+  text-decoration: none;
+}
+
+.cityLink:hover {
+  color: #302683;
+  text-decoration: underline;
+}
+
+.deleteButton {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 2px solid #e04226;
+  border-radius: 50%;
+}
+
+.deleteButton:hover {
+  opacity: 0.6;
+}
+
+.deleteButton:active {
+  opacity: 0.4;
+}
+
+.deleteButton::before,
+.deleteButton::after {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  left: 50%;
+  background-color: #e04226;
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  content: "";
+}
+
+.deleteButton::after {
+  transform: translateX(-50%) rotate(-45deg);
+}

@@ -1,0 +1,36 @@
+.card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 120px;
+  padding: 8px 12px 10px 8px;
+  font-size: 18px;
+  border: 2px solid #57c74b;
+}
+
+.time {
+  justify-self: end;
+}
+
+.temperature {
+  align-self: end;
+}
+
+.temperatureItem {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.weather {
+  align-self: end;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherTitle {
+  align-self: flex-end;
+}
