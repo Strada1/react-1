@@ -1,0 +1,23 @@
+.tab__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align-last: left;
+  padding: 20px;
+  height: 306px;
+  width: 257px;
+}
+
+.tab__block-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.tab__block-list {
+  list-style: none;
+}
+
+.tab__list-item+.tab__list-item {
+  margin-top: 15px;
+}

@@ -1,0 +1,38 @@
+.weather__list-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather__list-item+.weather__list-item {
+  margin-top: 15px;
+}
+
+.weather__list-item-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  transition: all .3s;
+}
+
+.weather__list-item-title:hover {
+  color: #696969;
+}
+
+.weather__list-item-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+}
+
+.weather__list-item-button path {
+  transition: all .3s;
+}
+
+.weather__list-item-button:hover path {
+  fill: #696969;
+}
