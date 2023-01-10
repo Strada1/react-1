@@ -1,3 +1,5 @@
+import { DATE_FORMATE } from '../constans/constans';
+
 export function detailsGetTime(time) {
   let timeInMs = time * 1000;
   let timeInHours =
@@ -10,4 +12,10 @@ export function detailsGetTime(time) {
       : new Date(timeInMs).getMinutes();
   let result = `${timeInHours}:${timeInMinutes}`;
   return result;
+}
+
+export function getCurrentDay(timestamp) {
+  const currentDayRaw = new Date(timestamp);
+  const currentDay = currentDayRaw.toLocaleString('en', DATE_FORMATE);
+  return currentDay;
 }

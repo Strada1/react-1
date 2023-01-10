@@ -1,4 +1,5 @@
 import { API, DEG } from '../constans/constans';
+import { getCurrentDay, detailsGetTime } from '../helpers/helpers';
 
 async function fetchCity(url) {
   let response = await fetch(url);
@@ -26,5 +27,11 @@ export async function fetchWeather(city) {
 
 export async function fethcForecast(city) {
   const url = `${API.SERVER_URL}/forecast/?q=${city}&appid=${API.API_KEY}&units=metric`;
-  fetchCity(url);
+  return fetchCity(url).then((result) => {
+    console.log(result);
+    return {
+      name: result.city.name,
+      list: result.list,
+    };
+  });
 }

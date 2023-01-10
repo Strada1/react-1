@@ -3,13 +3,14 @@ import './App.css'
 import SearchBar from './components/Searchbar/Searchbar'
 import MainBlock from './components/MainBlock/MainBlock'
 
-import  {fetchWeather}  from './fetch/fetch'
+import  {fetchWeather, fethcForecast}  from './fetch/fetch'
 import {  DEFAULT_CITY } from './constans/constans'
-import { CitiesContext } from './context';
+import { CitiesContext, ForecastContext } from './context';
 
 function App() {
 
   const [city, setCity] = useState([])
+  const [forecast, setForecast] = useState([])
   const [currentCity, setCurrentCity] = useState(DEFAULT_CITY)
 
 
@@ -21,7 +22,8 @@ function App() {
 
   useEffect(() => {
     fetchWeather(currentCity).then(result => setCity(result))
-    console.log('useEffect');
+    fethcForecast(currentCity).then(result => setForecast(result))
+
   }, [currentCity])
 
 
@@ -35,8 +37,10 @@ function App() {
           <SearchBar
             searchCityHandler = {(event, text) => searchCityHandler(event, text)}
           />
-          <CitiesContext.Provider value = { city }>
-            <MainBlock setCurrentCity={setCurrentCity } />
+          <CitiesContext.Provider value={city}>
+            <ForecastContext.Provider value={forecast}>
+              <MainBlock setCurrentCity={setCurrentCity} />
+            </ForecastContext.Provider>
           </CitiesContext.Provider>
 
 
