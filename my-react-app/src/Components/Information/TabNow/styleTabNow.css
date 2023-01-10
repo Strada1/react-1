@@ -1,0 +1,43 @@
+.tabNow {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 35% 40% 1fr;
+  grid-template-rows: 25% 40% 1fr;
+  grid-template-areas: 'a b c' 'd e f' 'g h i';
+}
+.tabNow__temp {
+  grid-area: a;
+  font-size: 45px;
+  align-self: end;
+  justify-self: end;
+}
+.tabNow-container-img {
+  grid-area: e;
+  align-self: center;
+  justify-content: center;
+}
+.tabNow__img {
+  max-width: 125px;
+  max-height: 125px;
+}
+.tabNow__city {
+  grid-area: g;
+  font-size: 24px;
+  align-self: center;
+  justify-self: center;
+}
+.tabNow__btn {
+  grid-area: i;
+  width: 25px;
+  height: 25px;
+  align-self: center;
+  justify-self: center;
+  background-image: url(../../../img/heart.png);
+  background-repeat: no-repeat;
+  background-color: white;
+  border: none;
+}
+.tabNow__btn_liked {
+  background-image: url(../../../img/heart-liked.png);
+}
