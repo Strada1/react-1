@@ -1,0 +1,49 @@
+.main-forecast {
+  display: flex;
+  flex-direction: column;
+  width: 298px;
+  border-right: 2px solid #fff;
+
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  height: 345px;
+}
+
+.forecast-weather {
+  margin-top: auto;
+}
+
+.like {
+  border: none;
+  background-color: transparent;
+  stroke: #fff;
+  fill: #fff;
+}
+
+.like:hover svg {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}
+
+.like:active svg {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}
+
+.like-active {
+  fill:  #FF7C7C;
+  stroke:  #FF7C7C;
+}
+
+.locations-header {
+  display: flex;
+  padding-bottom: 7px;
+  padding-left: 17px;
+  font-size: 36px;
+  line-height: 75px;
+  font-weight: 600;
+  height: 80px;
+}

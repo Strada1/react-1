@@ -1,0 +1,14 @@
+.main-locations {
+  width: 299px;
+}
+
+.main-locations .locations-header {
+  border-bottom: 2px solid #fff;
+  font-weight: 600;
+    font-size: 24px;
+}
+
+.text-locations {
+  display: inline-block;
+  margin-top: auto;
+}

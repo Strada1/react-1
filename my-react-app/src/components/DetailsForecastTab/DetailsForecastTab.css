@@ -1,0 +1,31 @@
+.details-items {
+  list-style-type: none;
+  margin: 16px 20px;
+  padding: 0 20px;
+  background: linear-gradient(270deg, rgba(0, 134, 207, 0.246) -6.38%, rgba(2, 110, 189, 0.408) 107.1%);
+  border-radius: 10px;
+}
+
+.details-items li {
+  font-size: 18px;
+  margin: 6px 0;
+  color: rgba(255, 255, 255, 0.7);
+
+  
+}
+.details-items li:first-child {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 24px 0 24px 0;
+  color: #fff;
+}
+.details-items li:first-child img {
+  margin: 0 8px 0 0;
+  height: 28px;
+}
+
+.details-items li:last-child {
+  margin: 0 0 20px;
+}

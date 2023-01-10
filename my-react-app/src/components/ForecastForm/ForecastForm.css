@@ -1,0 +1,39 @@
+.forecast-form {
+    display: flex;
+    justify-content: flex-start;
+    height: 45px;
+    border-bottom: 2px solid #fff;
+    background: linear-gradient(6.74deg, rgba(149, 214, 252, 0.5) -20.07%, rgba(158, 212, 247, 0.5) 118.01%);
+  }
+  
+  input[type="text"] {
+    font: inherit;
+    font-size: 18px;
+    line-height: 21px;
+    outline: none;
+    border: none;
+    width: 522px;
+    margin-left: 15px;
+    background-color: transparent;
+    color: #056CB6;
+    font-weight: 600;
+  }
+
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+  }
+  
+  .button {
+    margin-right: 15px;
+  
+    background: url(./magnifier.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
