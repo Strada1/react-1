@@ -22,7 +22,7 @@ const DeatilsScreen = () => {
     return (
         <div className="weather--details">
             <h3 className="location-header">
-                Bishkek
+                {currentCity.name}
             </h3>
             <ul className="details--list">
                     {detailsList}

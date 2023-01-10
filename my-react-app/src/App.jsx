@@ -36,7 +36,7 @@ function App() {
             searchCityHandler = {(event, text) => searchCityHandler(event, text)}
           />
           <CitiesContext.Provider value = { city }>
-            <MainBlock  />
+            <MainBlock setCurrentCity={setCurrentCity } />
           </CitiesContext.Provider>
 
 

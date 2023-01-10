@@ -6,7 +6,7 @@ import { LOCAL_STORAGE } from '../../constans/constans';
 import {  useEffect, useState } from 'react';
 
 
-const MainBlock = () => {
+const MainBlock = ({setCurrentCity}) => {
 
     const [locationList, setlocationList] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE.FAVOURITE_CITIES)) || null);
 
@@ -28,7 +28,8 @@ const MainBlock = () => {
             <Locationsbar
                 locationList={locationList}
                 setlocationList={setlocationList}
-                deleteCity = {(id) => deleteCity(id)}
+                deleteCity={(id) => deleteCity(id)}
+                setCurrentCity = {setCurrentCity}
             />
         </div>
     )
