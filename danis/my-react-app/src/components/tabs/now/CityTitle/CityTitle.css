@@ -1,0 +1,15 @@
+.button__heart:hover svg path {
+    transition: all 0.3s ease-in-out;
+    fill: red;
+    cursor: pointer;
+}
+
+.button__heart {
+    border: none;
+    background: none;
+}
+
+.title__heart {
+    display: flex;
+    justify-content: space-between;
+}
