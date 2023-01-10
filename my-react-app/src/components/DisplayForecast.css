@@ -1,0 +1,56 @@
+.city-forecast {
+    font-size: 24px;
+    padding-top: 33px;
+    padding-left: 18px;
+}
+
+.data-container {
+    width: 265px;
+    height: 120px;
+    border: 1px solid #000000;
+    margin-left: 18px;
+    margin-top: 7px;
+}
+
+.date-forecast {
+    font-size: 18px;
+    padding-top: 6px;
+    padding-left: 8px;
+}
+
+.time-forecast {
+    font-size: 18px;
+    margin-top: -18px;
+    margin-left: 208px;
+}
+
+.temperature-forecast {
+    padding-top: 38px;
+    padding-left: 10px;
+}
+
+.feels-like-forecast {
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.weather-forecast {
+    margin-top: -40px;
+    margin-left: 208px;
+}
+
+.icon-forecast {
+    width: 40px;
+    height: 40px;
+    margin-top: -5px;
+    margin-left: 208px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background: linear-gradient(180deg, #00c6fb, #005bea);
+}
